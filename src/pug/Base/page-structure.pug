@@ -1,0 +1,33 @@
+doctype html
+html(lang='tr' dir='ltr')
+
+  block pageInformation
+
+  //- Head
+  head
+    include ./head.pug
+  
+  //- Body
+  body
+    mixin body(header = true, footer = true)
+      if header
+        //- Header
+        include ../Layouts/header.pug
+        |
+        |
+      
+      //- Content
+      block
+
+      if footer
+        |
+        |
+        //- Footer
+        include ../Layouts/footer.pug
+
+    block body
+
+    |
+    |
+    //- Scripts
+    include ./scripts.pug

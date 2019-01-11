@@ -1,0 +1,35 @@
+meta(charset="UTF-8")
+meta(http-equiv="X-UA-Compatible" content="ie=edge")
+meta(name="viewport" content="width=device-width, initial-scale=1.0")
+
+title #{pageTitle}
+
+if pageDesc
+  meta(name="description" content=pageDesc)
+if pageAuthor
+  meta(name="author" content=pageAuthor)
+if pageKeywords
+  meta(name="keywords" content=pageKeywords)
+
+block links
+  link(rel="stylesheet" href="./css/app.min.css")
+  link(rel="icon" type="image/png" href="./favicon.png")
+
+// Facebook Open Graph 
+meta(property="og:type" content="website")
+meta(property="og:url" content="https://example.com/page.html")
+meta(property="og:title" content="Content Title")
+meta(property="og:image" content="https://example.com/image.jpg")
+meta(property="og:description" content="Description Here")
+meta(property="og:site_name" content="Site Name")
+meta(property="og:locale" content="tr_TR")
+meta(property="og:image:height" content="630")
+
+// Twitter Card 
+meta(name='twitter:card', content='summary')
+meta(name='twitter:site', content='@site_account')
+meta(name='twitter:creator', content='@individual_account')
+meta(name='twitter:url', content='https://example.com/page.html')
+meta(name='twitter:title', content='Content Title')
+meta(name='twitter:description', content='Content description less than200 characters')
+meta(name='twitter:image', content='https://example.com/image.jpg')
