@@ -10,20 +10,23 @@ html(lang='tr' dir='ltr')
   //- Body
   body
     mixin body(header = true, footer = true)
-      if header
-        //- Header
-        include ../Layouts/header.pug
-        |
-        |
-      
-      //- Content
-      block
+      // Main Content
+      #pxl-body
+        if header
+          //- Header
+          include ../Layouts/header.pug
+          |
+          |
+        
+        //- Content
+        block
 
-      if footer
-        |
-        |
-        //- Footer
-        include ../Layouts/footer.pug
+        if footer
+          |
+          |
+          //- Footer
+          include ../Layouts/footer.pug
+      // Main Content
 
     block body
 

@@ -29,144 +29,104 @@
 </head>
 
 <body>
+  <input class="pxl-modal-state--on" type="radio" id="modal-register-on" name="modal-register" />
+  <input class="pxl-modal-state--off" type="radio" id="modal-register-off" name="modal-register" />
   <!-- Modal-->
   <section class="pxl-modal">
-    <input class="pxl-modal-trigger--on" type="radio" id="modal-register-on" name="modal-register" />
-    <input class="pxl-modal-trigger--off" type="radio" id="modal-register-off" name="modal-register" />
     <div class="pxl-modal__container">
+      <label class="pxl-modal__overlay" for="modal-register-off"></label>
       <div class="pxl-modal__inner">
-        <label class="pxl-modal__overlay" for="modal-register-off"></label>
-        <div class="pxl-modal__content">
-          <!-- Modal Header-->
-          <div class="pxl-modal__header">
-            <div class="pxl-modal__header__title">
-              <h5>Modal Başlığı</h5>
-            </div>
-            <label class="pxl-modal__header__close" for="modal-register-off">&times;</label>
+        <!-- Modal Header-->
+        <div class="pxl-modal__header">
+          <div class="pxl-modal__header__title">
+            <h5>Modal Başlığı</h5>
           </div>
-          <!-- Modal Header-->
-          <!-- Modal Body (content)-->
-          <div class="pxl-modal__body">
-            <form>
-              <div class="form-row">
-                <div class="col-md-4 mb-3">
-                  <label for="validationServer01">First name</label>
-                  <input class="form-control is-valid" id="validationServer01" type="text" placeholder="First name" value="Mark" required="">
-                  <div class="valid-feedback">Looks good!</div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="validationServer02">Last name</label>
-                  <input class="form-control is-valid" id="validationServer02" type="text" placeholder="Last name" value="Otto" required="">
-                  <div class="valid-feedback">Looks good!</div>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="validationServerUsername">Username</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend3">@</span>
-                    </div>
-                    <input class="form-control is-invalid" id="validationServerUsername" type="text" placeholder="Username" aria-describedby="inputGroupPrepend3" required="">
-                    <div class="invalid-feedback">Please choose a username.</div>
-                  </div>
-                </div>
-              </div>
-              <div class="form-row">
-                <div class="col-md-6 mb-3">
-                  <label for="validationServer03">City</label>
-                  <input class="form-control is-invalid" id="validationServer03" type="text" placeholder="City" required="">
-                  <div class="invalid-feedback">Please provide a valid city.</div>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label for="validationServer04">State</label>
-                  <input class="form-control is-invalid" id="validationServer04" type="text" placeholder="State" required="">
-                  <div class="invalid-feedback">Please provide a valid state.</div>
-                </div>
-                <div class="col-md-3 mb-3">
-                  <label for="validationServer05">Zip</label>
-                  <input class="form-control is-invalid" id="validationServer05" type="text" placeholder="Zip" required="">
-                  <div class="invalid-feedback">Please provide a valid zip.</div>
-                </div>
-              </div>
-              <div class="form-group">
-                <div class="form-check">
-                  <input class="form-check-input is-invalid" id="invalidCheck3" type="checkbox" value="" required="">
-                  <label class="form-check-label" for="invalidCheck3">Agree to terms and conditions</label>
-                  <div class="invalid-feedback">You must agree before submitting.</div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <!-- Modal Body (content)-->
-          <!-- Modal Footer-->
-          <div class="pxl-modal__footer">
-            <button class="btn btn-primary" type="submit">Submit form</button>
-          </div>
-          <!-- Modal Footer-->
+          <label class="pxl-modal__header__close" for="modal-register-off">&times;</label>
         </div>
+        <!-- Modal Header-->
+        <!-- Modal Body (content)-->
+        <div class="pxl-modal__body">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown button</button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </div>
+        </div>
+        <!-- Modal Body (content)-->
+        <!-- Modal Footer-->
+        <div class="pxl-modal__footer">
+          <label class="btn btn-primary pxl-modal--trigger" for="modal-register-off">Submit form</label>
+        </div>
+        <!-- Modal Footer-->
       </div>
     </div>
   </section>
   <!-- Modal-->
-  <!-- (header) Main Header -->
-  <header class="main-header">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a>
-              <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
-          <li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+  <!-- Main Content-->
+  <div id="pxl-body">
+    <!-- (header) Main Header -->
+    <header class="main-header sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+    <!-- (header) Main Header -->
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-4 py-3">
+          <label class="btn btn-danger btn-block pxl-modal--trigger" for="modal-register-on">Open Modal</label>
+        </div>
       </div>
-    </nav>
-  </header>
-  <!-- (header) Main Header -->
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-4 py-3">
-        <label class="btn btn-danger btn-block" for="modal-register-on">Open Modal</label>
-      </div>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p class="deneme">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
+      <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</strong>
+      </p>
     </div>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-    <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</strong>
-    </p>
+    <!-- Footer-->
+    <!-- Footer-->
   </div>
-  <!-- Footer-->
-  <!-- Footer-->
+  <!-- Main Content-->
   <!-- Scripts -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

@@ -9,56 +9,19 @@ include ./Widgets/_init.pug
 
 block body
   +modal('modal-register', 'Modal Başlığı')
-    form
-      .form-row
-        .col-md-4.mb-3
-          label(for='validationServer01') First name
-          input#validationServer01.form-control.is-valid(type='text', placeholder='First name', value='Mark', required='')
-          .valid-feedback
-            | Looks good!
-        .col-md-4.mb-3
-          label(for='validationServer02') Last name
-          input#validationServer02.form-control.is-valid(type='text', placeholder='Last name', value='Otto', required='')
-          .valid-feedback
-            | Looks good!
-        .col-md-4.mb-3
-          label(for='validationServerUsername') Username
-          .input-group
-            .input-group-prepend
-              span#inputGroupPrepend3.input-group-text @
-            input#validationServerUsername.form-control.is-invalid(type='text', placeholder='Username', aria-describedby='inputGroupPrepend3', required='')
-            .invalid-feedback
-              | Please choose a username.
-      .form-row
-        .col-md-6.mb-3
-          label(for='validationServer03') City
-          input#validationServer03.form-control.is-invalid(type='text', placeholder='City', required='')
-          .invalid-feedback
-            | Please provide a valid city.
-        .col-md-3.mb-3
-          label(for='validationServer04') State
-          input#validationServer04.form-control.is-invalid(type='text', placeholder='State', required='')
-          .invalid-feedback
-            | Please provide a valid state.
-        .col-md-3.mb-3
-          label(for='validationServer05') Zip
-          input#validationServer05.form-control.is-invalid(type='text', placeholder='Zip', required='')
-          .invalid-feedback
-            | Please provide a valid zip.
-      .form-group
-        .form-check
-          input#invalidCheck3.form-check-input.is-invalid(type='checkbox', value='', required='')
-          label.form-check-label(for='invalidCheck3')
-            | Agree to terms and conditions
-          .invalid-feedback
-            | You must agree before submitting.
+    .dropdown
+      button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+        | Dropdown button
+      .dropdown-menu(aria-labelledby='dropdownMenuButton')
+        a.dropdown-item(href='#') Action
+        a.dropdown-item(href='#') Another action
+        a.dropdown-item(href='#') Something else here
 
   +body
-
     .container
       .row.justify-content-center
         .col-4.py-3
-          label(for="modal-register-on").btn.btn-danger.btn-block Open Modal
+          label(for="modal-register-on").btn.btn-danger.btn-block.pxl-modal--trigger Open Modal
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
@@ -74,7 +37,7 @@ block body
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
+      p.deneme Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
