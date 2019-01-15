@@ -8,20 +8,58 @@ block pageInformation
 include ./Widgets/_init.pug
 
 block body
-  +modal('modal-register', 'Modal Başlığı')
-    .dropdown
-      button#dropdownMenuButton.btn.btn-secondary.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
-        | Dropdown button
-      .dropdown-menu(aria-labelledby='dropdownMenuButton')
-        a.dropdown-item(href='#') Action
-        a.dropdown-item(href='#') Another action
-        a.dropdown-item(href='#') Something else here
+  +overlay('modal-register', true, { class: 'pxl-modal' })
+    +modal
+      // Modal Header
+      .pxl-modal__header
+        .pxl-modal__header__title
+        label.pxl-modal__header__close(for="modal-register-off") &times;
+      // Modal Header
+
+      // Modal Body (content)
+      .pxl-modal__body
+        form.was-validated
+          .custom-control.custom-checkbox.mb-3
+            input#customControlValidation1.custom-control-input(type='checkbox', required='')
+            label.custom-control-label(for='customControlValidation1') Check this custom checkbox
+            .invalid-feedback Example invalid feedback text
+          .custom-control.custom-radio
+            input#customControlValidation2.custom-control-input(type='radio', name='radio-stacked', required='')
+            label.custom-control-label(for='customControlValidation2') Toggle this custom radio
+          .custom-control.custom-radio.mb-3
+            input#customControlValidation3.custom-control-input(type='radio', name='radio-stacked', required='')
+            label.custom-control-label(for='customControlValidation3') Or toggle this other custom radio
+            .invalid-feedback More example invalid feedback text
+          .form-group
+            select.custom-select(required='')
+              option(value='') Open this select menu
+              option(value='1') One
+              option(value='2') Two
+              option(value='3') Three
+            .invalid-feedback Example invalid custom select feedback
+          .custom-file
+            input#validatedCustomFile.custom-file-input(type='file', required='')
+            label.custom-file-label(for='validatedCustomFile') Choose file...
+            .invalid-feedback Example invalid custom file feedback
+      // Modal Body (content)
+
+      // Modal Footer
+      .pxl-modal__footer
+        label(for=modalName+"-off").btn.btn-primary.pxl-overlay--trigger Submit form
+      // Modal Footer
+
+  +overlay('side-navigation', true)
 
   +body
     .container
       .row.justify-content-center
         .col-4.py-3
-          label(for="modal-register-on").btn.btn-danger.btn-block.pxl-modal--trigger Open Modal
+          label.btn.btn-danger.btn-block.pxl-overlay--trigger(for="modal-register-on") Open Modal
+        .col-4.py-3
+          label.btn.btn-danger.btn-block.pxl-overlay--trigger(for="side-navigation-on") Open Overlay
+        .col-6.py-3
+          button.btn.btn-danger.btn-block.test-button Button 1
+          button.btn.btn-danger.btn-block.test-button Button 2
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
       p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.

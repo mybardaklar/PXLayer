@@ -1,74 +1,28 @@
-label.pxl-modal--trigger {
-  margin-bottom: 0;
-}
-
-input[type="radio"].pxl-modal-state--on {
-  display: none;
-
-  &:checked {
-
-    & ~ #pxl-body {
-      overflow: hidden;
-      filter: blur(5px);
-    }
-
-    & ~ .pxl-modal {
-      @include visible(true);
-
+.pxl-modal {
+  input[type=radio].pxl-overlay-state--on {
+    &:checked ~ .pxl-overlay__wrapper {
       .pxl-modal__inner {
         transform: none;
       }
     }
   }
-}
-
-input[type="radio"].pxl-modal-state--off {
-  display: none;
-}
-
-.pxl-modal {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: $z-index-modal-container;
-  overflow-x: hidden;
-  overflow-y: auto;
-  transition: all 250ms;
-  @include visible(false);
 
   &__container {
     display: flex;
-    align-items: flex-start;
     justify-content: center;
-    width: 100%; height: auto; min-height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
+    width: 100%;
+    height: 100%;
     @include padding(null $size-4);
-  }
-
-  &__overlay {
-    background-color: hsla(0, 0%, 0%, .5);
-    display: block;
-    width: 100%; height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: $z-index-modal-overlay;
-    margin-bottom: 0;
   }
 
   &__inner {
     background-color: #fff;
-    width: 100%; max-width: 992px;
+    width: 100%; max-width: 500px;
     display: flex;
     flex-direction: column;
     border-radius: 5px;
     position: relative;
-    z-index: $z-index-modal-inner;
+    z-index: 2;
     box-shadow: 0 5px 10px 2.5px rgba(#000, .1);
     transition: all 500ms;
     transform: translate(0, -50px);
@@ -80,7 +34,7 @@ input[type="radio"].pxl-modal-state--off {
     align-items: center;
     justify-content: space-between;
     @include padding(null $size-6);
-    height: 60px;
+    height: 50px;
     color: $black-light;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -93,15 +47,19 @@ input[type="radio"].pxl-modal-state--off {
 
     &__close {
       display: inline-block;
-      width: 60px;
-      height: 60px;
-      cursor: pointer;
+      color: $grey;
       font-size: $size-3;
+      width: 50px; height: 50px;
       margin-bottom: 0;
       margin-right: -$size-6;
       text-align: center;
-      line-height: 60px;
+      line-height: 50px;
+      cursor: pointer;
       user-select: none;
+
+      &:hover {
+        color: $grey-darken;
+      }
     }
   }
 
@@ -115,8 +73,7 @@ input[type="radio"].pxl-modal-state--off {
     align-items: center;
     justify-content: flex-end;
     border-top: 1px $grey-lighten solid;
-    @include padding(null $size-6);
-    height: 60px;
+    @include padding($size-6);
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
   }

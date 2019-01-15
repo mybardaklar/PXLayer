@@ -1,26 +1,4 @@
-mixin modal(modalName, modalTitle)
-  input(type="radio" id=modalName + "-on"  name=modalName).pxl-modal-state--on
-  input(type="radio" id=modalName + "-off" name=modalName).pxl-modal-state--off
-
-  // Modal
-  section.pxl-modal
-    .pxl-modal__container
-      label(for=modalName+"-off").pxl-modal__overlay
-      .pxl-modal__inner
-        // Modal Header
-        .pxl-modal__header
-          .pxl-modal__header__title
-            h5= modalTitle
-          label(for=modalName+"-off").pxl-modal__header__close &times;
-        // Modal Header
-
-        // Modal Body (content)
-        .pxl-modal__body
-          block
-        // Modal Body (content)
-
-        // Modal Footer
-        .pxl-modal__footer
-          label(for=modalName+"-off").btn.btn-primary.pxl-modal--trigger Submit form
-        // Modal Footer
-  // Modal
+mixin modal
+  .pxl-modal__container
+    .pxl-modal__inner
+      block

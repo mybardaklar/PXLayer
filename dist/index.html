@@ -29,39 +29,77 @@
 </head>
 
 <body>
-  <input class="pxl-modal-state--on" type="radio" id="modal-register-on" name="modal-register" />
-  <input class="pxl-modal-state--off" type="radio" id="modal-register-off" name="modal-register" />
-  <!-- Modal-->
-  <section class="pxl-modal">
-    <div class="pxl-modal__container">
-      <label class="pxl-modal__overlay" for="modal-register-off"></label>
-      <div class="pxl-modal__inner">
-        <!-- Modal Header-->
-        <div class="pxl-modal__header">
-          <div class="pxl-modal__header__title">
-            <h5>Modal Başlığı</h5>
-          </div>
-          <label class="pxl-modal__header__close" for="modal-register-off">&times;</label>
-        </div>
-        <!-- Modal Header-->
-        <!-- Modal Body (content)-->
-        <div class="pxl-modal__body">
-          <div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" id="dropdownMenuButton" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown button</button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a><a class="dropdown-item" href="#">Something else here</a>
+  <!-- Overlay-->
+  <section class="pxl-overlay pxl-modal">
+    <input class="pxl-overlay-state--on" type="radio" id="modal-register-on" name="modal-register" checked="checked" />
+    <input class="pxl-overlay-state--off" type="radio" id="modal-register-off" name="modal-register" />
+    <div class="pxl-overlay__wrapper">
+      <div class="pxl-overlay__container">
+        <label class="pxl-overlay__background" for="modal-register-off"></label>
+        <div class="pxl-modal__container">
+          <div class="pxl-modal__inner">
+            <!-- Modal Header-->
+            <div class="pxl-modal__header">
+              <div class="pxl-modal__header__title"></div>
+              <label class="pxl-modal__header__close" for="modal-register-off">&times;</label>
             </div>
+            <!-- Modal Header-->
+            <!-- Modal Body (content)-->
+            <div class="pxl-modal__body">
+              <form class="was-validated">
+                <div class="custom-control custom-checkbox mb-3">
+                  <input class="custom-control-input" id="customControlValidation1" type="checkbox" required="">
+                  <label class="custom-control-label" for="customControlValidation1">Check this custom checkbox</label>
+                  <div class="invalid-feedback">Example invalid feedback text</div>
+                </div>
+                <div class="custom-control custom-radio">
+                  <input class="custom-control-input" id="customControlValidation2" type="radio" name="radio-stacked" required="">
+                  <label class="custom-control-label" for="customControlValidation2">Toggle this custom radio</label>
+                </div>
+                <div class="custom-control custom-radio mb-3">
+                  <input class="custom-control-input" id="customControlValidation3" type="radio" name="radio-stacked" required="">
+                  <label class="custom-control-label" for="customControlValidation3">Or toggle this other custom radio</label>
+                  <div class="invalid-feedback">More example invalid feedback text</div>
+                </div>
+                <div class="form-group">
+                  <select class="custom-select" required="">
+                    <option value="">Open this select menu</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <div class="invalid-feedback">Example invalid custom select feedback</div>
+                </div>
+                <div class="custom-file">
+                  <input class="custom-file-input" id="validatedCustomFile" type="file" required="">
+                  <label class="custom-file-label" for="validatedCustomFile">Choose file...</label>
+                  <div class="invalid-feedback">Example invalid custom file feedback</div>
+                </div>
+              </form>
+            </div>
+            <!-- Modal Body (content)-->
+            <!-- Modal Footer-->
+            <div class="pxl-modal__footer">
+              <label class="btn btn-primary pxl-overlay--trigger" for="undefined-off">Submit form</label>
+            </div>
+            <!-- Modal Footer-->
           </div>
         </div>
-        <!-- Modal Body (content)-->
-        <!-- Modal Footer-->
-        <div class="pxl-modal__footer">
-          <label class="btn btn-primary pxl-modal--trigger" for="modal-register-off">Submit form</label>
-        </div>
-        <!-- Modal Footer-->
       </div>
     </div>
   </section>
-  <!-- Modal-->
+  <!-- Overlay-->
+  <!-- Overlay-->
+  <section class="pxl-overlay">
+    <input class="pxl-overlay-state--on" type="radio" id="side-navigation-on" name="side-navigation" checked="checked" />
+    <input class="pxl-overlay-state--off" type="radio" id="side-navigation-off" name="side-navigation" />
+    <div class="pxl-overlay__wrapper">
+      <div class="pxl-overlay__container">
+        <label class="pxl-overlay__background" for="side-navigation-off"></label>
+      </div>
+    </div>
+  </section>
+  <!-- Overlay-->
   <!-- Main Content-->
   <div id="pxl-body">
     <!-- (header) Main Header -->
@@ -94,7 +132,14 @@
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-4 py-3">
-          <label class="btn btn-danger btn-block pxl-modal--trigger" for="modal-register-on">Open Modal</label>
+          <label class="btn btn-danger btn-block pxl-overlay--trigger" for="modal-register-on">Open Modal</label>
+        </div>
+        <div class="col-4 py-3">
+          <label class="btn btn-danger btn-block pxl-overlay--trigger" for="side-navigation-on">Open Overlay</label>
+        </div>
+        <div class="col-6 py-3">
+          <button class="btn btn-danger btn-block test-button">Button 1</button>
+          <button class="btn btn-danger btn-block test-button">Button 2</button>
         </div>
       </div>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
@@ -132,7 +177,7 @@
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  <script src="./js/app.js"></script>
+  <script src="./js/app.min.js"></script>
 </body>
 
 </html>

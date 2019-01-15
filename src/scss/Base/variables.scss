@@ -38,7 +38,6 @@ $size-6: 1rem;
 $size-7: 0.75rem;
 
 // Z-index
-$z-index-app: 1;
 $z-index-1: 10;
 $z-index-2: 20;
 $z-index-3: 30;
@@ -49,9 +48,8 @@ $z-index-7: 70;
 $z-index-8: 80;
 $z-index-9: 90;
 
-$z-index-modal-container: 12;
-$z-index-modal-overlay: 11;
-$z-index-modal-inner: 13;
+$z-index-app: 1;
+$z-index-overlay: 11;
 
 // Breakpoints
 $breakpoints: (

@@ -6,4 +6,8 @@
   left: 0;
   z-index: $z-index-app;
   transition: all 250ms;
+
+  &.pxl-overlay--on {
+    filter: blur(5px);
+  }
 }
