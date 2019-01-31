@@ -2,34 +2,36 @@ meta(charset="UTF-8")
 meta(http-equiv="X-UA-Compatible" content="ie=edge")
 meta(name="viewport" content="width=device-width, initial-scale=1.0")
 
-title #{pageTitle}
+title #{title}
 
-if pageDesc
+if metaDescription
   meta(name="description" content=pageDesc)
-if pageAuthor
-  meta(name="author" content=pageAuthor)
-if pageKeywords
-  meta(name="keywords" content=pageKeywords)
+if metaAuthor
+  meta(name="author" content=metaAuthor)
+if metaKeywords
+  meta(name="keywords" content=metaKeywords)
 
 block links
-  link(rel="stylesheet" href="./css/app.min.css")
+  include ./stylesheets
   link(rel="icon" type="image/png" href="./favicon.png")
 
-// Facebook Open Graph 
-meta(property="og:type" content="website")
-meta(property="og:url" content="https://example.com/page.html")
-meta(property="og:title" content="Content Title")
-meta(property="og:image" content="https://example.com/image.jpg")
-meta(property="og:description" content="Description Here")
-meta(property="og:site_name" content="Site Name")
-meta(property="og:locale" content="tr_TR")
-meta(property="og:image:height" content="630")
+if openGraph
+  // Facebook Open Graph 
+  meta(property="og:type" content="website")
+  meta(property="og:url" content=openGraph.url)
+  meta(property="og:title" content=openGraph.title)
+  meta(property="og:image" content=openGraph.image)
+  meta(property="og:description" content=openGraph.description)
+  meta(property="og:site_name" content=openGraph.site_name)
+  meta(property="og:locale" content=openGraph.locale)
+  meta(property="og:image:height" content=openGraph.image_height)
 
-// Twitter Card 
-meta(name='twitter:card', content='summary')
-meta(name='twitter:site', content='@site_account')
-meta(name='twitter:creator', content='@individual_account')
-meta(name='twitter:url', content='https://example.com/page.html')
-meta(name='twitter:title', content='Content Title')
-meta(name='twitter:description', content='Content description less than200 characters')
-meta(name='twitter:image', content='https://example.com/image.jpg')
+if twitterCard
+  // Twitter Card 
+  meta(name='twitter:card', content='summary')
+  meta(name='twitter:site', content=twitterCard.site)
+  meta(name='twitter:creator', content=twitterCard.creator)
+  meta(name='twitter:url', content=twitterCard.url)
+  meta(name='twitter:title', content=twitterCard.title)
+  meta(name='twitter:description', content=twitterCard.description)
+  meta(name='twitter:image', content=twitterCard.image)

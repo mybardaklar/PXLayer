@@ -1,9 +1,12 @@
-class PXLOverlay {
+export default class PXLOverlay {
 
   constructor() {
     this.pxl_body = document.querySelector('#pxl-body');
     this.stateOn  = document.querySelectorAll('input[type=radio].pxl-overlay-state--on');
     this.stateOff = document.querySelectorAll('input[type=radio].pxl-overlay-state--off');
+    this.whenDOMLoaded();
+    this.whenStateOn();
+    this.whenStateOff();
   }
 
   blurBackground(el, type) {
@@ -26,7 +29,9 @@ class PXLOverlay {
   whenStateOn() {
     this.stateOn.forEach((el) => {
       el.addEventListener('change', (e) => {
-        this.blurBackground(el, true);
+        setTimeout(() => {
+          this.blurBackground(el, true);
+        }, 250);
       });
     });
   }
@@ -48,5 +53,3 @@ class PXLOverlay {
   }
 
 }
-
-module.exports = new PXLOverlay();

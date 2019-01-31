@@ -1,23 +1,20 @@
-extends ./Base/page-structure.pug
+extends ./Base/page-structure
 
 //- page title and meta tags(description, author, keywords)
 block pageInformation
-  - var pageTitle = 'Homepage'
-  - var pageKeywords = 'idk'
+  - var title = 'Homepage';
+  - var metaKeywords = 'idk';
 
-include ./Widgets/_init.pug
+include ./Widgets/_init
 
 block body
-  +overlay('modal-register', true, { class: 'pxl-modal' })
+  +overlay('modal-register', false, { class: 'pxl-modal' })
     +modal
-      // Modal Header
-      .pxl-modal__header
+      +modal__header
         .pxl-modal__header__title
+          h5 Modal Title
         label.pxl-modal__header__close(for="modal-register-off") &times;
-      // Modal Header
-
-      // Modal Body (content)
-      .pxl-modal__body
+      +modal__body
         form.was-validated
           .custom-control.custom-checkbox.mb-3
             input#customControlValidation1.custom-control-input(type='checkbox', required='')
@@ -41,47 +38,86 @@ block body
             input#validatedCustomFile.custom-file-input(type='file', required='')
             label.custom-file-label(for='validatedCustomFile') Choose file...
             .invalid-feedback Example invalid custom file feedback
-      // Modal Body (content)
+      +modal__footer
+        .pxl-overlay--trigger
+          +tooltip({ 'tooltip-position': 'left', style: 'width: 500px;' })
+            span Click to modal
+            span Click to modal
+            span Click to modal
+            span Click to modal
+            span Click to modal
+            span Click to modal
+            span Click to modal
+            span Click to modal
+          label(for=modalName+"-off").btn.btn-primary.pxl-overlay--trigger Submit form
 
-      // Modal Footer
-      .pxl-modal__footer
-        label(for=modalName+"-off").btn.btn-primary.pxl-overlay--trigger Submit form
-      // Modal Footer
-
-  +overlay('side-navigation', true)
+  +overlay('side-navigation', true, { class: 'pxl-side-nav' })
+    +side-nav
+      .user-side-navigation
 
   +body
     .container
       .row.justify-content-center
         .col-4.py-3
-          label.btn.btn-danger.btn-block.pxl-overlay--trigger(for="modal-register-on") Open Modal
+          .pxl-overlay--trigger
+            +tooltip({ 'tooltip-position': 'left' })
+              span Click to modal
+            label.btn.btn-danger.btn-block.pxl-overlay--trigger(for="modal-register-on") Tooltip
         .col-4.py-3
           label.btn.btn-danger.btn-block.pxl-overlay--trigger(for="side-navigation-on") Open Overlay
         .col-6.py-3
-          button.btn.btn-danger.btn-block.test-button Button 1
-          button.btn.btn-danger.btn-block.test-button Button 2
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p.deneme Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
-      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
+          .pxl-overlay--trigger
+            +tooltip({ 'tooltip-position': 'top' })
+              i.fas.fa-angle-double-right
+              span  Click to modal
+            button.btn.btn-danger.btn-block.test-button Button 1
+          .pxl-overlay--trigger
+            +tooltip({ 'tooltip-position': 'bottom' })
+              span Click to modal
+            button.btn.btn-danger.btn-block.test-button Button 2
+      p My anger outweights my guilt.
       p
-        strong Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.
+        | Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.
+      p
+        | Are you so desperate to fight criminals that you lock yourself in to take them on one at a time ?
+      p You know how to disappear. We can teach you to become truly invisible.
+      p
+        | Behind you, stands a symbol of oppression. Blackgate Prison, where a thousand men have languished under the name of this man: Harvey Dent.
+      p Do you feel in charge?
+      p They scream and they cry much as you're doing now.
+      p This is what happens when an unstoppable force meets an immovable object.
+      p All creatures feel fear. Especially the scary ones. 
+      p
+        | Breathe in your fears. Face them. To conquer fear, you must become fear. You must bask in the fear of other men. And men fear most what they cannot see. You have to become a terrible thought. A wraith. You have to become an idea! Feel terror cloud your senses. Feel its power to distort. To control. And know that this power can be yours. Embrace your worst fear. Become one with the darkness.
+      p
+        | But I know the rage that drives you. That impossible anger strangIing the grief until the memory of your loved one is just poison in your veins. And one day, you catch yourself wishing the person you loved had never existed so you'd be spared your pain.
+      p Gordon... You do like to play things pretty close to the chest.
+      p
+        | Every man who has lotted here over the centuries, has looked up to the light and imagined climbing to freedom. So easy, so simple! And like shipwrecked men turning to seawater foregoing uncontrollable thirst, many have died trying. And then here there can be no true despair without hope. So as I terrorize Gotham, I will feed its people hope to poison their souls. I will let them believe that they can survive so that you can watch them climbing over each other to stay in the sun. You can watch me torture an entire city. And then when you've truly understood the depth of your failure, we will fulfill Ra's Al Ghul's destiny. We will destroy Gotham. And then, when that is done, and Gotham is... ashes Then you have my permission to die.
+      p
+        | Okay. Now... Hardened Kevlar plates over titanium-dipped, tri-weave fibers for flexibility. You'll be lighter, faster, more agile.
+      p
+        | Gotham's been good to our family, but the city's been suffering. People less fortunate than us have been enduring very hard times. So we built a new, cheap, public transportation system to unite the city. And at the center, Wayne tower.
+      p Pretty soon we will be chasing down over due library books.
+      p
+        | Death does not wait for you to be ready! Death is not considerate of fair! And make no mistake, here you face death. Tiger. Jujitsu. Panther. You're skilled. But this is not a dance. And you are afraid. But not of me. Tell us Mr. Wayne, what do you fear?
+      p But it's not who you are underneath... it's what you do that defines you.
+      p There you are! There is nothing to fear but fear itseIf!
+      p It's not who I am underneath but what I do that defines me.
+      p
+        | Never underestimate Gotham City. People get mugged coming home from work every day of the week. Sometimes things just go bad.
+      p
+        | I'm Gotham's reckoning. It'll end the ball of damns you've all been living on. A necessary evil.
+      p
+        | I speak for the rest of the board and Mr Wayne, in expressing our own excitement.
+      p I got another another job. Your.
+      p
+        | You hung up your cape and your cowl but you didn't move on. You never went to find a life.
+      p
+        | But we've met before. That was a long time ago, I was a kid at St. Swithin's, It used to be funded by the Wayne Foundation. It's an orphanage. My mum died when I was small, it was a car accident. I don't remember it. My dad got shot a couple of years later for a gambling debt. Oh I remember that one just fine. Not a lot of people know what it feels like to be angry in your bones. I mean they understand. The fosters parents. Everybody understands, for a while. Then they want the angry little kid to do something he knows he can't do, move on. After a while they stop understanding. They send the angry kid to a boy's home, I figured it out too late. Yeah I learned to hide the anger, and practice smiling in the mirror. It's like putting on a mask. So you showed up this one day, in a cool car, pretty girl on your arm. We were so excited! Bruce Wayne, a billionaire orphan? We used to make up stories about you man, legends and you know with the other kids, that's all it was, just stories, but right when I saw you, I knew who you really were. I'd seen that look on your face before. It's the same one I taught myself. I don't why you took the fault for Dent's murder but I'm still a believer in the Batman. Even if you're not...
+      p Someone like you. Someone who'll rattle the cages.
+      p I thought this might be a good opportunity for... improving the foundations.
+      p Peace has cost you your strength. Victory has defeated you.
+      p
+        strong You know what you said about the structures becoming shackles. You were right and I can't take it, the injustice. I mean, no one ever's gonna know who saved the entire city.
+

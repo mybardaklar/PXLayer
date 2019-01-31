@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr" dir="ltr">
+<html lang="en" dir="ltr">
 
 <head>
   <meta charset="UTF-8">
@@ -9,42 +9,24 @@
   <meta name="keywords" content="idk">
   <link rel="stylesheet" href="./css/app.min.css">
   <link rel="icon" type="image/png" href="./favicon.png">
-  <!-- Facebook Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://example.com/page.html">
-  <meta property="og:title" content="Content Title">
-  <meta property="og:image" content="https://example.com/image.jpg">
-  <meta property="og:description" content="Description Here">
-  <meta property="og:site_name" content="Site Name">
-  <meta property="og:locale" content="tr_TR">
-  <meta property="og:image:height" content="630">
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="@site_account">
-  <meta name="twitter:creator" content="@individual_account">
-  <meta name="twitter:url" content="https://example.com/page.html">
-  <meta name="twitter:title" content="Content Title">
-  <meta name="twitter:description" content="Content description less than200 characters">
-  <meta name="twitter:image" content="https://example.com/image.jpg">
 </head>
 
 <body>
-  <!-- Overlay-->
+  <!-- section.pxl-overlay -->
   <section class="pxl-overlay pxl-modal">
-    <input class="pxl-overlay-state--on" type="radio" id="modal-register-on" name="modal-register" checked="checked" />
-    <input class="pxl-overlay-state--off" type="radio" id="modal-register-off" name="modal-register" />
+    <input class="pxl-overlay-state--on" type="radio" id="modal-register-on" name="modal-register">
+    <input class="pxl-overlay-state--off" type="radio" id="modal-register-off" name="modal-register">
     <div class="pxl-overlay__wrapper">
       <div class="pxl-overlay__container">
         <label class="pxl-overlay__background" for="modal-register-off"></label>
         <div class="pxl-modal__container">
           <div class="pxl-modal__inner">
-            <!-- Modal Header-->
             <div class="pxl-modal__header">
-              <div class="pxl-modal__header__title"></div>
+              <div class="pxl-modal__header__title">
+                <h5>Modal Title</h5>
+              </div>
               <label class="pxl-modal__header__close" for="modal-register-off">&times;</label>
             </div>
-            <!-- Modal Header-->
-            <!-- Modal Body (content)-->
             <div class="pxl-modal__body">
               <form class="was-validated">
                 <div class="custom-control custom-checkbox mb-3">
@@ -77,33 +59,39 @@
                 </div>
               </form>
             </div>
-            <!-- Modal Body (content)-->
-            <!-- Modal Footer-->
             <div class="pxl-modal__footer">
-              <label class="btn btn-primary pxl-overlay--trigger" for="undefined-off">Submit form</label>
+              <div class="pxl-overlay--trigger">
+                <div class="pxl-tooltip" tooltip-position="left" style="width: 500px;"><span>Click to modal</span><span>Click to modal</span><span>Click to modal</span><span>Click to modal</span><span>Click to modal</span><span>Click to modal</span><span>Click to modal</span><span>Click to modal</span>
+                </div>
+                <label class="btn btn-primary pxl-overlay--trigger" for="undefined-off">Submit form</label>
+              </div>
             </div>
-            <!-- Modal Footer-->
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!-- Overlay-->
-  <!-- Overlay-->
-  <section class="pxl-overlay">
-    <input class="pxl-overlay-state--on" type="radio" id="side-navigation-on" name="side-navigation" checked="checked" />
-    <input class="pxl-overlay-state--off" type="radio" id="side-navigation-off" name="side-navigation" />
+  <!-- /section.pxl-overlay -->
+  <!-- section.pxl-overlay -->
+  <section class="pxl-overlay pxl-side-nav">
+    <input class="pxl-overlay-state--on" type="radio" id="side-navigation-on" name="side-navigation" checked>
+    <input class="pxl-overlay-state--off" type="radio" id="side-navigation-off" name="side-navigation">
     <div class="pxl-overlay__wrapper">
       <div class="pxl-overlay__container">
         <label class="pxl-overlay__background" for="side-navigation-off"></label>
+        <div class="pxl-side-nav__container">
+          <aside class="pxl-side-nav__inner">
+            <div class="user-side-navigation"></div>
+          </aside>
+        </div>
       </div>
     </div>
   </section>
-  <!-- Overlay-->
-  <!-- Main Content-->
+  <!-- /section.pxl-overlay -->
+  <!-- #pxl-body -->
   <div id="pxl-body">
-    <!-- (header) Main Header -->
-    <header class="main-header sticky-top">
+    <!-- header.main-header -->
+    <header class="main-header">
       <nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
         </button>
@@ -128,55 +116,80 @@
         </div>
       </nav>
     </header>
-    <!-- (header) Main Header -->
+    <!-- /header.main-header -->
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-4 py-3">
-          <label class="btn btn-danger btn-block pxl-overlay--trigger" for="modal-register-on">Open Modal</label>
+          <div class="pxl-overlay--trigger">
+            <div class="pxl-tooltip" tooltip-position="left"><span>Click to modal</span>
+            </div>
+            <label class="btn btn-danger btn-block pxl-overlay--trigger" for="modal-register-on">Tooltip</label>
+          </div>
         </div>
         <div class="col-4 py-3">
           <label class="btn btn-danger btn-block pxl-overlay--trigger" for="side-navigation-on">Open Overlay</label>
         </div>
         <div class="col-6 py-3">
-          <button class="btn btn-danger btn-block test-button">Button 1</button>
-          <button class="btn btn-danger btn-block test-button">Button 2</button>
+          <div class="pxl-overlay--trigger">
+            <div class="pxl-tooltip" tooltip-position="top"><i class="fas fa-angle-double-right"></i><span> Click to modal</span>
+            </div>
+            <button class="btn btn-danger btn-block test-button">Button 1</button>
+          </div>
+          <div class="pxl-overlay--trigger">
+            <div class="pxl-tooltip" tooltip-position="bottom"><span>Click to modal</span>
+            </div>
+            <button class="btn btn-danger btn-block test-button">Button 2</button>
+          </div>
         </div>
       </div>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p class="deneme">Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</p>
-      <p><strong>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat autem facilis reiciendis doloribus aperiam saepe necessitatibus molestias, architecto dolor quo quis tenetur aut harum aspernatur ducimus veritatis voluptate sunt optio.</strong>
+      <p>My anger outweights my guilt.</p>
+      <p>Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.</p>
+      <p>Are you so desperate to fight criminals that you lock yourself in to take them on one at a time ?</p>
+      <p>You know how to disappear. We can teach you to become truly invisible.</p>
+      <p>Behind you, stands a symbol of oppression. Blackgate Prison, where a thousand men have languished under the name of this man: Harvey Dent.</p>
+      <p>Do you feel in charge?</p>
+      <p>They scream and they cry much as you're doing now.</p>
+      <p>This is what happens when an unstoppable force meets an immovable object.</p>
+      <p>All creatures feel fear. Especially the scary ones.</p>
+      <p>Breathe in your fears. Face them. To conquer fear, you must become fear. You must bask in the fear of other men. And men fear most what they cannot see. You have to become a terrible thought. A wraith. You have to become an idea! Feel terror cloud
+        your senses. Feel its power to distort. To control. And know that this power can be yours. Embrace your worst fear. Become one with the darkness.</p>
+      <p>But I know the rage that drives you. That impossible anger strangIing the grief until the memory of your loved one is just poison in your veins. And one day, you catch yourself wishing the person you loved had never existed so you'd be spared your
+        pain.</p>
+      <p>Gordon... You do like to play things pretty close to the chest.</p>
+      <p>Every man who has lotted here over the centuries, has looked up to the light and imagined climbing to freedom. So easy, so simple! And like shipwrecked men turning to seawater foregoing uncontrollable thirst, many have died trying. And then here
+        there can be no true despair without hope. So as I terrorize Gotham, I will feed its people hope to poison their souls. I will let them believe that they can survive so that you can watch them climbing over each other to stay in the sun. You can
+        watch me torture an entire city. And then when you've truly understood the depth of your failure, we will fulfill Ra's Al Ghul's destiny. We will destroy Gotham. And then, when that is done, and Gotham is... ashes Then you have my permission to
+        die.</p>
+      <p>Okay. Now... Hardened Kevlar plates over titanium-dipped, tri-weave fibers for flexibility. You'll be lighter, faster, more agile.</p>
+      <p>Gotham's been good to our family, but the city's been suffering. People less fortunate than us have been enduring very hard times. So we built a new, cheap, public transportation system to unite the city. And at the center, Wayne tower.</p>
+      <p>Pretty soon we will be chasing down over due library books.</p>
+      <p>Death does not wait for you to be ready! Death is not considerate of fair! And make no mistake, here you face death. Tiger. Jujitsu. Panther. You're skilled. But this is not a dance. And you are afraid. But not of me. Tell us Mr. Wayne, what do
+        you fear?</p>
+      <p>But it's not who you are underneath... it's what you do that defines you.</p>
+      <p>There you are! There is nothing to fear but fear itseIf!</p>
+      <p>It's not who I am underneath but what I do that defines me.</p>
+      <p>Never underestimate Gotham City. People get mugged coming home from work every day of the week. Sometimes things just go bad.</p>
+      <p>I'm Gotham's reckoning. It'll end the ball of damns you've all been living on. A necessary evil.</p>
+      <p>I speak for the rest of the board and Mr Wayne, in expressing our own excitement.</p>
+      <p>I got another another job. Your.</p>
+      <p>You hung up your cape and your cowl but you didn't move on. You never went to find a life.</p>
+      <p>But we've met before. That was a long time ago, I was a kid at St. Swithin's, It used to be funded by the Wayne Foundation. It's an orphanage. My mum died when I was small, it was a car accident. I don't remember it. My dad got shot a couple of
+        years later for a gambling debt. Oh I remember that one just fine. Not a lot of people know what it feels like to be angry in your bones. I mean they understand. The fosters parents. Everybody understands, for a while. Then they want the angry
+        little kid to do something he knows he can't do, move on. After a while they stop understanding. They send the angry kid to a boy's home, I figured it out too late. Yeah I learned to hide the anger, and practice smiling in the mirror. It's like
+        putting on a mask. So you showed up this one day, in a cool car, pretty girl on your arm. We were so excited! Bruce Wayne, a billionaire orphan? We used to make up stories about you man, legends and you know with the other kids, that's all it
+        was, just stories, but right when I saw you, I knew who you really were. I'd seen that look on your face before. It's the same one I taught myself. I don't why you took the fault for Dent's murder but I'm still a believer in the Batman. Even if
+        you're not...</p>
+      <p>Someone like you. Someone who'll rattle the cages.</p>
+      <p>I thought this might be a good opportunity for... improving the foundations.</p>
+      <p>Peace has cost you your strength. Victory has defeated you.</p>
+      <p><strong>You know what you said about the structures becoming shackles. You were right and I can't take it, the injustice. I mean, no one ever's gonna know who saved the entire city.</strong>
       </p>
     </div>
     <!-- Footer-->
     <!-- Footer-->
   </div>
-  <!-- Main Content-->
+  <!-- /#pxl-body -->
   <!-- Scripts -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   <script src="./js/app.min.js"></script>
 </body>
 

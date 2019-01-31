@@ -1,9 +1,7 @@
-const PXLOverlay = require('./PXLOverlay');
+import PXLOverlay from './modules/PXLOverlay';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  PXLOverlay.whenDOMLoaded();
-  PXLOverlay.whenStateOn();
-  PXLOverlay.whenStateOff();
+  const overlay = new PXLOverlay();
 
 });

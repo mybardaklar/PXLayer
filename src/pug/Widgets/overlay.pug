@@ -1,5 +1,5 @@
 mixin overlay(overlayName, checked = false, attr)
-  // Overlay
+  // section.pxl-overlay 
   section.pxl-overlay&attributes(attr)
     input.pxl-overlay-state--on(type="radio" id=overlayName + "-on" name=overlayName checked=checked)
     input.pxl-overlay-state--off(type="radio" id=overlayName + "-off" name=overlayName)
@@ -8,4 +8,4 @@ mixin overlay(overlayName, checked = false, attr)
       .pxl-overlay__container
         label.pxl-overlay__background(for=overlayName+"-off")
         block
-  // Overlay
+  // /section.pxl-overlay 

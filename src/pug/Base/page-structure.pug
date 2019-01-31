@@ -1,20 +1,20 @@
 doctype html
-html(lang='tr' dir='ltr')
+html(lang='en' dir='ltr')
 
   block pageInformation
 
   //- Head
   head
-    include ./head.pug
+    include ./head
   
   //- Body
   body
     mixin body(header = true, footer = true)
-      // Main Content
+      // #pxl-body 
       #pxl-body
         if header
           //- Header
-          include ../Layouts/header.pug
+          include ../Partials/header
           |
           |
         
@@ -25,12 +25,12 @@ html(lang='tr' dir='ltr')
           |
           |
           //- Footer
-          include ../Layouts/footer.pug
-      // Main Content
+          include ../Partials/footer
+      // /#pxl-body 
 
     block body
 
     |
     |
     //- Scripts
-    include ./scripts.pug
+    include ./scripts
