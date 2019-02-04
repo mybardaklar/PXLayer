@@ -70,13 +70,13 @@ gulp.task('sass', () => {
       loadMaps: true
     }))
     .pipe(sass({
-      errLogToConsole: true
+      errLogToConsole: true,
+      outputStyle: 'compressed'
     }).on('error', console.error.bind(console)))
     .pipe(autoprefixer({
       browsers: ['last 2 versions', '> 5%', 'Firefox ESR']
     }))
     .pipe(uglifycss({
-      maxLineLen: 80,
       uglyComments: true
     }))
     .pipe(rename({ suffix: '.min' }))
