@@ -1,0 +1,101 @@
+=wh100($important: false)
+  height: 100% _important($important)
+  width: 100% _important($important)
+
+=visible($visibility) 
+  opacity: if($visibility, 1, 0)
+  visibility: if($visibility, unquote('visible'), unquote('hidden'))
+
+=mp0($important: false)
+  margin: 0 _important($important)
+  padding: 0 _important($important)
+
+=clearfix
+  &::after
+    clear: both
+    content: ''
+    display: table
+
+=margin($args)
+  $length: length($args)
+  
+  @if $length == 4
+    margin-top: _get($args, 1)
+    margin-right: _get($args, 2)
+    margin-bottom: _get($args, 3)
+    margin-left: _get($args, 4)
+  @else if $length == 3
+    margin-top: _get($args, 1)
+    margin-right: _get($args, 2)
+    margin-bottom: _get($args, 3)
+    margin-left: _get($args, 2)
+  @else if $length == 2
+    margin-top: _get($args, 1)
+    margin-right: _get($args, 2)
+    margin-bottom: _get($args, 1)
+    margin-left: _get($args, 2)
+  @else
+    margin-top: $args
+    margin-right: $args
+    margin-bottom: $args
+    margin-left: $args
+
+=padding($args)
+  $length: length($args)
+  
+  @if $length == 4
+    padding-top: _get($args, 1)
+    padding-right: _get($args, 2)
+    padding-bottom: _get($args, 3)
+    padding-left: _get($args, 4)
+  @else if $length == 3
+    padding-top: _get($args, 1)
+    padding-right: _get($args, 2)
+    padding-bottom: _get($args, 3)
+    padding-left: _get($args, 2)
+  @else if $length == 2
+    padding-top: _get($args, 1)
+    padding-right: _get($args, 2)
+    padding-bottom: _get($args, 1)
+    padding-left: _get($args, 2)
+  @else
+    padding-top: $args
+    padding-right: $args
+    padding-bottom: $args
+    padding-left: $args
+
+// -----------------------------------------------------------------------------
+// SCSS @media Mixin from doPXL
+// -----------------------------------------------------------------------------
+// Syntax:
+// @include media($from: null, $size: null, $type: 'screen');
+// -----------------------------------------------------------------------------
+// $from: up|down|between;
+// $size: length|(min, max);
+// $type: all|print|screen|speech;
+// -----------------------------------------------------------------------------
+// Example in usage:
+// @include media('between', (480px, 768px)) {...}
+// -----------------------------------------------------------------------------
+=media($from: null, $size: null, $type: 'screen')
+  @if $from == 'up'
+    @media only #{unquote($type)} and (min-width: $size)
+      @content
+  @else if $from == 'down'
+    @media only #{unquote($type)} and (max-width: $size)
+      @content
+  @else if $from == 'between'
+    @media only #{unquote($type)} and (min-width: nth($size, 1)) and (max-width: nth($size, 2))
+      @content
+
+@mixin mobile
+  @media screen and (max-width: $tablet - 1px)
+    @content
+
+@mixin tablet
+  @media screen and (min-width: $tablet), print
+    @content
+
+@mixin tablet-only
+  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+    @content

@@ -1,0 +1,60 @@
+.pxl-overlay--trigger
+  position: relative
+
+  &:hover
+    .pxl-tooltip
+      +visible(true)
+
+      &[tooltip-position="top"]
+        top: 0
+    
+      &[tooltip-position="right"]
+        right: 0
+    
+      &[tooltip-position="bottom"]
+        bottom: 0
+    
+      &[tooltip-position="left"]
+        left: 0
+
+.pxl-tooltip
+  display: inline-block
+  line-height: $body-line-height
+  background-color: hsla(0, 0%, 21%, .85)
+  color: #fff
+  text-align: center
+  border-radius: 5px
+  position: absolute
+  z-index: 2
+  font-size: 12px
+  cursor: default
+  user-select: none
+  pointer-events: none
+  box-sizing: initial
+  transition: all 250ms
+  +padding(5px 10px)
+  +visible(false)
+
+  &[tooltip-position="top"]
+    margin-top: -10px
+    top: 5px
+    left: 50%
+    transform: translate(-50%, -100%)
+
+  &[tooltip-position="right"]
+    margin-right: -10px
+    top: 50%
+    right: 5px
+    transform: translate(100%, -50%)
+
+  &[tooltip-position="bottom"]
+    margin-bottom: -10px
+    bottom: 5px
+    left: 50%
+    transform: translate(-50%, 100%)
+
+  &[tooltip-position="left"]
+    margin-left: -10px
+    top: 50%
+    left: 5px
+    transform: translate(-100%, -50%)

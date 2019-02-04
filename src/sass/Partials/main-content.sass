@@ -1,0 +1,12 @@
+#pxl-body
+  width: 100%
+  height: 100%
+  overflow: auto
+  position: fixed
+  top: 0
+  left: 0
+  z-index: $z-index-app
+  transition: all 250ms
+
+  &.pxl-overlay--on
+    filter: blur(5px)

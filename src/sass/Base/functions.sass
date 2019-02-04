@@ -1,0 +1,17 @@
+@function _get($variable, $value)
+  @if type-of($variable) == 'list'
+    @return nth($variable, $value)
+  @else if type-of($variable) == 'map'
+    @return map-get($variable, $value)
+
+@function _important($important)
+  @if $important == true or $important == '!important'
+    @return unquote('!important')
+  @else
+    @return null
+
+@function _none($value)
+  @if $value == null
+    @return unquote('none')
+  @else
+    @return unquote($value)

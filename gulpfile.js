@@ -35,7 +35,7 @@ const browserSync   = require('browser-sync').create();
 const pugSRC        = './src/pug/*.pug',
       pugURL        = './dist';
 
-const sassSRC       = './src/scss/*.scss',
+const sassSRC       = './src/sass/*.sass',
       sassURL       = './dist/css';
 
 const jsSRC         = './src/js/app.js',
@@ -48,7 +48,7 @@ const fontSRC       = './src/fonts/**/*',
       fontURL       = './dist/fonts';
 
 const pugWatch      = './src/pug/**/*.pug';
-const sassWatch     = './src/scss/**/*.scss';
+const sassWatch     = './src/sass/**/*.sass';
 const jsWatch       = './src/js/**/*.js';
 const imgWatch      = './src/img/**/*';
 const fontWatch     = './src/fonts/**/*';

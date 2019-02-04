@@ -1,4 +1,4 @@
-import PXLOverlay from './modules/PXLOverlay';
+import PXLOverlay from './Modules/PXLOverlay';
 
 document.addEventListener('DOMContentLoaded', () => {
 

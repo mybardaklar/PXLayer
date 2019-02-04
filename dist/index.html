@@ -74,7 +74,7 @@
   <!-- /section.pxl-overlay -->
   <!-- section.pxl-overlay -->
   <section class="pxl-overlay pxl-side-nav">
-    <input class="pxl-overlay-state--on" type="radio" id="side-navigation-on" name="side-navigation" checked>
+    <input class="pxl-overlay-state--on" type="radio" id="side-navigation-on" name="side-navigation">
     <input class="pxl-overlay-state--off" type="radio" id="side-navigation-off" name="side-navigation">
     <div class="pxl-overlay__wrapper">
       <div class="pxl-overlay__container">
@@ -90,33 +90,28 @@
   <!-- /section.pxl-overlay -->
   <!-- #pxl-body -->
   <div id="pxl-body">
-    <!-- header.main-header -->
-    <header class="main-header">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light"><a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active"><a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item"><a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown"><a class="dropdown-item" href="#">Action</a><a class="dropdown-item" href="#">Another action</a>
-                <div class="dropdown-divider"></div><a class="dropdown-item" href="#">Something else here</a>
+    <!-- nav.pxl-navbar -->
+    <div class="container">
+      <nav class="pxl-navbar" role="navigation">
+        <div class="pxl-navbar__brand">
+          <a class="pxl-navbar__item" href="#">
+            <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+          </a>
+        </div>
+        <div class="pxl-navbar__menu">
+          <div class="pxl-navbar__menu__start"><a class="pxl-navbar__item" href="#">Home</a><a class="pxl-navbar__item" href="#">Documentation</a><a class="pxl-navbar__item" href="#">More</a>
+          </div>
+          <div class="pxl-navbar__menu__end">
+            <div class="pxl-navbar__item">
+              <div class="form-group mx-sm-3 mb-0">
+                <input class="form-control" type="text" placeholder="Search">
               </div>
-            </li>
-            <li class="nav-item"><a class="nav-link disabled" href="#">Disabled</a>
-            </li>
-          </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
+            </div>
+          </div>
         </div>
       </nav>
-    </header>
-    <!-- /header.main-header -->
+    </div>
+    <!-- /nav.pxl-navbar -->
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-4 py-3">
