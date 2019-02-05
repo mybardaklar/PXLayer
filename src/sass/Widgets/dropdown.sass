@@ -1,0 +1,25 @@
+.pxl-dropdown
+  position: relative
+
+  input[type=checkbox].pxl-dropdown-state
+    display: none
+    &:checked
+      & ~ .dropdown--trigger
+        border-color: $color-3
+
+      & ~ .pxl-dropdown__menu
+        top: 100%
+        +visible(true)
+      
+  
+  &--trigger
+    display: inline-block
+  
+  &__menu
+    box-shadow: 0 5px 5px rgba($black-lighten, .1)
+    position: absolute
+    top: 0
+    left: 0
+    margin-top: 4px
+    transition: all 500ms cubic-bezier(1, 0, .25, 1)
+    +visible(false)

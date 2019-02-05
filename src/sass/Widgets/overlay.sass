@@ -27,7 +27,7 @@ label.pxl-overlay--trigger
     right: 0
     bottom: 0
     left: 0
-    z-index: $z-index-overlay
+    z-index: $overlay-z-index
     overflow-x: hidden
     overflow-y: auto
     transition: all 250ms
@@ -43,7 +43,7 @@ label.pxl-overlay--trigger
     left: 0
 
   &__background
-    background-image: linear-gradient(to bottom, rgba(#240b36, .9), rgba(#c31432, .9), rgba(#240b36, .9))
+    background-image: $overlay-background
     background-size: 100% 200%
     background-position: 0 200%
     display: block

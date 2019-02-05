@@ -1,4 +1,16 @@
 .pxl-modal
+
+  &.scrollable-body
+    .pxl-overlay__wrapper
+      overflow-x: hidden
+      overflow-y: hidden
+    .pxl-modal__inner
+      max-height: calc(100vh - #{ $modal-inner-spacing * 2 })
+    .pxl-modal__body
+      flex-grow: 1
+      flex-shrink: 1
+      overflow: auto
+
   input[type=radio].pxl-overlay-state--on
     &:checked ~ .pxl-overlay__wrapper
       .pxl-modal__inner
@@ -7,6 +19,7 @@
   &__container
     display: flex
     justify-content: center
+    align-items: center
     width: 100%
     height: 100%
     +padding(null $size-4)
@@ -14,29 +27,32 @@
   &__inner
     background-color: #fff
     width: 100%
-    max-width: 500px
+    max-width: $modal-inner-width
     display: flex
     flex-direction: column
     border-radius: 5px
     position: relative
     z-index: 2
     box-shadow: 0 5px 10px 2.5px rgba(#000, .1)
-    transition: all 500ms
-    transform: translate(0, -50px)
-    +margin($size-4 null)
+    transition: all 500ms cubic-bezier(1, 0, .25, 1)
+    transform: translate(0, -100%)
+    +margin($modal-inner-spacing null)
 
   &__header
+    background-color: $modal-header-bg-color
     display: flex
     align-items: center
     justify-content: space-between
-    +padding(null $size-6)
     height: 50px
     color: $black-light
-    border-top-left-radius: 5px
-    border-top-right-radius: 5px
+    border-bottom: $modal-header-border
+    border-top-left-radius: $modal-header-radius
+    border-top-right-radius: $modal-header-radius
+    +padding($modal-header-padding)
 
     &__title
       h5
+        font-weight: $weight-medium
         margin-bottom: 0
 
     &__close
@@ -56,14 +72,15 @@
         color: $grey-darken
 
   &__body
-    padding: $size-6
+    background-color: $modal-body-bg-color
+    +padding($modal-body-padding)
 
   &__footer
-    background-color: $white-dark
+    background-color: $modal-footer-bg-color
     display: flex
     align-items: center
     justify-content: flex-end
-    border-top: 1px $grey-lighten solid
-    +padding($size-6)
-    border-bottom-left-radius: 5px
-    border-bottom-right-radius: 5px
+    border-top: $modal-footer-border
+    border-bottom-left-radius: $modal-footer-radius
+    border-bottom-right-radius: $modal-footer-radius
+    +padding($modal-footer-padding)

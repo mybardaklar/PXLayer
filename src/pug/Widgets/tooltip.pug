@@ -1,3 +1,3 @@
-mixin tooltip(attr)
-  .pxl-tooltip&attributes(attr)
+mixin tooltip(position, width, attr)
+  .pxl-tooltip(style="width:" + width tooltip-position=position)&attributes(attr)
     block

@@ -8,73 +8,175 @@ block pageInformation
 include ./Widgets/_init
 
 block body
-  +overlay('modal-register', false, { class: 'pxl-modal' })
+  +overlay('modal-register', false, { class: 'pxl-modal scrollable-body' })
     +modal
       +modal__header
         .pxl-modal__header__title
           h5 Modal Title
         label.pxl-modal__header__close(for="modal-register-off") &times;
       +modal__body
-        form.was-validated
-          .custom-control.custom-checkbox.mb-3
-            input#customControlValidation1.custom-control-input(type='checkbox', required='')
-            label.custom-control-label(for='customControlValidation1') Check this custom checkbox
-            .invalid-feedback Example invalid feedback text
-          .custom-control.custom-radio
-            input#customControlValidation2.custom-control-input(type='radio', name='radio-stacked', required='')
-            label.custom-control-label(for='customControlValidation2') Toggle this custom radio
-          .custom-control.custom-radio.mb-3
-            input#customControlValidation3.custom-control-input(type='radio', name='radio-stacked', required='')
-            label.custom-control-label(for='customControlValidation3') Or toggle this other custom radio
-            .invalid-feedback More example invalid feedback text
-          .form-group
-            select.custom-select(required='')
-              option(value='') Open this select menu
-              option(value='1') One
-              option(value='2') Two
-              option(value='3') Three
-            .invalid-feedback Example invalid custom select feedback
-          .custom-file
-            input#validatedCustomFile.custom-file-input(type='file', required='')
-            label.custom-file-label(for='validatedCustomFile') Choose file...
-            .invalid-feedback Example invalid custom file feedback
+        .field
+          label.label Name
+          .control
+            input.input(type='text', placeholder='Text input')
+        .field
+          label.label Username
+          .control.has-icons-left.has-icons-right
+            input.input.is-success(type='text', placeholder='Text input', value='bulma')
+            span.icon.is-small.is-left
+              i.fas.fa-user
+            span.icon.is-small.is-right
+              i.fas.fa-check
+          p.help.is-success This username is available
+        .field
+          label.label Email
+          .control.has-icons-left.has-icons-right
+            input.input.is-danger(type='email', placeholder='Email input', value='hello@')
+            span.icon.is-small.is-left
+              i.fas.fa-envelope
+            span.icon.is-small.is-right
+              i.fas.fa-exclamation-triangle
+          p.help.is-danger This email is invalid
+        .field
+          label.label Subject
+          .control
+            .select
+              select
+                option Select dropdown
+                option With options
+        .field
+          label.label Message
+          .control
+            textarea.textarea(placeholder='Textarea')
+        .field
+          .control
+            label.checkbox
+              input(type='checkbox')
+              | &nbsp;I agree to the 
+              a(href='#') terms and conditions
+
       +modal__footer
-        .pxl-overlay--trigger
-          +tooltip({ 'tooltip-position': 'left', style: 'width: 500px;' })
-            span Click to modal
-            span Click to modal
-            span Click to modal
-            span Click to modal
-            span Click to modal
-            span Click to modal
-            span Click to modal
-            span Click to modal
-          label(for=modalName+"-off").btn.btn-primary.pxl-overlay--trigger Submit form
+        .pxl-tooltip--trigger
+          +tooltip('top', '80px')
+            span Cancel form
+          label(for="modal-register-off").button.is-outline.pxl-overlay--trigger Cancel
 
   +overlay('side-navigation', false, { class: 'pxl-side-nav' })
     +side-nav
-      .user-side-navigation
+      nav.panel
+        p.panel-heading
+          | repositories
+        .panel-block
+          p.control.has-icons-left
+            input.input.is-small(type='text', placeholder='search')
+            span.icon.is-small.is-left
+              i.fas.fa-search(aria-hidden='true')
+        p.panel-tabs
+          a.is-active all
+          a public
+          a private
+          a sources
+          a forks
+        a.panel-block.is-active
+          span.panel-icon
+            i.fas.fa-book(aria-hidden='true')
+          |     bulma
+        a.panel-block
+          span.panel-icon
+            i.fas.fa-book(aria-hidden='true')
+          |     marksheet
+        a.panel-block
+          span.panel-icon
+            i.fas.fa-book(aria-hidden='true')
+          |     minireset.css
+        a.panel-block
+          span.panel-icon
+            i.fas.fa-book(aria-hidden='true')
+          |     jgthms.github.io
+        a.panel-block
+          span.panel-icon
+            i.fas.fa-code-branch(aria-hidden='true')
+          |     daniellowtw/infboard
+        a.panel-block
+          span.panel-icon
+            i.fas.fa-code-branch(aria-hidden='true')
+          |     mojs
+        label.panel-block
+          input(type='checkbox')
+          |     remember me
+        .panel-block
+          button.button.is-link.is-outlined.is-fullwidth
+            | reset all filters
+
+      aside.menu
+        p.menu-label
+          | General
+        ul.menu-list
+          li
+            a Dashboard
+          li
+            a Customers
+        p.menu-label
+          | Administration
+        ul.menu-list
+          li
+            a Team Settings
+          li
+            a.is-active Manage Your Team
+            ul
+              li
+                a Members
+              li
+                a Plugins
+              li
+                a Add a member
+          li
+            a Invitations
+          li
+            a Cloud Storage Environment Settings
+          li
+            a Authentication
+        p.menu-label
+          | Transactions
+        ul.menu-list
+          li
+            a Payments
+          li
+            a Transfers
+          li
+            a Balance
+
 
   +body
-    .container
-      .row.justify-content-center
-        .col-4.py-3
-          .pxl-overlay--trigger
-            +tooltip({ 'tooltip-position': 'left' })
+    .container(style="margin-top: 50px;")
+      .columns.is-multiline
+        .column.is-6
+          .pxl-tooltip--trigger
+            +tooltip('bottom', '80px')
               span Click to modal
-            label.btn.btn-danger.btn-block.pxl-overlay--trigger(for="modal-register-on") Tooltip
-        .col-4.py-3
-          label.btn.btn-danger.btn-block.pxl-overlay--trigger(for="side-navigation-on") Open Overlay
-        .col-6.py-3
-          .pxl-overlay--trigger
-            +tooltip({ 'tooltip-position': 'top' })
+            label.button.is-primary.is-rounded.is-fullwidth.pxl-overlay--trigger(for="modal-register-on") Open Modal
+        
+        .column.is-6
+          .pxl-tooltip--trigger
+            +tooltip('bottom', '120px')
+              span Open side navigation
+            label.button.is-link.is-rounded.is-fullwidth.pxl-overlay--trigger(for="side-navigation-on") Open Side Navigation
+        
+        .column.is-12
+          //- Tooltip trigger
+          span.pxl-tooltip--trigger
+            +tooltip('bottom', '100px')
               i.fas.fa-angle-double-right
               span  Click to modal
-            button.btn.btn-danger.btn-block.test-button Button 1
-          .pxl-overlay--trigger
-            +tooltip({ 'tooltip-position': 'bottom' })
+            button.button.is-link.is-rounded.test-button Button 1
+          
+          //- Tooltip trigger
+          span.pxl-tooltip--trigger
+            +tooltip('top', '80px')
               span Click to modal
-            button.btn.btn-danger.btn-block.test-button Button 2
+            button.button.is-link.is-rounded.test-button Button 2
+      +dropdown
+      br
       p My anger outweights my guilt.
       p
         | Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.
