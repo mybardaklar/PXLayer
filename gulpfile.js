@@ -12,7 +12,11 @@ const sass          = require('gulp-sass'),
 
 // JS related plugins
 const uglify        = require('gulp-uglify'),
-      babel         = require('gulp-babel');
+      babelify      = require('babelify'),
+      browserify    = require('browserify'),
+      source        = require('vinyl-source-stream'),
+      buffer        = require('vinyl-buffer'),
+      stripDebug    = require('gulp-strip-debug');
 
 // Image related plugins
 const imagemin      = require('gulp-imagemin');
@@ -20,7 +24,9 @@ const imagemin      = require('gulp-imagemin');
 // Utility plugins
 const rename        = require('gulp-rename'),
       sourcemaps    = require('gulp-sourcemaps'),
-      plumber       = require('gulp-plumber');
+      plumber       = require('gulp-plumber'),
+      options       = require('gulp-options'),
+      gulpif        = require('gulp-if');
 
 // Browers related plugins
 const browserSync   = require('browser-sync').create();
@@ -78,17 +84,6 @@ gulp.task('sass', () => {
 
 // Task for compiling JS files
 gulp.task('js', () => {
-  return gulp.src(jsSRC)
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(sourcemaps.init({ loadMaps: true }))
-    .pipe(uglify())
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest(jsURL))
-    .pipe(browserSync.stream());
-
   return browserify(jsSRC)
     .transform(babelify, { presets: ['@babel/preset-env'] })
     .bundle()
