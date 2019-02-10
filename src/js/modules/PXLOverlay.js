@@ -29,9 +29,7 @@ export default class PXLOverlay {
   whenStateOn() {
     this.stateOn.forEach((el) => {
       el.addEventListener('change', (e) => {
-        setTimeout(() => {
-          this.blurBackground(el, true);
-        }, 250);
+        this.blurBackground(el, true);
       });
     });
   }

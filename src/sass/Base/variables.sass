@@ -54,11 +54,11 @@ $transition-easing    : ease-out !default
 $transition-speed     : 250ms !default
 
 // Screen size
-$gap                  : 64px !default
-$breakpoint-tablet    : 769px !default
-$breakpoint-desktop   : 960px + (2 * $gap) !default
-$breakpoint-widescreen: 1152px + (2 * $gap) !default
-$breakpoint-fullhd    : 1344px + (2 * $gap) !default
+$gap                  : 10px !default
+$breakpoint-mobile    : 480px !default
+$breakpoint-tablet    : 768px !default
+$breakpoint-desktop   : 1024px !default
+$breakpoint-widescreen: 1366px !default
 
 // <body> settings
 $body-background-color: $white !default
@@ -86,12 +86,12 @@ $strong-color         : $grey-darken !default
 $strong-weight        : $weight-semibold !default
 
 // Overlay settings
-$overlay-background   : linear-gradient(to bottom, rgba(#240b36, .9), rgba(#c31432, .9), rgba(#240b36, .9)) !default
+$overlay-background   : rgba(#240b36, .3) !default
 $overlay-z-index      : 11 !default
 
 // Modal settings
 $modal-inner-width    : 700px !default
-$modal-inner-spacing  : 30px !default
+$modal-inner-spacing  : $size-7 !default
 
 $modal-header-bg-color: $white-dark !default
 $modal-header-border  : 1px solid $grey-lighten !default

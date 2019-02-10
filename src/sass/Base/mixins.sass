@@ -64,38 +64,41 @@
     padding-bottom: $args
     padding-left: $args
 
-// -----------------------------------------------------------------------------
-// SCSS @media Mixin from doPXL
-// -----------------------------------------------------------------------------
-// Syntax:
-// @include media($from: null, $size: null, $type: 'screen');
-// -----------------------------------------------------------------------------
-// $from: up|down|between;
-// $size: length|(min, max);
-// $type: all|print|screen|speech;
-// -----------------------------------------------------------------------------
-// Example in usage:
-// @include media('between', (480px, 768px)) {...}
-// -----------------------------------------------------------------------------
-=media($from: null, $size: null, $type: 'screen')
-  @if $from == 'up'
-    @media only #{unquote($type)} and (min-width: $size)
+=breakpoint($type, $breakpoint)
+  @if $type == 'from'
+    @media screen and (min-width: $breakpoint)
       @content
-  @else if $from == 'down'
-    @media only #{unquote($type)} and (max-width: $size)
+  @else if $type == 'until'
+    @media screen and (max-width: $breakpoint)
       @content
-  @else if $from == 'between'
-    @media only #{unquote($type)} and (min-width: nth($size, 1)) and (max-width: nth($size, 2))
+  @else if $type == 'between'
+    @media screen and (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2) - 1)
       @content
 
-@mixin mobile
-  @media screen and (max-width: $tablet - 1px)
+=bp-mobile
+  +breakpoint('from', $breakpoint-mobile)
     @content
 
-@mixin tablet
-  @media screen and (min-width: $tablet), print
+=bp-tablet
+  +breakpoint('from', $breakpoint-tablet)
     @content
 
-@mixin tablet-only
-  @media screen and (min-width: $tablet) and (max-width: $desktop - 1px)
+=bp-desktop
+  +breakpoint('from', $breakpoint-desktop)
     @content
+
+=bp-widescreen
+  +breakpoint('from', $breakpoint-widescreen)
+    @content
+
+.res-test
+  background-color: red
+  color: #fff
+  padding: 10px
+
+  +breakpoint('between', ($breakpoint-mobile, $breakpoint-tablet))
+    background-color: blue
+  +bp-desktop
+    background-color: green
+  +bp-widescreen
+    background-color: tomato

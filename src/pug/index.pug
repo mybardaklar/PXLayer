@@ -1,4 +1,4 @@
-extends ./Base/page-structure
+extends ./Base/layout
 
 //- page title and meta tags(description, author, keywords)
 block pageInformation
@@ -8,12 +8,12 @@ block pageInformation
 include ./Widgets/_init
 
 block body
-  +overlay('modal-register', false, { class: 'pxl-modal scrollable-body' })
-    +modal
+  +overlay('modal-register', false, { class: 'pxl-modal' })
+    +overlay__body('top', 'top to bottom')
       +modal__header
         .pxl-modal__header__title
           h5 Modal Title
-        label.pxl-modal__header__close(for="modal-register-off") &times;
+        label.pxl-modal__header__close-button(for="modal-register-off") &times;
       +modal__body
         .field
           label.label Name
@@ -61,96 +61,109 @@ block body
             span Cancel form
           label(for="modal-register-off").button.is-outline.pxl-overlay--trigger Cancel
 
-  +overlay('side-navigation', false, { class: 'pxl-side-nav' })
-    +side-nav
-      nav.panel
-        p.panel-heading
-          | repositories
-        .panel-block
-          p.control.has-icons-left
-            input.input.is-small(type='text', placeholder='search')
-            span.icon.is-small.is-left
-              i.fas.fa-search(aria-hidden='true')
-        p.panel-tabs
-          a.is-active all
-          a public
-          a private
-          a sources
-          a forks
-        a.panel-block.is-active
-          span.panel-icon
-            i.fas.fa-book(aria-hidden='true')
-          |     bulma
-        a.panel-block
-          span.panel-icon
-            i.fas.fa-book(aria-hidden='true')
-          |     marksheet
-        a.panel-block
-          span.panel-icon
-            i.fas.fa-book(aria-hidden='true')
-          |     minireset.css
-        a.panel-block
-          span.panel-icon
-            i.fas.fa-book(aria-hidden='true')
-          |     jgthms.github.io
-        a.panel-block
-          span.panel-icon
-            i.fas.fa-code-branch(aria-hidden='true')
-          |     daniellowtw/infboard
-        a.panel-block
-          span.panel-icon
-            i.fas.fa-code-branch(aria-hidden='true')
-          |     mojs
-        label.panel-block
-          input(type='checkbox')
-          |     remember me
-        .panel-block
-          button.button.is-link.is-outlined.is-fullwidth
-            | reset all filters
+  +overlay('default-overlay', false, { class: 'pxl-deneme' })
+    +overlay__body('top', 'top to down')
+      p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+      p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+      p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+      p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+      p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+  
+  +overlay('side-navigation', true, { class: 'pxl-side-nav' })
+    +overlay__body('top right', 'right to left')
+      +side-nav
+        .has-text-right
+          label.pxl-side-nav__close-button(for="side-navigation-off") &times;
+        nav.panel
+          p.panel-heading
+            | repositories
+          .panel-block
+            p.control.has-icons-left
+              input.input.is-small(type='text', placeholder='search')
+              span.icon.is-small.is-left
+                i.fas.fa-search(aria-hidden='true')
+          p.panel-tabs
+            a.is-active all
+            a public
+            a private
+            a sources
+            a forks
+          a.panel-block.is-active
+            span.panel-icon
+              i.fas.fa-book(aria-hidden='true')
+            |     bulma
+          a.panel-block
+            span.panel-icon
+              i.fas.fa-book(aria-hidden='true')
+            |     marksheet
+          a.panel-block
+            span.panel-icon
+              i.fas.fa-book(aria-hidden='true')
+            |     minireset.css
+          a.panel-block
+            span.panel-icon
+              i.fas.fa-book(aria-hidden='true')
+            |     jgthms.github.io
+          a.panel-block
+            span.panel-icon
+              i.fas.fa-code-branch(aria-hidden='true')
+            |     daniellowtw/infboard
+          a.panel-block
+            span.panel-icon
+              i.fas.fa-code-branch(aria-hidden='true')
+            |     mojs
+          label.panel-block
+            input(type='checkbox')
+            |     remember me
+          .panel-block
+            button.button.is-link.is-outlined.is-fullwidth
+              | reset all filters
 
-      aside.menu
-        p.menu-label
-          | General
-        ul.menu-list
-          li
-            a Dashboard
-          li
-            a Customers
-        p.menu-label
-          | Administration
-        ul.menu-list
-          li
-            a Team Settings
-          li
-            a.is-active Manage Your Team
-            ul
-              li
-                a Members
-              li
-                a Plugins
-              li
-                a Add a member
-          li
-            a Invitations
-          li
-            a Cloud Storage Environment Settings
-          li
-            a Authentication
-        p.menu-label
-          | Transactions
-        ul.menu-list
-          li
-            a Payments
-          li
-            a Transfers
-          li
-            a Balance
+        aside.menu
+          p.menu-label
+            | General
+          ul.menu-list
+            li
+              a Dashboard
+            li
+              a Customers
+          p.menu-label
+            | Administration
+          ul.menu-list
+            li
+              a Team Settings
+            li
+              a.is-active Manage Your Team
+              ul
+                li
+                  a Members
+                li
+                  a Plugins
+                li
+                  a Add a member
+            li
+              a Invitations
+            li
+              a Cloud Storage Environment Settings
+            li
+              a Authentication
+          p.menu-label
+            | Transactions
+          ul.menu-list
+            li
+              a Payments
+            li
+              a Transfers
+            li
+              a Balance
 
 
   +body
     .container(style="margin-top: 50px;")
       .columns.is-multiline
         .column.is-6
+          label.button.is-danger.is-rounded.is-fullwidth.pxl-overlay--trigger(for="default-overlay-on") Default Overlay
+          br
           .pxl-tooltip--trigger
             +tooltip('bottom', '80px')
               span Click to modal
@@ -177,7 +190,7 @@ block body
             button.button.is-link.is-rounded.test-button Button 2
       +dropdown
       br
-      p My anger outweights my guilt.
+      p.res-test My anger outweights my guilt.
       p
         | Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.
       p

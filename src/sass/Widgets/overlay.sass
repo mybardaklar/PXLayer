@@ -1,6 +1,28 @@
 label.pxl-overlay--trigger
   margin-bottom: 0
 
+input[type=radio].pxl-overlay-state--off
+  display: none
+  position: absolute
+  top: -9999px
+  left: -9999px
+  &:not(:checked) ~ #pxl-body
+    filter: blur(5px)
+    transition: all 250ms
+  
+
+.pxl-deneme
+  .pxl-overlay__inner
+    width: 100%
+    height: 60px
+    overflow: auto
+    background-color: #fff
+    border-top: 10px solid yellow
+    border-right: 10px solid red
+    border-bottom: 10px solid blue
+    border-left: 10px solid cyan
+
+
 .pxl-overlay
   input[type=radio].pxl-overlay-state--on
     display: none
@@ -8,12 +30,17 @@ label.pxl-overlay--trigger
     top: -9999px
     left: -9999px
   
-    &:checked ~ .pxl-overlay__wrapper
+    &:checked ~ .pxl-overlay__container
+      transition: all 250ms
       +visible(true)
 
-      label.pxl-overlay__background
-        background-position: 0 0
+      .pxl-overlay__background
+        transition: all 250ms
         +visible(true)
+
+      .pxl-overlay__inner
+        transition: all 500ms cubic-bezier(1, 0, .25, 1) 250ms
+        transform: none
   
   input[type=radio].pxl-overlay-state--off
     display: none
@@ -21,7 +48,7 @@ label.pxl-overlay--trigger
     top: -9999px
     left: -9999px
 
-  &__wrapper
+  &__container
     position: fixed
     top: 0
     right: 0
@@ -30,10 +57,12 @@ label.pxl-overlay--trigger
     z-index: $overlay-z-index
     overflow-x: hidden
     overflow-y: auto
-    transition: all 250ms
+    transition: all 250ms 500ms
     +visible(false)
 
-  &__container
+  &__wrapper
+    display: flex
+    flex-direction: column
     width: 100%
     height: auto
     min-height: 100%
@@ -43,9 +72,7 @@ label.pxl-overlay--trigger
     left: 0
 
   &__background
-    background-image: $overlay-background
-    background-size: 100% 200%
-    background-position: 0 200%
+    background-color: $overlay-background
     display: block
     width: 100%
     height: 100%
@@ -54,5 +81,74 @@ label.pxl-overlay--trigger
     left: 0
     z-index: 1
     margin-bottom: 0
-    transition: visibility 250ms, opacity 250ms, background-position 1s
+    transition: all 250ms 500ms
     +visible(false)
+
+  &__body
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: 100%
+    flex-grow: 1
+
+    // inner animations
+    &[data-inner-animation="top to bottom"]
+      .pxl-overlay__inner
+        transform: translate(0, -100%)
+    &[data-inner-animation="right to left"]
+      .pxl-overlay__inner
+        transform: translate(100%, 0)
+    &[data-inner-animation="bottom to top"]
+      .pxl-overlay__inner
+        transform: translate(0, 100%)
+    &[data-inner-animation="left to right"]
+      .pxl-overlay__inner
+        transform: translate(-100%, 0)
+
+    // inner position settings
+    &[data-inner-position="top"]
+      align-items: center
+      justify-content: flex-start
+    &[data-inner-position="top left"]
+      align-items: flex-start
+      justify-content: flex-start
+    &[data-inner-position="top center"]
+      align-items: center
+      justify-content: flex-start
+    &[data-inner-position="top right"]
+      align-items: flex-end
+      justify-content: flex-start
+    
+    &[data-inner-position="center"]
+      align-items: center
+      justify-content: center
+    &[data-inner-position="center left"]
+      align-items: flex-start
+      justify-content: center
+    &[data-inner-position="center center"]
+      align-items: center
+      justify-content: center
+    &[data-inner-position="center right"]
+      align-items: flex-end
+      justify-content: center
+    
+    &[data-inner-position="bottom"]
+      align-items: center
+      justify-content: flex-end
+    &[data-inner-position="bottom left"]
+      align-items: flex-start
+      justify-content: flex-end
+    &[data-inner-position="bottom center"]
+      align-items: center
+      justify-content: flex-end
+    &[data-inner-position="bottom right"]
+      align-items: flex-end
+      justify-content: flex-end
+      
+  &__inner
+    display: inline-block
+    min-height: 1px
+    position: relative
+    z-index: 2
+    transition: all 500ms cubic-bezier(1, 0, .25, 1)
+    transform: translate(0, -100%)

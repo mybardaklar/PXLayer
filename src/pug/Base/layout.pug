@@ -11,7 +11,7 @@ html(lang='en' dir='ltr')
   body
     mixin body(header = true, footer = true)
       // #pxl-body 
-      #pxl-body
+      section#pxl-body
         if header
           //- Header
           include ../Partials/header
@@ -19,7 +19,8 @@ html(lang='en' dir='ltr')
           |
         
         //- Content
-        block
+        main.main-content
+          block
 
         if footer
           |

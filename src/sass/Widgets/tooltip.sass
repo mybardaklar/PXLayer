@@ -4,16 +4,16 @@
     .pxl-tooltip
       +visible(true)
 
-      &[tooltip-position="top"]
+      &[data-tooltip-position="top"]
         top: 0
     
-      &[tooltip-position="right"]
+      &[data-tooltip-position="right"]
         right: 0
     
-      &[tooltip-position="bottom"]
+      &[data-tooltip-position="bottom"]
         bottom: 0
     
-      &[tooltip-position="left"]
+      &[data-tooltip-position="left"]
         left: 0
 
 span.pxl-tooltip--trigger
@@ -38,25 +38,25 @@ span.pxl-tooltip--trigger
   +padding(5px 10px)
   +visible(false)
 
-  &[tooltip-position="top"]
+  &[data-tooltip-position="top"]
     margin-top: -10px
     top: 5px
     left: 50%
     transform: translate(-50%, -100%)
 
-  &[tooltip-position="right"]
+  &[data-tooltip-position="right"]
     margin-right: -10px
     top: 50%
     right: 5px
     transform: translate(100%, -50%)
 
-  &[tooltip-position="bottom"]
+  &[data-tooltip-position="bottom"]
     margin-bottom: -10px
     bottom: 5px
     left: 50%
     transform: translate(-50%, 100%)
 
-  &[tooltip-position="left"]
+  &[data-tooltip-position="left"]
     margin-left: -10px
     top: 50%
     left: 5px
