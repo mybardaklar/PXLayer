@@ -1,20 +1,11 @@
-mixin dropdown()
-  .pxl-dropdown
-    input#asdasdasda.pxl-dropdown-state(type="checkbox", name="dropdown-1")
-    label.dropdown--trigger.button(for="asdasdasda")
-      span Dropdown button
-      span.icon.is-small
-        i.fas.fa-angle-down(aria-hidden='true')
-    .pxl-dropdown__menu
-      .dropdown-content
-        a.dropdown-item(href='#')
-          | Dropdown item
-        a.dropdown-item
-          | Other dropdown item
-        a.dropdown-item.is-active(href='#')
-          | Active dropdown item
-        a.dropdown-item(href='#')
-          | Other dropdown item
-        hr.dropdown-divider
-        a.dropdown-item(href='#')
-          | With a divider
+mixin dropdown(type = 'hover')
+  .pxl-dropdown(class="pxl-dropdown--" + type)
+    block
+
+mixin dropdown__trigger
+  .pxl-dropdown__trigger(tabindex="0")
+    block
+
+mixin dropdown__body
+  .pxl-dropdown__body
+    block

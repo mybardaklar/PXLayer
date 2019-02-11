@@ -64,6 +64,9 @@
     padding-bottom: $args
     padding-left: $args
 
+=unselectable
+  user-select: none
+
 =breakpoint($type, $breakpoint)
   @if $type == 'from'
     @media screen and (min-width: $breakpoint)

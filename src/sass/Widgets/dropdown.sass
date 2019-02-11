@@ -1,25 +1,35 @@
 .pxl-dropdown
   position: relative
 
-  input[type=checkbox].pxl-dropdown-state
-    display: none
-    &:checked
-      & ~ .dropdown--trigger
-        border-color: $color-3
+  &#{&}--focus
+    .pxl-dropdown__trigger
+      &:focus,
+      &:active
+        pointer-events: none
+        & ~ .pxl-dropdown__body
+          transform: scaleY(1)
+          +visible(true)
+  &#{&}--hover
+    &:hover .pxl-dropdown__body
+      transform: scaleY(1)
+      +visible(true)
 
-      & ~ .pxl-dropdown__menu
-        top: 100%
-        +visible(true)
-      
-  
-  &--trigger
+  &__trigger
     display: inline-block
+    outline: 0
   
-  &__menu
+  &__body
     box-shadow: 0 5px 5px rgba($black-lighten, .1)
     position: absolute
-    top: 0
+    top: 100%
     left: 0
-    margin-top: 4px
-    transition: all 500ms cubic-bezier(1, 0, .25, 1)
+    padding-top: 4px
+    transition: all 250ms cubic-bezier(1, 0, .25, 1)
+    transform-origin: left top
+    transform: scaleY(0)
+    +unselectable
     +visible(false)
+
+    &:hover
+      transform: scaleY(1)
+      +visible(true)

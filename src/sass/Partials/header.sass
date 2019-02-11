@@ -9,9 +9,13 @@
   top: 0
   z-index: $z-index-1
 
+  +breakpoint('until', $breakpoint-desktop - 1)
+    display: block
+
   &__brand
     display: flex
-    align-items: stretch
+    align-items: center
+    justify-content: space-between
     flex-shrink: 0
     min-height: 3.25rem
 
@@ -20,6 +24,9 @@
     align-items: stretch
     flex-grow: 1
     flex-shrink: 0
+
+    +breakpoint('until', $breakpoint-desktop - 1)
+      display: none
 
     &__start
       display: flex
@@ -37,6 +44,7 @@
     display: flex
     align-items: center
     color: $grey-darken
+    font-weight: $weight-normal
     line-height: 1.5
     padding: .5rem .75rem
     position: relative
@@ -46,3 +54,17 @@
     &:hover
       text-decoration: none
       color: $color-3
+
+  &__burger
+    display: flex
+    width: 50px
+    height: 50px
+    padding: .5rem .75rem
+    margin-bottom: 0
+
+    +breakpoint('from', $breakpoint-desktop)
+      display: none
+
+    svg
+      width: 100%
+    

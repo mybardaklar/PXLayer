@@ -59,7 +59,7 @@ block body
         .pxl-tooltip--trigger
           +tooltip('top', '80px')
             span Cancel form
-          label(for="modal-register-off").button.is-outline.pxl-overlay--trigger Cancel
+          label(for="modal-register-off").button.is-outline.pxl-overlay__trigger Cancel
 
   +overlay('default-overlay', false, { class: 'pxl-deneme' })
     +overlay__body('top', 'top to down')
@@ -69,56 +69,14 @@ block body
       p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
       p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
   
-  +overlay('side-navigation', true, { class: 'pxl-side-nav' })
+  +overlay('side-navigation', false, { class: 'pxl-side-nav' })
     +overlay__body('top right', 'right to left')
       +side-nav
         .has-text-right
           label.pxl-side-nav__close-button(for="side-navigation-off") &times;
-        nav.panel
-          p.panel-heading
-            | repositories
-          .panel-block
-            p.control.has-icons-left
-              input.input.is-small(type='text', placeholder='search')
-              span.icon.is-small.is-left
-                i.fas.fa-search(aria-hidden='true')
-          p.panel-tabs
-            a.is-active all
-            a public
-            a private
-            a sources
-            a forks
-          a.panel-block.is-active
-            span.panel-icon
-              i.fas.fa-book(aria-hidden='true')
-            |     bulma
-          a.panel-block
-            span.panel-icon
-              i.fas.fa-book(aria-hidden='true')
-            |     marksheet
-          a.panel-block
-            span.panel-icon
-              i.fas.fa-book(aria-hidden='true')
-            |     minireset.css
-          a.panel-block
-            span.panel-icon
-              i.fas.fa-book(aria-hidden='true')
-            |     jgthms.github.io
-          a.panel-block
-            span.panel-icon
-              i.fas.fa-code-branch(aria-hidden='true')
-            |     daniellowtw/infboard
-          a.panel-block
-            span.panel-icon
-              i.fas.fa-code-branch(aria-hidden='true')
-            |     mojs
-          label.panel-block
-            input(type='checkbox')
-            |     remember me
-          .panel-block
-            button.button.is-link.is-outlined.is-fullwidth
-              | reset all filters
-
+        .field
+          .control
+            input.input.is-rounded(type='text', placeholder='Search')
         aside.menu
           p.menu-label
             | General
@@ -160,35 +118,24 @@ block body
 
   +body
     .container(style="margin-top: 50px;")
-      .columns.is-multiline
-        .column.is-6
-          label.button.is-danger.is-rounded.is-fullwidth.pxl-overlay--trigger(for="default-overlay-on") Default Overlay
-          br
-          .pxl-tooltip--trigger
-            +tooltip('bottom', '80px')
-              span Click to modal
-            label.button.is-primary.is-rounded.is-fullwidth.pxl-overlay--trigger(for="modal-register-on") Open Modal
-        
-        .column.is-6
-          .pxl-tooltip--trigger
-            +tooltip('bottom', '120px')
-              span Open side navigation
-            label.button.is-link.is-rounded.is-fullwidth.pxl-overlay--trigger(for="side-navigation-on") Open Side Navigation
-        
-        .column.is-12
-          //- Tooltip trigger
-          span.pxl-tooltip--trigger
-            +tooltip('bottom', '100px')
-              i.fas.fa-angle-double-right
-              span  Click to modal
-            button.button.is-link.is-rounded.test-button Button 1
-          
-          //- Tooltip trigger
-          span.pxl-tooltip--trigger
-            +tooltip('top', '80px')
-              span Click to modal
-            button.button.is-link.is-rounded.test-button Button 2
-      +dropdown
+      label.button.is-danger.is-rounded.is-fullwidth.pxl-overlay__trigger(for="default-overlay-on") Default Overlay
+      label.button.is-link.is-rounded.is-fullwidth.pxl-overlay__trigger(for="side-navigation-on") Open Side Navigation
+      label.button.is-primary.is-rounded.is-fullwidth.pxl-overlay__trigger(for="modal-register-on") Open Modal
+      +dropdown('hover')
+        +dropdown__trigger asdasdas
+        +dropdown__body
+          .dropdown-content
+            a.dropdown-item(href='#') Dropdown item
+            a.dropdown-item(href="#") Other dropdown item
+            a.dropdown-item.is-active(href='#') Active dropdown item
+            a.dropdown-item(href='#') Other dropdown item
+            hr.dropdown-divider
+            a.dropdown-item(href='#') With a divider
+      select
+        option(value="1") Value 1
+        option(value="2") Value 2
+        option(value="3") Value 3
+        option(value="4") Value 4
       br
       p.res-test My anger outweights my guilt.
       p
@@ -235,4 +182,3 @@ block body
       p Peace has cost you your strength. Victory has defeated you.
       p
         strong You know what you said about the structures becoming shackles. You were right and I can't take it, the injustice. I mean, no one ever's gonna know who saved the entire city.
-

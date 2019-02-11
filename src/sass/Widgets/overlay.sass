@@ -1,7 +1,7 @@
-label.pxl-overlay--trigger
+label.pxl-overlay__trigger
   margin-bottom: 0
 
-input[type=radio].pxl-overlay-state--off
+input[type=radio].pxl-overlay__state-off
   display: none
   position: absolute
   top: -9999px
@@ -24,7 +24,7 @@ input[type=radio].pxl-overlay-state--off
 
 
 .pxl-overlay
-  input[type=radio].pxl-overlay-state--on
+  input[type=radio].pxl-overlay__state-on
     display: none
     position: absolute
     top: -9999px
@@ -41,12 +41,6 @@ input[type=radio].pxl-overlay-state--off
       .pxl-overlay__inner
         transition: all 500ms cubic-bezier(1, 0, .25, 1) 250ms
         transform: none
-  
-  input[type=radio].pxl-overlay-state--off
-    display: none
-    position: absolute
-    top: -9999px
-    left: -9999px
 
   &__container
     position: fixed
@@ -81,7 +75,7 @@ input[type=radio].pxl-overlay-state--off
     left: 0
     z-index: 1
     margin-bottom: 0
-    transition: all 250ms 500ms
+    transition: all 250ms 750ms
     +visible(false)
 
   &__body
@@ -94,16 +88,16 @@ input[type=radio].pxl-overlay-state--off
     // inner animations
     &[data-inner-animation="top to bottom"]
       .pxl-overlay__inner
-        transform: translate(0, -100%)
+        transform: translate(0, -105%)
     &[data-inner-animation="right to left"]
       .pxl-overlay__inner
-        transform: translate(100%, 0)
+        transform: translate(105%, 0)
     &[data-inner-animation="bottom to top"]
       .pxl-overlay__inner
-        transform: translate(0, 100%)
+        transform: translate(0, 105%)
     &[data-inner-animation="left to right"]
       .pxl-overlay__inner
-        transform: translate(-100%, 0)
+        transform: translate(-105%, 0)
 
     // inner position settings
     &[data-inner-position="top"]
