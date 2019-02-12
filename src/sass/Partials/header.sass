@@ -1,5 +1,5 @@
 .pxl-navbar
-  background-color: #fff
+  background-color: $color-3
   border-bottom: 1px solid $white-darken
   box-shadow: 0 3px 9px rgba(#000, .1)
   min-height: 3.25rem
@@ -15,9 +15,24 @@
   &__brand
     display: flex
     align-items: center
-    justify-content: space-between
+    justify-content: center
     flex-shrink: 0
     min-height: 3.25rem
+
+    &__item
+      display: flex
+      align-items: center
+      +padding(null $size-5)
+
+  &__burger
+    margin-bottom: 0
+    cursor: pointer
+    position: absolute
+    top: 0
+    right: 0
+
+    +breakpoint('from', $breakpoint-desktop)
+      display: none
 
   &__menu
     display: flex
@@ -43,28 +58,17 @@
   &__item
     display: flex
     align-items: center
-    color: $grey-darken
+    color: $white
     font-weight: $weight-normal
     line-height: 1.5
-    padding: .5rem .75rem
     position: relative
     flex-grow: 0
     flex-shrink: 0
+    +padding(.5rem .75rem)
     
     &:hover
       text-decoration: none
       color: $color-3
 
-  &__burger
-    display: flex
-    width: 50px
-    height: 50px
-    padding: .5rem .75rem
-    margin-bottom: 0
-
-    +breakpoint('from', $breakpoint-desktop)
-      display: none
-
-    svg
-      width: 100%
-    
+    &.pxl-dropdown__trigger
+      min-height: 3.25rem

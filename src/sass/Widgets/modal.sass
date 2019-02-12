@@ -1,5 +1,4 @@
 .pxl-modal
-
   &.scrollable-body
     .pxl-overlay__container
       overflow-x: hidden
@@ -19,28 +18,28 @@
       overflow: auto
 
   .pxl-overlay__body
-    +padding($modal-inner-spacing)
+    +padding($modal-spacing)
 
   .pxl-overlay__inner
-    background-color: #fff
+    background-color: $modal-background-color
     width: 100%
-    max-width: $modal-inner-width
+    max-width: $modal-width
     display: flex
     flex-direction: column
-    border-radius: 5px
-    box-shadow: 0 5px 10px 2.5px rgba(#000, .1)
+    border-radius: $modal-radius
+    box-shadow: $modal-shadow
 
   &__header
-    background-color: $modal-header-bg-color
+    background-color: $modal__header-background-color
     display: flex
     align-items: center
     justify-content: space-between
-    min-height: 50px
+    min-height: $modal__header-height
     color: $black-light
-    border-bottom: $modal-header-border
-    border-top-left-radius: $modal-header-radius
-    border-top-right-radius: $modal-header-radius
-    +padding($modal-header-padding)
+    border-bottom: $modal__header-border
+    border-top-left-radius: $modal-radius
+    border-top-right-radius: $modal-radius
+    +padding($modal__header-padding)
 
     &__title
       h5
@@ -64,18 +63,18 @@
         color: $grey-darken
 
   &__body
-    background-color: $modal-body-bg-color
+    background-color: $modal__body-background-color
     flex-grow: 1
     flex-shrink: 1
-    +padding($modal-body-padding)
+    +padding($modal__body-padding)
 
   &__footer
-    background-color: $modal-footer-bg-color
-    min-height: 50px
+    background-color: $modal__footer-background-color
+    min-height: $modal__footer-height
     display: flex
     align-items: center
     justify-content: flex-end
-    border-top: $modal-footer-border
-    border-bottom-left-radius: $modal-footer-radius
-    border-bottom-right-radius: $modal-footer-radius
-    +padding($modal-footer-padding)
+    border-top: $modal__footer-border
+    border-bottom-left-radius: $modal-radius
+    border-bottom-right-radius: $modal-radius
+    +padding($modal__footer-padding)

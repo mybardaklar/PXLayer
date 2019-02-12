@@ -9,7 +9,7 @@ include ./Widgets/_init
 
 block body
   +overlay('modal-register', false, { class: 'pxl-modal' })
-    +overlay__body('top', 'top to bottom')
+    +overlay__body('center center', 'top to bottom')
       +modal__header
         .pxl-modal__header__title
           h5 Modal Title
@@ -117,10 +117,18 @@ block body
 
 
   +body
-    .container(style="margin-top: 50px;")
-      label.button.is-danger.is-rounded.is-fullwidth.pxl-overlay__trigger(for="default-overlay-on") Default Overlay
-      label.button.is-link.is-rounded.is-fullwidth.pxl-overlay__trigger(for="side-navigation-on") Open Side Navigation
-      label.button.is-primary.is-rounded.is-fullwidth.pxl-overlay__trigger(for="modal-register-on") Open Modal
+    .pxl-container
+      label.button.is-danger.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="default-overlay-on")
+        span Default Overlay
+        +tooltip('bottom', '100px')
+          | Click to open default overlay
+      
+      label.button.is-primary.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="modal-register-on")
+        span Modal
+        +tooltip('bottom', '100px')
+          | Click to open modal
+
+
       +dropdown('hover')
         +dropdown__trigger asdasdas
         +dropdown__body

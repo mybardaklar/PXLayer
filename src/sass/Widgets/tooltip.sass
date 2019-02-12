@@ -1,4 +1,4 @@
-.pxl-tooltip--trigger
+.pxl-tooltip__trigger
   position: relative
   &:hover
     .pxl-tooltip
@@ -16,48 +16,49 @@
       &[data-tooltip-position="left"]
         left: 0
 
-span.pxl-tooltip--trigger
+span.pxl-tooltip__trigger
   display: inline-block
 
 .pxl-tooltip
   display: inline-block
   line-height: $body-line-height
-  background-color: rgba($black-lighten, .8)
-  color: #fff
+  background-color: $tooltip-background-color
+  color: $tooltip-color
   text-align: center
-  border-radius: 5px
+  border-radius: $toolitp-radius
+  //min-width: 100%;
   position: absolute
   z-index: 2
   font-size: 12px
   cursor: default
-  user-select: none
   pointer-events: none
   box-sizing: initial
-  box-shadow: 0 0 5px 1px rgba($black-lighten, .25)
-  transition: all 250ms
+  box-shadow: $tooltip-shadow
+  transition: $tooltip-transition
+  +unselectable
   +padding(5px 10px)
   +visible(false)
 
   &[data-tooltip-position="top"]
-    margin-top: -10px
+    margin-top: -#{ $tooltip-spacing }
     top: 5px
     left: 50%
     transform: translate(-50%, -100%)
 
   &[data-tooltip-position="right"]
-    margin-right: -10px
+    margin-right: -#{ $tooltip-spacing }
     top: 50%
     right: 5px
     transform: translate(100%, -50%)
 
   &[data-tooltip-position="bottom"]
-    margin-bottom: -10px
+    margin-bottom: -#{ $tooltip-spacing }
     bottom: 5px
     left: 50%
     transform: translate(-50%, 100%)
 
   &[data-tooltip-position="left"]
-    margin-left: -10px
+    margin-left: -#{ $tooltip-spacing }
     top: 50%
     left: 5px
     transform: translate(-100%, -50%)

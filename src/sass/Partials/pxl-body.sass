@@ -6,4 +6,18 @@
   top: 0
   left: 0
   z-index: $z-index-app
-  transition: all 250ms 500ms
+  transition: all 250ms 750ms
+
+.pxl-container
+  width: 100%
+  position: relative
+  +margin(null auto)
+  
+  +breakpoint('from', $breakpoint-mobile)
+    +padding($size-5)
+  +breakpoint('from', $breakpoint-tablet)
+    max-width: 702px
+  +breakpoint('from', $breakpoint-desktop)
+    max-width: 958px
+  +breakpoint('from', $breakpoint-widescreen)
+    max-width: 1300px

@@ -1,14 +1,13 @@
 .pxl-side-nav
   .pxl-overlay__inner
-    background-color: $white-darken
-    width: 320px
+    background-color: $side-nav-background-color
+    width: $side-nav-width
     height: 100%
     min-height: 100vh
     position: relative
     z-index: 2
-    box-shadow: -5px 0 10px 2.5px rgba(#000, .25)
-    transition: all 750ms cubic-bezier(1, 0, .25, 1)
-    +padding(null 20px 20px)
+    box-shadow: $side-nav-shadow
+    +padding($side-nav-padding)
 
   &__close-button
     display: inline-block

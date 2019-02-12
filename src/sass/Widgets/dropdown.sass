@@ -3,8 +3,7 @@
 
   &#{&}--focus
     .pxl-dropdown__trigger
-      &:focus,
-      &:active
+      &:focus
         pointer-events: none
         & ~ .pxl-dropdown__body
           transform: scaleY(1)
@@ -17,6 +16,7 @@
   &__trigger
     display: inline-block
     outline: 0
+    cursor: pointer
   
   &__body
     box-shadow: 0 5px 5px rgba($black-lighten, .1)
@@ -29,7 +29,3 @@
     transform: scaleY(0)
     +unselectable
     +visible(false)
-
-    &:hover
-      transform: scaleY(1)
-      +visible(true)
