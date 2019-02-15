@@ -41,6 +41,8 @@ input[type=radio].pxl-overlay__state-off
       .pxl-overlay__inner
         transition: $overlay__inner-transition-in
         transform: none
+        +visible(true)
+        +margin(0)
 
   &__container
     position: fixed
@@ -66,7 +68,7 @@ input[type=radio].pxl-overlay__state-off
     left: 0
 
   &__background
-    background-color: $overlay-background-color
+    background-image: linear-gradient(to bottom, rgba(#1488CC, .5), rgba(#2B32B2, .5))
     display: block
     width: 100%
     height: 100%
@@ -87,18 +89,26 @@ input[type=radio].pxl-overlay__state-off
     overflow: hidden
 
     // inner animations
-    &[data-inner-animation="top to bottom"]
+    &[data-inner-animation="ttb"]
       .pxl-overlay__inner
-        transform: translate(0, 100vh)
-    &[data-inner-animation="right to left"]
+        transform: translate(0, -100%)
+        margin-top: -100%
+    &[data-inner-animation="rtl"]
       .pxl-overlay__inner
-        transform: translate(100vw, 0)
-    &[data-inner-animation="bottom to top"]
+        transform: translate(100%, 0)
+        margin-right: -100%
+    &[data-inner-animation="btt"]
       .pxl-overlay__inner
-        transform: translate(0, 105%)
-    &[data-inner-animation="left to right"]
+        transform: translate(0, 100%)
+        margin-bottom: -100%
+    &[data-inner-animation="ltr"]
       .pxl-overlay__inner
-        transform: translate(-105%, 0)
+        transform: translate(-100%, 0)
+        margin-left: -100%
+    &[data-inner-animation="scale"]
+      .pxl-overlay__inner
+        transform: scale(.75)
+        +visible(false)
 
     // inner position settings
     &[data-inner-position="top"]
@@ -146,4 +156,4 @@ input[type=radio].pxl-overlay__state-off
     position: relative
     z-index: 2
     transition: $overlay__inner-transition-out 
-    transform: translate(0, -100%)
+    //transform: translate(0, -100%)

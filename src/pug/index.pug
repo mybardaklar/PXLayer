@@ -9,7 +9,7 @@ include ./Widgets/_init
 
 block body
   +overlay('modal-register', false, { class: 'pxl-modal' })
-    +overlay__body('center center', 'top to bottom')
+    +overlay__body('center center')
       +modal__header
         .pxl-modal__header__title
           h5 Modal Title
@@ -122,30 +122,20 @@ block body
         span Default Overlay
         +tooltip('bottom', '100px')
           | Click to open default overlay
-      
+      br
       label.button.is-primary.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="modal-register-on")
         span Modal
         +tooltip('bottom', '100px')
           | Click to open modal
 
-
-      +dropdown('hover')
-        +dropdown__trigger asdasdas
-        +dropdown__body
-          .dropdown-content
-            a.dropdown-item(href='#') Dropdown item
-            a.dropdown-item(href="#") Other dropdown item
-            a.dropdown-item.is-active(href='#') Active dropdown item
-            a.dropdown-item(href='#') Other dropdown item
-            hr.dropdown-divider
-            a.dropdown-item(href='#') With a divider
+      br
       select
         option(value="1") Value 1
         option(value="2") Value 2
         option(value="3") Value 3
         option(value="4") Value 4
       br
-      p.res-test My anger outweights my guilt.
+
       p
         | Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.
       p

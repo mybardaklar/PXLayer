@@ -1,3 +1,11 @@
+input[type=radio].pxl-side-nav__state-off
+  & ~ #pxl-body
+    transition: $overlay__inner-transition-out
+
+  &:not(:checked) ~ #pxl-body
+    transform: translate(-320px, 0)
+    transition: $overlay__inner-transition-in
+
 .pxl-side-nav
   .pxl-overlay__inner
     background-color: $side-nav-background-color

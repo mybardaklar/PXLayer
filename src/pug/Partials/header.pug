@@ -1,7 +1,7 @@
 // nav.pxl-navbar 
 nav.pxl-navbar(role="navigation")
   .pxl-navbar__brand
-    a.pxl-navbar__brand__item(href="#")
+    a.pxl-navbar__brand__item(href="./")
       +icon('logo', { width: '50px', height: '50px', style: 'fill: #fff;' })
     label.pxl-navbar__brand__item.pxl-navbar__burger(for="side-navigation-on")
       +icon('hamburger-menu', { width: '30px', height: '50px', style: 'fill: #fffC;' })
@@ -9,7 +9,7 @@ nav.pxl-navbar(role="navigation")
     .pxl-navbar__menu__start
       a.pxl-navbar__item(href="#") Home
       a.pxl-navbar__item(href="#") Documentation
-      +dropdown('focus')
+      +dropdown('hover')
         +dropdown__trigger({ class: 'pxl-navbar__item' })
           | More
         +dropdown__body

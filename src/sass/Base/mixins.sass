@@ -93,15 +93,3 @@
 =bp-widescreen
   +breakpoint('from', $breakpoint-widescreen)
     @content
-
-.res-test
-  background-color: red
-  color: #fff
-  padding: 10px
-
-  +breakpoint('between', ($breakpoint-mobile, $breakpoint-tablet))
-    background-color: blue
-  +bp-desktop
-    background-color: green
-  +bp-widescreen
-    background-color: tomato
