@@ -39,7 +39,8 @@ const sassSRC       = './src/sass/*.sass',
       sassURL       = './dist/css';
 
 const jsSRC         = './src/js/app.js',
-      jsURL         = './dist/js';
+      jsURL         = './dist/js',
+      jsFileName    = 'app.js';
 
 const imgSRC        = './src/img/*',
       imgURL        = './dist/img';
@@ -48,6 +49,7 @@ const fontSRC       = './src/fonts/**/*',
       fontURL       = './dist/fonts';
 
 const pugWatch      = './src/pug/**/*.pug';
+const htmlWatch     = './dist/.html';
 const sassWatch     = './src/sass/**/*.sass';
 const jsWatch       = './src/js/**/*.js';
 const imgWatch      = './src/img/**/*';
@@ -87,7 +89,7 @@ gulp.task('js', () => {
   return browserify(jsSRC)
     .transform(babelify, { presets: ['@babel/preset-env'] })
     .bundle()
-    .pipe(source('app.js'))
+    .pipe(source(jsFileName))
     .pipe(rename({ suffix: '.min' }))
     .pipe(buffer())
     .pipe(gulpif(options.has('production'), stripDebug()))
@@ -126,6 +128,6 @@ gulp.task('serve', ['pug', 'sass', 'js', 'img', 'fonts'], () => {
   gulp.watch(imgWatch, ['img']);
   gulp.watch(fontWatch, ['fonts']);
 
-  gulp.watch('./dist/.html').on('change', browserSync.reload);
+  gulp.watch(htmlWatch).on('change', browserSync.reload);
 });
 gulp.task('default', ['serve']);

@@ -9,7 +9,7 @@ include ./Widgets/_init
 
 block body
   +overlay('modal-register', false, { class: 'pxl-modal' })
-    +overlay__body('center center')
+    +overlay__body('center center', 'rtl')
       +modal__header
         .pxl-modal__header__title
           h5 Modal Title
@@ -62,7 +62,7 @@ block body
           label(for="modal-register-off").button.is-outline.pxl-overlay__trigger Cancel
 
   +overlay('default-overlay', false, { class: 'pxl-deneme' })
-    +overlay__body('top', 'top to down')
+    +overlay__body('top', 'ttb')
       p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
       p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
       p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
@@ -70,7 +70,7 @@ block body
       p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
   
   +overlay('side-navigation', false, { class: 'pxl-side-nav' })
-    +overlay__body('top right', 'right to left')
+    +overlay__body('top right', 'rtl')
       +side-nav
         .has-text-right
           label.pxl-side-nav__close-button(for="side-navigation-off") &times;
@@ -127,6 +127,11 @@ block body
         span Modal
         +tooltip('bottom', '100px')
           | Click to open modal
+      br
+      label.button.is-warning.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="side-navigation-on")
+        span Side Navigation
+        +tooltip('bottom', '100px')
+          | Click to side navigation
 
       br
       select
