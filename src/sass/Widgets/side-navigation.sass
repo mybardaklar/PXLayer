@@ -3,7 +3,7 @@ input[type=radio].pxl-side-nav__state-off
     transition: $overlay__inner-transition-out
 
   &:not(:checked) ~ #pxl-body
-    //left: -320px
+    transform: translate(-#{$side-nav-width}, 0)
     transition: $overlay__inner-transition-in
 
 .pxl-side-nav
