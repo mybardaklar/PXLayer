@@ -1,0 +1,106 @@
++overlay('modal-register', false, { class: 'pxl-modal' })
+  +overlay__body('center', 'btt')
+    +modal__header
+      .pxl-modal__header__title
+        h5 Modal Title
+      label.pxl-modal__header__close-button(for="modal-register--off") &times;
+    +modal__body
+      .field
+        label.label Name
+        .control
+          input.input(type='text', placeholder='Text input')
+      .field
+        label.label Username
+        .control.has-icons-left.has-icons-right
+          input.input.is-success(type='text', placeholder='Text input', value='bulma')
+          span.icon.is-small.is-left
+            i.fas.fa-user
+          span.icon.is-small.is-right
+            i.fas.fa-check
+        p.help.is-success This username is available
+      .field
+        label.label Email
+        .control.has-icons-left.has-icons-right
+          input.input.is-danger(type='email', placeholder='Email input', value='hello@')
+          span.icon.is-small.is-left
+            i.fas.fa-envelope
+          span.icon.is-small.is-right
+            i.fas.fa-exclamation-triangle
+        p.help.is-danger This email is invalid
+      .field
+        label.label Subject
+        .control
+          .select
+            select
+              option Select dropdown
+              option With options
+      .field
+        label.label Message
+        .control
+          textarea.textarea(placeholder='Textarea')
+      .field
+        .control
+          label.checkbox
+            input(type='checkbox')
+            | &nbsp;I agree to the 
+            a(href='#') terms and conditions
+
+    +modal__footer
+      .pxl-tooltip--trigger
+        +tooltip('top', '80px')
+          span Cancel form
+        label(for="modal-register--off").button.is-outline.pxl-overlay__trigger Cancel
+
++overlay('default-overlay', false, { class: 'pxl-deneme' })
+  +overlay__body('top', 'ttb')
+    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+    p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
+  
++overlay('side-navigation', false, { class: 'pxl-side-nav', 'data-inner-animation': 'ltr' })
+  +overlay__body('top left', 'ltr')
+    +side-nav
+      .has-text-right
+        label.pxl-side-nav__close-button(for="side-navigation--off") &times;
+      .field
+        .control
+          input.input.is-rounded(type='text', placeholder='Search')
+      aside.menu
+        p.menu-label
+          | General
+        ul.menu-list
+          li
+            a Dashboard
+          li
+            a Customers
+        p.menu-label
+          | Administration
+        ul.menu-list
+          li
+            a Team Settings
+          li
+            a.is-active Manage Your Team
+            ul
+              li
+                a Members
+              li
+                a Plugins
+              li
+                a Add a member
+          li
+            a Invitations
+          li
+            a Cloud Storage Environment Settings
+          li
+            a Authentication
+        p.menu-label
+          | Transactions
+        ul.menu-list
+          li
+            a Payments
+          li
+            a Transfers
+          li
+            a Balance

@@ -1,12 +1,27 @@
 input[type=radio].pxl-side-nav__state-off
+
+  &[data-inner-animation="rtl"]:not(:checked) ~ #pxl-body
+    transform: translate(-#{$side-nav-width}, 0)
+  &[data-inner-animation="ltr"]:not(:checked) ~ #pxl-body
+    transform: translate(#{$side-nav-width}, 0)
+
   & ~ #pxl-body
     transition: $overlay__inner-transition-out
 
   &:not(:checked) ~ #pxl-body
-    transform: translate(-#{$side-nav-width}, 0)
     transition: $overlay__inner-transition-in
 
 .pxl-side-nav
+  .pxl-overlay__body
+    $overlay__inner-animation-size: $side-nav-width
+    // inner animations
+    &[data-inner-animation="rtl"]
+      .pxl-overlay__inner
+        transform: translate(#{$overlay__inner-animation-size}, 0)
+    &[data-inner-animation="ltr"]
+      .pxl-overlay__inner
+        transform: translate(-#{$overlay__inner-animation-size}, 0)
+
   .pxl-overlay__inner
     background-color: $side-nav-background-color
     width: $side-nav-width

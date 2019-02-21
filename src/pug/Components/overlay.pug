@@ -1,0 +1,20 @@
+mixin overlay(overlayName, checked = false, attr)
+  // section.pxl-overlay 
+  if attr['data-inner-animation']
+    input.pxl-overlay__state-off(type="radio", id=overlayName + "--off", class=attr.class + "__state-off", name=overlayName, data-inner-animation=attr['data-inner-animation'], checked)
+  else
+    input.pxl-overlay__state-off(type="radio", id=overlayName + "--off", class=attr.class + "__state-off", name=overlayName, checked)
+
+  section.pxl-overlay&attributes(attr)
+    input.pxl-overlay__state-on(type="radio", id=overlayName + "--on", name=overlayName, checked=checked)
+
+    .pxl-overlay__container
+      .pxl-overlay__wrapper
+        label.pxl-overlay__background(for=overlayName+"--off")
+        block
+  // /section.pxl-overlay 
+
+mixin overlay__body(innerPosition, innerAnimation)
+  .pxl-overlay__body(data-inner-position=innerPosition, data-inner-animation=innerAnimation)
+    .pxl-overlay__inner
+      block

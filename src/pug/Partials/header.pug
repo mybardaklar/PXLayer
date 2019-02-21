@@ -1,16 +1,16 @@
-// nav.pxl-navbar 
-nav.pxl-navbar(role="navigation")
-  .pxl-navbar__brand
-    a.pxl-navbar__brand__item(href="./")
+// nav.pxl-main-navbar 
+nav.pxl-main-navbar(role="navigation")
+  .pxl-main-navbar__brand
+    a.pxl-main-navbar__brand__item(href="./")
       +icon('logo', { width: '50px', height: '50px', style: 'fill: #fff;' })
-    label.pxl-navbar__brand__item.pxl-navbar__burger(for="side-navigation-on")
+    label.pxl-main-navbar__brand__item.pxl-main-navbar__burger(for="side-navigation-on")
       +icon('hamburger-menu', { width: '30px', height: '50px', style: 'fill: #fffC;' })
-  .pxl-navbar__menu
-    .pxl-navbar__menu__start
-      a.pxl-navbar__item(href="#") Home
-      a.pxl-navbar__item(href="#") Documentation
+  .pxl-main-navbar__menu
+    .pxl-main-navbar__menu__start
+      a.pxl-main-navbar__item(href="#") Home
+      a.pxl-main-navbar__item(href="#") Documentation
       +dropdown('hover')
-        +dropdown__trigger({ class: 'pxl-navbar__item' })
+        +dropdown__trigger({ class: 'pxl-main-navbar__item' })
           | More
         +dropdown__body
           .dropdown-content
@@ -20,9 +20,9 @@ nav.pxl-navbar(role="navigation")
             a.dropdown-item(href='#4') Other dropdown item
             hr.dropdown-divider
             a.dropdown-item(href='#5') With a divider
-    .pxl-navbar__menu__end
-      .pxl-navbar__item
+    .pxl-main-navbar__menu__end
+      .pxl-main-navbar__item
         .field
           .control
             input.input.is-rounded(type='text', placeholder='Search')
-// /nav.pxl-navbar 
+// /nav.pxl-main-navbar 

@@ -18,7 +18,22 @@
       overflow: auto
 
   .pxl-overlay__body
+    $overlay__inner-animation-size: 100vw
     +padding($modal-spacing)
+
+    // inner animations
+    &[data-inner-animation="ttb"]
+      .pxl-overlay__inner
+        transform: translate(0, -#{$overlay__inner-animation-size})
+    &[data-inner-animation="rtl"]
+      .pxl-overlay__inner
+        transform: translate(#{$overlay__inner-animation-size}, 0)
+    &[data-inner-animation="btt"]
+      .pxl-overlay__inner
+        transform: translate(0, #{$overlay__inner-animation-size})
+    &[data-inner-animation="ltr"]
+      .pxl-overlay__inner
+        transform: translate(-#{$overlay__inner-animation-size}, 0)
 
   .pxl-overlay__inner
     background-color: $modal-background-color
