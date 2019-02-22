@@ -1,19 +1,19 @@
-input[type=radio].pxl-side-nav__state-off
-
-  &[data-inner-animation="rtl"]:not(:checked) ~ #pxl-body
-    transform: translate(-#{$side-nav-width}, 0)
-  &[data-inner-animation="ltr"]:not(:checked) ~ #pxl-body
-    transform: translate(#{$side-nav-width}, 0)
-
+input[type=radio].pxl-side-navigation--state-off
   & ~ #pxl-body
     transition: $overlay__inner-transition-out
 
   &:not(:checked) ~ #pxl-body
     transition: $overlay__inner-transition-in
 
-.pxl-side-nav
+  &[data-side-navigation-animation="rtl"]:not(:checked) ~ #pxl-body
+    transform: translate(-#{$side-navigation-width}, 0)
+  &[data-side-navigation-animation="ltr"]:not(:checked) ~ #pxl-body
+    transform: translate(#{$side-navigation-width}, 0)
+
+.pxl-side-navigation
   .pxl-overlay__body
-    $overlay__inner-animation-size: $side-nav-width
+    $overlay__inner-animation-size: $side-navigation-width
+    
     // inner animations
     &[data-inner-animation="rtl"]
       .pxl-overlay__inner
@@ -23,14 +23,14 @@ input[type=radio].pxl-side-nav__state-off
         transform: translate(-#{$overlay__inner-animation-size}, 0)
 
   .pxl-overlay__inner
-    background-color: $side-nav-background-color
-    width: $side-nav-width
+    background-color: $side-navigation-background-color
+    width: $side-navigation-width
     height: 100%
     min-height: 100vh
     position: relative
     z-index: 2
-    box-shadow: $side-nav-shadow
-    +padding($side-nav-padding)
+    box-shadow: $side-navigation-shadow
+    +padding($side-navigation-padding)
 
   &__close-button
     display: inline-block

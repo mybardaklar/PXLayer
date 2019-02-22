@@ -2,20 +2,20 @@ meta(charset="UTF-8")
 meta(http-equiv="X-UA-Compatible", content="ie=edge")
 meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
-title #{title}
+title #{pageInfo.title}
 
-if metaDescription
-  meta(name="description", content=pageDesc)
-if metaAuthor
-  meta(name="author", content=metaAuthor)
-if metaKeywords
-  meta(name="keywords", content=metaKeywords)
+if pageInfo.description
+  meta(name="description", content=pageInfo.description)
+if pageInfo.author
+  meta(name="author", content=pageInfo.author)
+if pageInfo.keywords
+  meta(name="keywords", content=pageInfo.keywords)
 
 block links
   include ./stylesheets
   link(rel="icon", type="image/png", sizes="192x192", href="./favicon.png")
 
-meta(name="theme-color", content="#db5945")
+meta(name="theme-color", content="#2B32B2")
 
 if openGraph
   // Facebook Open Graph 

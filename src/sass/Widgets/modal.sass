@@ -34,6 +34,10 @@
     &[data-inner-animation="ltr"]
       .pxl-overlay__inner
         transform: translate(-#{$overlay__inner-animation-size}, 0)
+    &[data-inner-animation="scale"]
+      .pxl-overlay__inner
+        transform: scale(.75)
+        +visible(false)
 
   .pxl-overlay__inner
     background-color: $modal-background-color
