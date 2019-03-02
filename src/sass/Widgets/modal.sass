@@ -1,4 +1,5 @@
 .pxl-modal
+
   &.scrollable-body
     .pxl-overlay__container
       overflow-x: hidden
@@ -16,6 +17,22 @@
       flex-grow: 1
       flex-shrink: 1
       overflow: auto
+
+  input[type=radio].pxl-overlay--state-on
+    &:checked ~ .pxl-overlay__container
+      transition: $modal__container-transition-in
+
+      .pxl-overlay__background
+        transition: $modal__background-transition-in
+
+      .pxl-overlay__inner
+        transition: $modal__inner-transition-in
+
+  .pxl-overlay__container
+    transition: $modal__container-transition-out
+
+  .pxl-overlay__background
+    transition: $modal__background-transition-out
 
   .pxl-overlay__body
     $overlay__inner-animation-size: 100vw
@@ -47,6 +64,7 @@
     flex-direction: column
     border-radius: $modal-radius
     box-shadow: $modal-shadow
+    transition: $modal__inner-transition-out
 
   &__header
     background-color: $modal__header-background-color

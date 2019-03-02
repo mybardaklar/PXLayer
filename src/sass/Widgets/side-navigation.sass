@@ -1,9 +1,10 @@
 input[type=radio].pxl-side-navigation--state-off
   & ~ #pxl-body
-    transition: $overlay__inner-transition-out
+    transition: $side-navigation__inner-transition-out
 
   &:not(:checked) ~ #pxl-body
-    transition: $overlay__inner-transition-in
+    filter: blur(5px)
+    transition: $side-navigation__inner-transition-in
 
   &[data-side-navigation-animation="rtl"]:not(:checked) ~ #pxl-body
     transform: translate(-#{$side-navigation-width}, 0)
@@ -11,6 +12,22 @@ input[type=radio].pxl-side-navigation--state-off
     transform: translate(#{$side-navigation-width}, 0)
 
 .pxl-side-navigation
+  input[type=radio].pxl-overlay--state-on
+    &:checked ~ .pxl-overlay__container
+      transition: $side-navigation__container-transition-in
+
+      .pxl-overlay__background
+        transition: $side-navigation__background-transition-in
+
+      .pxl-overlay__inner
+        transition: $side-navigation__inner-transition-in
+
+  .pxl-overlay__container
+    transition: $side-navigation__container-transition-out
+  
+  .pxl-overlay__background
+    transition: $side-navigation__background-transition-out
+
   .pxl-overlay__body
     $overlay__inner-animation-size: $side-navigation-width
     
@@ -30,6 +47,7 @@ input[type=radio].pxl-side-navigation--state-off
     position: relative
     z-index: 2
     box-shadow: $side-navigation-shadow
+    transition: $side-navigation__inner-transition-out
     +padding($side-navigation-padding)
 
   &__close-button

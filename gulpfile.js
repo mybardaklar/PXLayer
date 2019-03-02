@@ -21,12 +21,17 @@ const uglify        = require('gulp-uglify'),
 // Image related plugins
 const imagemin      = require('gulp-imagemin');
 
+// SVG related plugins
+const svgstore      = require('gulp-svgstore'),
+      svgmin        = require('gulp-svgmin');
+
 // Utility plugins
 const rename        = require('gulp-rename'),
       sourcemaps    = require('gulp-sourcemaps'),
       plumber       = require('gulp-plumber'),
       options       = require('gulp-options'),
-      gulpif        = require('gulp-if');
+      gulpif        = require('gulp-if'),
+      path          = require('path');
 
 // Browers related plugins
 const browserSync   = require('browser-sync').create();
@@ -42,6 +47,9 @@ const jsSRC         = './src/js/app.js',
       jsURL         = './dist/js',
       jsFileName    = 'app.js';
 
+const svgSRC        = './src/svg/*.svg',
+      svgURL        = './dist/img';
+
 const imgSRC        = './src/img/*',
       imgURL        = './dist/img';
 
@@ -49,9 +57,10 @@ const fontSRC       = './src/fonts/**/*',
       fontURL       = './dist/fonts';
 
 const pugWatch      = './src/pug/**/*.pug';
-const htmlWatch     = './dist/.html';
+const htmlWatch     = './dist/*.html';
 const sassWatch     = './src/sass/**/*.sass';
 const jsWatch       = './src/js/**/*.js';
+const svgWatch      = './src/svg/**/*.svg';
 const imgWatch      = './src/img/**/*';
 const fontWatch     = './src/fonts/**/*';
 
@@ -100,6 +109,27 @@ gulp.task('js', () => {
     .pipe(browserSync.stream());
 });
 
+// Task for compressing svg files
+gulp.task('svgstore', () => {
+  return gulp.src(svgSRC)
+    .pipe(svgmin(file => {
+      const prefix = path.basename(file.relative, path.extname(file.relative));
+      return {
+        plugins: [{
+          cleanupIDs: {
+            prefix: prefix + '-',
+            minify: true
+          }
+        }]
+      }
+    }))
+    .pipe(rename({ prefix: 'pxl-icon-' }))
+    .pipe(svgstore())
+    .pipe(rename({ basename: 'pxl-svg-sprite' }))
+    .pipe(gulp.dest(svgURL))
+    .pipe(browserSync.stream());
+});
+
 // Task for compressing image files
 gulp.task('img', () => {
   return gulp.src(imgSRC)
@@ -117,7 +147,7 @@ gulp.task('fonts', () => {
 });
 
 // Server task
-gulp.task('serve', ['pug', 'sass', 'js', 'img', 'fonts'], () => {
+gulp.task('serve', ['pug', 'sass', 'js', 'svgstore', 'img', 'fonts'], () => {
   browserSync.init({
     server: './dist'
   });
@@ -125,6 +155,7 @@ gulp.task('serve', ['pug', 'sass', 'js', 'img', 'fonts'], () => {
   gulp.watch(pugWatch, ['pug']);
   gulp.watch(sassWatch, ['sass']);
   gulp.watch(jsWatch, ['js']);
+  gulp.watch(svgWatch, ['svgstore']);
   gulp.watch(imgWatch, ['img']);
   gulp.watch(fontWatch, ['fonts']);
 

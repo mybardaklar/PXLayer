@@ -12,8 +12,7 @@ block pageInformation
 block body
   +overlay({
     name: 'modal-register',
-    type: 'modal',
-    class: 'pxl-modal scrollable-body',
+    class: 'pxl-modal',
     checked: false,
     innerPosition: 'top left',
     innerAnimation: 'scale'
@@ -84,12 +83,11 @@ block body
     
   +overlay({
     name: 'side-navigation',
-    type: 'side-navigation',
     class: 'pxl-side-navigation',
     stateOffClass: 'pxl-side-navigation--state-off',
     checked: false,
-    innerPosition: 'top right',
-    innerAnimation: 'rtl'
+    innerPosition: 'top left',
+    innerAnimation: 'ltr'
   })
     +side-navigation
       .has-text-right
@@ -140,17 +138,17 @@ block body
     .pxl-container
       label.button.is-danger.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="default-overlay--on")
         span Default Overlay
-        +tooltip('bottom', '100px')
+        +tooltip('bottom', { style: 'min-width: 100px;' })
           | Click to open default overlay
       br
       label.button.is-primary.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="modal-register--on")
         span Modal
-        +tooltip('bottom', '100px')
+        +tooltip('bottom', { style: 'min-width: 100px;' })
           | Click to open modal
       br
       label.button.is-warning.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="side-navigation--on")
         span Side Navigation
-        +tooltip('bottom', '100px')
+        +tooltip('bottom', { style: 'min-width: 120px;' })
           | Click to side navigation
 
       br
@@ -160,6 +158,14 @@ block body
         option(value="3") Value 3
         option(value="4") Value 4
       br
+
+      .icons
+        .pxl-tooltip__trigger
+          +icon('logo', { style: 'width: 48px; height: 48px;' })
+          +tooltip('bottom', { style: 'min-width: 100px;' })
+            | Click to side navigation
+        +icon('fast-food', { style: 'width: 48px; height: 48px;' })
+        +icon('cancel', { style: 'width: 48px; height: 48px;' })
 
       p
         | Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.
