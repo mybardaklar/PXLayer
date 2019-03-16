@@ -1,40 +1,32 @@
+include ./settings
 include ../Components/_init
 include ../Widgets/_init
+include ../Partials/_init
+
+block PageSettings
 
 doctype html
-html(lang="en", dir="ltr")
-
-  block pageInformation
+html(lang=Settings.lang, dir=Settings.dir, class=returnBoolean(PageSettings.pxlBody, 'has-pxl-body'))&attributes(PageSettings.htmlAttr)
 
   //- Head
   head
-    include ./head
+    block Head
+      include ./head
   
   //- Body
-  body
-    mixin body(header = true, footer = true)
-      // #pxl-body 
-      section#pxl-body
-        if header
-          //- Header
-          include ../Partials/header
-          |
-          |
-        
-        //- Content
-        main.main-content
-          block
+  body(class=returnBoolean(PageSettings.pxlBody, 'has-pxl-body'))&attributes(PageSettings.bodyAttr)
+    block Overlays
+    |
+    |
 
-        if footer
-          |
-          |
-          //- Footer
-          include ../Partials/footer
-      // /#pxl-body 
-
-    block body
+    // #pxl-body 
+    section#pxl-body
+      block Body
+    // /#pxl-body 
 
     |
     |
     //- Scripts
-    include ./scripts
+    // Scripts 
+    block Scripts
+      include ./scripts

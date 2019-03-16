@@ -1,28 +1,29 @@
-// nav.pxl-main-navbar 
-nav.pxl-main-navbar(role="navigation")
-  .pxl-main-navbar__brand
-    a.pxl-main-navbar__brand__item(href="./")
-      +icon('logo', { style: 'width: 35px; height: 35px; fill: #fff;' })
-    label.pxl-main-navbar__brand__item.pxl-main-navbar__burger(for="side-navigation--on")
-      +icon('menu', { style: 'width: 30px; height: 30px; fill: #fff;' })
-  .pxl-main-navbar__menu
-    .pxl-main-navbar__menu__start
-      a.pxl-main-navbar__item(href="#") Home
-      a.pxl-main-navbar__item(href="#") Documentation
-      +dropdown('focus')
-        +dropdown__trigger({ class: 'pxl-main-navbar__item' })
-          | More
-        +dropdown__body
-          .dropdown-content
-            a.dropdown-item(href='#1') Dropdown item
-            a.dropdown-item(href="#2") Other dropdown item
-            a.dropdown-item.is-active(href='#3') Active dropdown item
-            a.dropdown-item(href='#4') Other dropdown item
-            hr.dropdown-divider
-            a.dropdown-item(href='#5') With a divider
-    .pxl-main-navbar__menu__end
-      .pxl-main-navbar__item
-        .field
-          .control
-            input.input.is-rounded(type='text', placeholder='Search')
-// /nav.pxl-main-navbar 
+mixin main-navbar
+  // nav.pxl-main-navbar 
+  nav.pxl-main-navbar(role="navigation")
+    .pxl-main-navbar__brand
+      a.pxl-main-navbar__brand__item(href="./")
+        +icon('logo', { style: 'width: 35px; height: 35px; fill: #fff;' })
+      label.pxl-main-navbar__brand__item.pxl-main-navbar__burger(for="side-navigation--on")
+        +icon('menu', { style: 'width: 30px; height: 30px; fill: #fff;' })
+    .pxl-main-navbar__menu
+      .pxl-main-navbar__menu__start
+        a.pxl-main-navbar__item(href="#") Home
+        a.pxl-main-navbar__item(href="#") Documentation
+        +dropdown('focus')
+          +dropdown__trigger({ class: 'pxl-main-navbar__item' })
+            | More
+          +dropdown__body
+            .dropdown-content
+              a.dropdown-item(href='#1') Dropdown item
+              a.dropdown-item(href="#2") Other dropdown item
+              a.dropdown-item.is-active(href='#3') Active dropdown item
+              a.dropdown-item(href='#4') Other dropdown item
+              hr.dropdown-divider
+              a.dropdown-item(href='#5') With a divider
+      .pxl-main-navbar__menu__end
+        .pxl-main-navbar__item
+          .field
+            .control
+              input.input.is-rounded(type='text', placeholder='Search')
+  // /nav.pxl-main-navbar 

@@ -1,21 +1,23 @@
 extends ./Base/layout
 
-//- page title and meta tags(description, author, keywords)
-block pageInformation
-  -
-    var pageInfo = {
-      title: 'Homepage',
-      author: 'MYB',
-      keywords: 'design, mesign, hotness, brotherhood'
-    }
+block PageSettings
+  - PageSettings.title    = 'Homepage'
+  - PageSettings.author   = 'MYB'
+  - PageSettings.keywords = 'design, mesign, hotness, brotherhood'
 
-block body
+block append Stylesheets
+  link(rel="stylesheet", href="style.css")
+
+block append Scripts
+  script(src="./app.built.js")
+
+block Overlays
   +overlay({
     name: 'modal-register',
     class: 'pxl-modal',
     checked: false,
     innerPosition: 'top left',
-    innerAnimation: 'scale'
+    innerAnimation: 'ttb'
   })
     +modal__header
       .pxl-modal__header__title
@@ -133,8 +135,10 @@ block body
           li
             a Balance
 
+block Body
+  +main-navbar
 
-  +body
+  +main-content
     .pxl-container
       label.button.is-danger.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="default-overlay--on")
         span Default Overlay
@@ -211,3 +215,4 @@ block body
       p Peace has cost you your strength. Victory has defeated you.
       p
         strong You know what you said about the structures becoming shackles. You were right and I can't take it, the injustice. I mean, no one ever's gonna know who saved the entire city.
+  +main-footer

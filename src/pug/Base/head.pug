@@ -2,38 +2,36 @@ meta(charset="UTF-8")
 meta(http-equiv="X-UA-Compatible", content="ie=edge")
 meta(name="viewport", content="width=device-width, initial-scale=1.0")
 
-title #{pageInfo.title}
+title #{PageSettings.title}
 
-if pageInfo.description
-  meta(name="description", content=pageInfo.description)
-if pageInfo.author
-  meta(name="author", content=pageInfo.author)
-if pageInfo.keywords
-  meta(name="keywords", content=pageInfo.keywords)
+if PageSettings.description
+  meta(name="description", content=PageSettings.description)
+if PageSettings.author
+  meta(name="author", content=PageSettings.author)
+if PageSettings.keywords
+  meta(name="keywords", content=PageSettings.keywords)
 
-block links
+block Stylesheets
   include ./stylesheets
-  link(rel="icon", type="image/png", sizes="192x192", href="./favicon.png")
+link(rel="icon", type="image/png", sizes="192x192", href="./favicon.png")
 
-meta(name="theme-color", content="#2B32B2")
+meta(name="theme-color", content=PageSettings.themeColor)
 
-if openGraph
+if Object.keys(OpenGraph).length > 0
   // Facebook Open Graph 
   meta(property="og:type", content="website")
-  meta(property="og:url", content=openGraph.url)
-  meta(property="og:title", content=openGraph.title)
-  meta(property="og:image", content=openGraph.image)
-  meta(property="og:description", content=openGraph.description)
-  meta(property="og:site_name", content=openGraph.site_name)
-  meta(property="og:locale", content=openGraph.locale)
-  meta(property="og:image:height", content=openGraph.image_height)
 
-if twitterCard
+  //- Properties ['og:url', 'og:title', 'og:image', 'og:description', 'og:site_name', 'og:locale', 'og:image:height']
+  each value, key in OpenGraph
+    if key === 'imageHeight'
+      meta(property="og:image:height", content=value)
+    else
+      meta(property="og:" + key, content=value)
+
+if Object.keys(TwitterCard).length > 0
   // Twitter Card 
   meta(name="twitter:card", content="summary")
-  meta(name="twitter:site", content=twitterCard.site)
-  meta(name="twitter:creator", content=twitterCard.creator)
-  meta(name="twitter:url", content=twitterCard.url)
-  meta(name="twitter:title", content=twitterCard.title)
-  meta(name="twitter:description", content=twitterCard.description)
-  meta(name="twitter:image", content=twitterCard.image)
+
+  //- Names ['twitter:site', 'twitter:creator', 'twitter:url', 'twitter:title', 'twitter:description', 'twitter:image']
+  each value, key in TwitterCard
+    meta(name="twitter:" + key, content=value)
