@@ -1,12 +1,12 @@
 {
-  "name": "dopxl",
+  "name": "pxlayer",
   "version": "1.0.0",
   "description": "Pure CSS framework. There's no JavaScript.",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Muhammed Yasar BARDAKLAR",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.2.2",
