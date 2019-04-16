@@ -1,18 +1,28 @@
 .pxl-dropdown
   position: relative
-  z-index: $z-index-3
 
-  &#{&}--focus
+  &--focus
     .pxl-dropdown__trigger
       &:focus
         pointer-events: none
         & ~ .pxl-dropdown__body
           transform: scaleY(1)
           +visible(true)
-  &#{&}--hover
+  
+  &--hover
     &:hover .pxl-dropdown__body
       transform: scaleY(1)
       +visible(true)
+
+  // dropdown position
+  &[data-dropdown-position="left"]
+    .pxl-dropdown__body
+      right: auto
+      left: 0
+  &[data-dropdown-position="right"]
+    .pxl-dropdown__body
+      right: 0
+      left: auto
 
   &__trigger
     display: inline-block
@@ -20,11 +30,9 @@
     cursor: pointer
   
   &__body
-    box-shadow: 0 5px 5px rgba($black-lighten, .1)
     position: absolute
     top: 100%
     left: 0
-    padding-top: 4px
     transition: all 250ms cubic-bezier(1, 0, .25, 1)
     transform-origin: left top
     transform: scaleY(0)

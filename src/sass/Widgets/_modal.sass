@@ -1,6 +1,6 @@
 .pxl-modal
 
-  &.scrollable-body
+  &.innerScroll
     .pxl-overlay__container
       overflow-x: hidden
       overflow-y: hidden
@@ -32,26 +32,37 @@
     transition: $modal__container-transition-out
 
   .pxl-overlay__background
+    @if type-of($overlay-background) == 'color'
+      background-color: $overlay-background
+    @else
+      background-image: $overlay-background
+      background-attachment: fixed
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
     transition: $modal__background-transition-out
 
   .pxl-overlay__body
-    $overlay__inner-animation-size: 100vw
     +padding($modal-spacing)
 
     // inner animations
-    &[data-inner-animation="ttb"]
+    &[data-inner-animation="top to bottom"]
       .pxl-overlay__inner
         transform: translate(0, -#{$overlay__inner-animation-size})
-    &[data-inner-animation="rtl"]
+    
+    &[data-inner-animation="right to left"]
       .pxl-overlay__inner
         transform: translate(#{$overlay__inner-animation-size}, 0)
-    &[data-inner-animation="btt"]
+    
+    &[data-inner-animation="bottom to top"]
       .pxl-overlay__inner
         transform: translate(0, #{$overlay__inner-animation-size})
-    &[data-inner-animation="ltr"]
+    
+    &[data-inner-animation="left to right"]
       .pxl-overlay__inner
         transform: translate(-#{$overlay__inner-animation-size}, 0)
-    &[data-inner-animation="scale"]
+    
+    &[data-inner-animation="zoom"]
       .pxl-overlay__inner
         transform: scale(.75)
         +visible(false)

@@ -5,77 +5,69 @@ block PageSettings
   - PageSettings.author   = 'MYB'
   - PageSettings.keywords = 'design, mesign, hotness, brotherhood'
 
-block append Stylesheets
-  link(rel="stylesheet", href="style.css")
-
-block append Scripts
-  script(src="./app.built.js")
-
 block Overlays
   +overlay({
     name: 'modal-register',
     class: 'pxl-modal',
-    checked: false,
-    innerPosition: 'top left',
-    innerAnimation: 'ttb'
+    innerPosition: 'top right',
+    innerAnimation: 'right to left'
   })
     +modal__header
       .pxl-modal__header__title
         h5 Modal Title
-      label.pxl-modal__header__close-button(for="modal-register--off") &times;
+      label.pxl-modal__header__close-button(for="modal-register--state-off") &times;
     +modal__body
-      .field
-        label.label Name
-        .control
-          input.input(type='text', placeholder='Text input')
-      .field
-        label.label Username
-        .control.has-icons-left.has-icons-right
-          input.input.is-success(type='text', placeholder='Text input', value='bulma')
-          span.icon.is-small.is-left
-            i.fas.fa-user
-          span.icon.is-small.is-right
-            i.fas.fa-check
-        p.help.is-success This username is available
-      .field
-        label.label Email
-        .control.has-icons-left.has-icons-right
-          input.input.is-danger(type='email', placeholder='Email input', value='hello@')
-          span.icon.is-small.is-left
-            i.fas.fa-envelope
-          span.icon.is-small.is-right
-            i.fas.fa-exclamation-triangle
-        p.help.is-danger This email is invalid
-      .field
-        label.label Subject
-        .control
-          .select
-            select
-              option Select dropdown
-              option With options
-      .field
-        label.label Message
-        .control
-          textarea.textarea(placeholder='Textarea')
-      .field
-        .control
-          label.checkbox
-            input(type='checkbox')
-            | &nbsp;I agree to the 
-            a(href='#') terms and conditions
-
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
     +modal__footer
       .pxl-tooltip--trigger
-        +tooltip('top', '80px')
+        +tooltip({ position: 'top', style: 'min-width: 80px;' })
           span Cancel form
-        label(for="modal-register--off").button.is-outline.pxl-overlay__trigger Cancel
+        label(for="modal-register--state-off").button.is-outline Cancel
+  
+  +overlay({
+    name: 'modal-ss',
+    class: 'pxl-modal',
+    innerPosition: 'bottom right',
+    innerAnimation: 'left to right'
+  })
+    +modal__body
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis
+    +modal__footer
+      .pxl-tooltip--trigger
+        +tooltip({ position: 'top', style: 'min-width: 100px;' })
+          span Cancel form
+        label(for="modal-ss--state-off").button.is-outline Cancel
 
   +overlay({
     name: 'default-overlay',
     checked: false,
     class: 'pxl-deneme',
     innerPosition: 'top',
-    innerAnimation: 'ttb'
+    innerAnimation: 'top to bottom'
   })
     p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
     p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
@@ -84,16 +76,16 @@ block Overlays
     p Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere, nesciunt ipsam ab rerum voluptate reiciendis tenetur inventore vel. Corrupti consectetur temporibus reiciendis mollitia doloremque fugiat voluptate dignissimos tempora deserunt aliquam?
     
   +overlay({
+    type: 'SideNavigation',
     name: 'side-navigation',
     class: 'pxl-side-navigation',
-    stateOffClass: 'pxl-side-navigation--state-off',
     checked: false,
-    innerPosition: 'top left',
-    innerAnimation: 'ltr'
+    innerPosition: 'top right',
+    innerAnimation: 'right to left'
   })
     +side-navigation
       .has-text-right
-        label.pxl-side-navigation__close-button(for="side-navigation--off") &times;
+        label.pxl-side-navigation__close-button(for="side-navigation--state-off") &times;
       .field
         .control
           input.input.is-rounded(type='text', placeholder='Search')
@@ -140,36 +132,61 @@ block Body
 
   +main-content
     .pxl-container
-      label.button.is-danger.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="default-overlay--on")
-        span Default Overlay
-        +tooltip('bottom', { style: 'min-width: 100px;' })
-          | Click to open default overlay
+      .pxl-wrap.pxl-flex
+        .pxl-wrap__item(pxl-col="6", pxl-align-self="end")
+          label.button.is-danger.is-rounded.is-fullwidth.pxl-tooltip--trigger(for="default-overlay--state-on")
+            span Default Overlay
+            +tooltip({ position: 'bottom', style: 'min-width: 100px;' })
+              | Click to open default overlay
+        .pxl-wrap__item(pxl-col="6")
+          label.button.is-primary.is-rounded.is-fullwidth.pxl-tooltip--trigger(for="modal-register--state-on")
+            span Modal
+            +tooltip({ position: 'bottom', style: 'min-width: 100px;' })
+              | Click to open modal
+        .pxl-wrap__item(pxl-col="6")
+          label.button.is-primary.is-rounded.is-fullwidth.pxl-tooltip--trigger(for="modal-ss--state-on")
+            span Modal SS
+            +tooltip({ position: 'bottom', style: 'min-width: 100px;' })
+              | Click to open modal SS
+        .pxl-wrap__item(pxl-col="6")
+          label.button.is-warning.is-rounded.is-fullwidth.pxl-tooltip--trigger(for="side-navigation--state-on")
+            span Side Navigation
+            +tooltip({ position: 'bottom', style: 'min-width: 120px;' })
+              | Click to side navigation
+      
+      .pxl-wrap.pxl-flex(pxl-justify-content="center", pxl-align-items="center")
+        .pxl-wrap__item(pxl-col="12", pxl-col-desktop="4")
+          span.amazing.box-1 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="4")
+        .pxl-wrap__item(pxl-col="12", pxl-col-desktop="4")
+          span.amazing.box-2 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="4")
+        .pxl-wrap__item(pxl-col="12", pxl-col-desktop="8")
+          span.amazing.box-3 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="8")
+      
+      .pxl-wrap.pxl-masonry(pxl-col="2", pxl-col-desktop="4", pxl-col-widescreen="3")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/1459505/pexels-photo-1459505.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/1769307/pexels-photo-1769307.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/804605/pexels-photo-804605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/433989/pexels-photo-433989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/1166430/pexels-photo-1166430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/1461264/pexels-photo-1461264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/1858115/pexels-photo-1858115.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/910086/pexels-photo-910086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/2099116/pexels-photo-2099116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/2097475/pexels-photo-2097475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+        .pxl-wrap__item
+          img(src="https://images.pexels.com/photos/1813252/pexels-photo-1813252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
       br
-      label.button.is-primary.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="modal-register--on")
-        span Modal
-        +tooltip('bottom', { style: 'min-width: 100px;' })
-          | Click to open modal
       br
-      label.button.is-warning.is-rounded.is-fullwidth.pxl-overlay__trigger.pxl-tooltip__trigger(for="side-navigation--on")
-        span Side Navigation
-        +tooltip('bottom', { style: 'min-width: 120px;' })
-          | Click to side navigation
-
-      br
-      select
-        option(value="1") Value 1
-        option(value="2") Value 2
-        option(value="3") Value 3
-        option(value="4") Value 4
-      br
-
-      .icons
-        .pxl-tooltip__trigger
-          +icon('logo', { style: 'width: 48px; height: 48px;' })
-          +tooltip('bottom', { style: 'min-width: 100px;' })
-            | Click to side navigation
-        +icon('fast-food', { style: 'width: 48px; height: 48px;' })
-        +icon('cancel', { style: 'width: 48px; height: 48px;' })
 
       p
         | Ooh, you think darkness is your ally? You merely adopted the dark, I was born in it. Molded by it. I didn't see the light until I was already a man. By then there was nothing to be but blinded.

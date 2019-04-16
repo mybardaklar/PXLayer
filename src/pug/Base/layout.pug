@@ -6,7 +6,11 @@ include ../Partials/_init
 block PageSettings
 
 doctype html
-html(lang=Settings.lang, dir=Settings.dir, class=returnBoolean(PageSettings.pxlBody, 'has-pxl-body'))&attributes(PageSettings.htmlAttr)
+html(
+  lang=Settings.lang,
+  dir=Settings.dir,
+  class=PageSettings.pxlBody ? 'has-pxl-body' : null
+)&attributes(PageSettings.htmlAttr)
 
   //- Head
   head
@@ -14,13 +18,13 @@ html(lang=Settings.lang, dir=Settings.dir, class=returnBoolean(PageSettings.pxlB
       include ./head
   
   //- Body
-  body(class=returnBoolean(PageSettings.pxlBody, 'has-pxl-body'))&attributes(PageSettings.bodyAttr)
+  body(class=PageSettings.pxlBody ? 'has-pxl-body' : null)&attributes(PageSettings.bodyAttr)
     block Overlays
     |
     |
 
     // #pxl-body 
-    section#pxl-body
+    section.pxl-body
       block Body
     // /#pxl-body 
 

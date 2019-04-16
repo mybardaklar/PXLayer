@@ -15,6 +15,7 @@
     "browser-sync": "^2.26.3",
     "browserify": "^16.2.3",
     "browserify-shim": "^3.8.14",
+    "eslint": "^5.15.3",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-babel": "^8.0.0",

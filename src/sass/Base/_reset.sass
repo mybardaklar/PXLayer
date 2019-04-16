@@ -1,7 +1,7 @@
 ::-moz-selection
-  background-color: hsl(hue($color-1), 50%, 90%)
+  background-color: $selection-background
 ::selection
-  background-color: hsl(hue($color-1), 50%, 90%)
+  background-color: $selection-background
 
 *
   &,
@@ -10,7 +10,10 @@
     box-sizing: border-box
 
 html
-  background-color: $body-background-color
+  @if type-of($body-background) == 'color'
+    background-color: $body-background
+  @else
+    background-image: $body-background
   font-size: $body-font-size
   -moz-osx-font-smoothing: grayscale
   -webkit-font-smoothing: antialiased
@@ -42,7 +45,10 @@ pre
   font-family: $code-font-family
 
 body
-  background-color: $body-background-color
+  @if type-of($body-background) == 'color'
+    background-color: $body-background
+  @else
+    background-image: $body-background
   color: $body-text-color
   font-size: 1rem
   font-weight: $body-font-weight

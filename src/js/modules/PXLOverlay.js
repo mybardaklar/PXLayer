@@ -1,4 +1,4 @@
-export default class PXLOverlay {
+class PXLOverlay {
 
   constructor() {
     this.pxl_body = document.querySelector('#pxl-body');
@@ -28,7 +28,7 @@ export default class PXLOverlay {
 
   whenStateOn() {
     this.stateOn.forEach((el) => {
-      el.addEventListener('change', (e) => {
+      el.addEventListener('change', () => {
         this.blurBackground(el, true);
       });
     });
@@ -36,7 +36,7 @@ export default class PXLOverlay {
 
   whenStateOff() {
     this.stateOff.forEach((el) => {
-      el.addEventListener('change', (e) => {
+      el.addEventListener('change', () => {
         let openOverlay = false;
 
         this.stateOn.forEach((el) => {
@@ -51,3 +51,5 @@ export default class PXLOverlay {
   }
 
 }
+
+export default PXLOverlay;

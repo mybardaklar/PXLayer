@@ -1,15 +1,16 @@
-input[type=radio].pxl-side-navigation--state-off
-  & ~ #pxl-body
-    transition: $side-navigation__inner-transition-out
+/* Scrolling animation
+  input[type=radio].pxl-side-navigation--state-off
+    & ~ #pxl-body
+      transition: $side-navigation__inner-transition-out
 
-  &:not(:checked) ~ #pxl-body
-    filter: blur(5px)
-    transition: $side-navigation__inner-transition-in
+    &:not(:checked) ~ #pxl-body
+      transition: $side-navigation__inner-transition-in
 
-  &[data-side-navigation-animation="rtl"]:not(:checked) ~ #pxl-body
-    transform: translate(-#{$side-navigation-width}, 0)
-  &[data-side-navigation-animation="ltr"]:not(:checked) ~ #pxl-body
-    transform: translate(#{$side-navigation-width}, 0)
+    &[data-sidenavigation-position="right to left"]:not(:checked) ~ #pxl-body
+      transform: translate(-#{$side-navigation-width}, 0)
+    &[data-sidenavigation-position="left to right"]:not(:checked) ~ #pxl-body
+      transform: translate(#{$side-navigation-width}, 0) */
+
 
 .pxl-side-navigation
   input[type=radio].pxl-overlay--state-on
@@ -26,16 +27,17 @@ input[type=radio].pxl-side-navigation--state-off
     transition: $side-navigation__container-transition-out
   
   .pxl-overlay__background
+    background: linear-gradient(to bottom, rgba(#1488CC, .5), rgba(#2B32B2, .5))
     transition: $side-navigation__background-transition-out
 
   .pxl-overlay__body
     $overlay__inner-animation-size: $side-navigation-width
     
     // inner animations
-    &[data-inner-animation="rtl"]
+    &[data-inner-animation="right to left"]
       .pxl-overlay__inner
         transform: translate(#{$overlay__inner-animation-size}, 0)
-    &[data-inner-animation="ltr"]
+    &[data-inner-animation="left to right"]
       .pxl-overlay__inner
         transform: translate(-#{$overlay__inner-animation-size}, 0)
 
@@ -49,6 +51,7 @@ input[type=radio].pxl-side-navigation--state-off
     box-shadow: $side-navigation-shadow
     transition: $side-navigation__inner-transition-out
     +padding($side-navigation-padding)
+    +visible(true)
 
   &__close-button
     display: inline-block

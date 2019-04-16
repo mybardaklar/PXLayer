@@ -1,21 +1,34 @@
 mixin overlay(attr)
   // section.pxl-overlay 
   //- overlay state off
-  input.pxl-overlay--state-off(type="radio", id=attr.name + "--off", class=attr.stateOffClass, name=attr.name, data-side-navigation-animation=attr.innerAnimation, checked)
+  input.pxl-overlay--state-off(
+    type="radio",
+    id=attr.name + "--state-off",
+    name=attr.name,
+    checked
+  )
 
   section.pxl-overlay(class=attr.class)
     //- overlay state on
-    input.pxl-overlay--state-on(type="radio", id=attr.name + "--on", name=attr.name, checked=attr.checked)
+    input.pxl-overlay--state-on(
+      type="radio",
+      id=attr.name + "--state-on",
+      name=attr.name,
+      checked=attr.checked
+    )
 
     //- overlay container
     .pxl-overlay__container
       .pxl-overlay__wrapper
         //- overlay background
-        label.pxl-overlay__background(for=attr.name+"--off")
+        label.pxl-overlay__background(for=attr.name+"--state-off")
 
         //- overlay body
-        .pxl-overlay__body(data-inner-position=attr.innerPosition, data-inner-animation=attr.innerAnimation)
+        .pxl-overlay__body(
+          data-inner-position=attr.innerPosition,
+          data-inner-animation=attr.innerAnimation
+        )
           //- overlay inner
           .pxl-overlay__inner
             block
-  // /section.pxl-overlay 
+  // ## section.pxl-overlay 

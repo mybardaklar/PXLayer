@@ -1,0 +1,175 @@
+.pxl-container
+  width: 100%
+  position: relative
+  +padding($container-padding)
+  +margin(null auto)
+  
+  +breakpoint('from', $breakpoint-tablet)
+    max-width: $container-tablet
+  +breakpoint('from', $breakpoint-desktop)
+    max-width: $container-desktop
+  +breakpoint('from', $breakpoint-widescreen)
+    max-width: $container-widescreen
+
+=pxl-wrap($wrap-type, $breakpoint-name, $breakpoint)
+  +breakpoint('from', $breakpoint)
+    @for $x from 1 through 12
+      &[pxl-col-#{$breakpoint-name}="#{$x}"]
+        @if $wrap-type == 'flex'
+          flex-basis: 100% / (12 / $x)
+          max-width: 100% / (12 / $x)
+        @else
+          column-count: $x
+
+.pxl-wrap
+  &:not([pxl-gapless])
+    +margin(#{-$gap} #{-$gap} #{ $gap + .5rem })
+    > .pxl-wrap__item
+      +padding($gap)
+
+  // flex grid system
+  &.pxl-flex
+    display: flex
+    flex-wrap: wrap
+
+    // flex-direction property
+    &[pxl-flex-direction="row"]
+      flex-direction: row
+    &[pxl-flex-direction="row-reverse"]
+      flex-direction: row-reverse
+    &[pxl-flex-direction="column"]
+      flex-direction: column
+    &[pxl-flex-direction="column-reverse"]
+      flex-direction: column-reverse
+    
+    // flex-wrap property
+    &[pxl-flex-wrap="nowrap"]
+      flex-wrap: nowrap
+    &[pxl-flex-wrap="wrap"]
+      flex-wrap: wrap
+    &[pxl-flex-wrap="wrap-reverse"]
+      flex-wrap: wrap-reverse
+    
+    // justify-content property
+    &[pxl-justify-content="start"]
+      justify-content: flex-start
+    &[pxl-justify-content="end"]
+      justify-content: flex-end
+    &[pxl-justify-content="center"]
+      justify-content: center
+    &[pxl-justify-content="between"]
+      justify-content: space-between
+    &[pxl-justify-content="around"]
+      justify-content: space-around
+    
+    // align-items property
+    &[pxl-align-items="stretch"]
+      align-items: stretch
+    &[pxl-align-items="center"]
+      align-items: center
+    &[pxl-align-items="start"]
+      align-items: flex-start
+    &[pxl-align-items="end"]
+      align-items: flex-end
+    &[pxl-align-items="baseline"]
+      align-items: baseline
+    
+    // align-content property
+    &[pxl-align-content="stretch"]
+      align-contents: stretch
+    &[pxl-align-content="center"]
+      align-content: center
+    &[pxl-align-content="start"]
+      align-content: flex-start
+    &[pxl-align-content="end"]
+      align-content: flex-end
+    &[pxl-align-content="between"]
+      align-content: space-between
+    &[pxl-align-content="around"]
+      align-content: space-around
+    
+    .pxl-wrap__item
+      flex-grow: 1
+      flex-basis: 100%
+      width: 100%
+      max-width: 100%
+      position: relative
+
+      // align-self property
+      &[pxl-align-self="auto"]
+        align-self: auto
+      &[pxl-align-self="stretch"]
+        align-self: stretch
+      &[pxl-align-self="center"]
+        align-self: center
+      &[pxl-align-self="start"]
+        align-self: flex-start
+      &[pxl-align-self="end"]
+        align-self: flex-end
+      &[pxl-align-self="baseline"]
+        align-self: baseline
+
+      @for $x from 1 through 12
+        &[pxl-col="#{$x}"]
+          flex-basis: 100% / (12 / $x)
+          max-width: 100% / (12 / $x)
+      
+      +pxl-wrap('flex', 'tablet', $breakpoint-tablet)
+      +pxl-wrap('flex', 'desktop', $breakpoint-desktop)
+      +pxl-wrap('flex', 'widescreen', $breakpoint-widescreen)
+  
+  // masonry grid system
+  &.pxl-masonry
+    column-gap: 0
+    
+    @for $x from 1 through 12
+      &[pxl-col="#{$x}"]
+        column-count: $x
+
+    +pxl-wrap('masonry', 'tablet', $breakpoint-tablet)
+    +pxl-wrap('masonry', 'desktop', $breakpoint-desktop)
+    +pxl-wrap('masonry', 'widescreen', $breakpoint-widescreen)
+
+    .pxl-wrap__item
+      position: relative
+      box-sizing: border-box
+      break-inside: avoid
+      transition: all 250ms
+
+      &:hover
+        transform: translateY(-7.5px)
+
+        img
+          box-shadow: 0 5px 10px 5px rgba($black, .4)
+
+      img
+        width: 100%
+        box-shadow: 0 5px 10px 2px rgba($black, .25)
+        transition: all 250ms
+        display: block
+      
+      iframe
+        width: 100%
+        height: 400px
+
+span.amazing
+  color: $white
+  display: block
+  text-align: center
+  font-weight: $weight-semibold
+  font-size: .75rem
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 10px
+  box-shadow: 0 3px 6px 3px rgba($black, .25)
+  +padding(1rem)
+
+  &.box-1
+    background-color: $color-1
+  &.box-2
+    background-color: $color-2
+  &.box-3
+    background-color: $color-3
+  &.box-4
+    background-color: $grey-dark

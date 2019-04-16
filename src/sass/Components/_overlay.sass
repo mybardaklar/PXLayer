@@ -1,26 +1,13 @@
-label.pxl-overlay__trigger
-  margin-bottom: 0
-
 input[type=radio].pxl-overlay--state-off
   display: none
   position: absolute
   top: -9999px
   left: -9999px
-  &:not(:checked) ~ #pxl-body
-    filter: blur(5px)
-  
 
-.pxl-deneme
-  .pxl-overlay__inner
-    width: 100%
-    height: 60px
-    overflow: auto
-    background-color: #fff
-    border-top: 10px solid yellow
-    border-right: 10px solid red
-    border-bottom: 10px solid blue
-    border-left: 10px solid cyan
-
+  &:not(:checked)
+    & ~ .pxl-body
+      @if $overlay-background-blur-animation
+        filter: blur(5px)
 
 .pxl-overlay
   input[type=radio].pxl-overlay--state-on
@@ -34,11 +21,11 @@ input[type=radio].pxl-overlay--state-off
 
       .pxl-overlay__background
         +visible(true)
+        opacity: $overlay-background-opacity
 
       .pxl-overlay__inner
         transform: none
         +visible(true)
-        +margin(0)
 
   &__container
     position: fixed
@@ -47,8 +34,8 @@ input[type=radio].pxl-overlay--state-off
     bottom: 0
     left: 0
     z-index: $overlay-z-index
-    overflow-x: hidden
-    overflow-y: auto
+    overflow: auto
+    -webkit-overflow-scrolling: touch
     +visible(false)
 
   &__wrapper
@@ -63,7 +50,14 @@ input[type=radio].pxl-overlay--state-off
     left: 0
 
   &__background
-    background-image: linear-gradient(to bottom, rgba(#1488CC, .5), rgba(#2B32B2, .5))
+    @if type-of($overlay-background) == 'color'
+      background-color: $overlay-background
+    @else
+      background-image: $overlay-background
+      background-attachment: fixed
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
     display: block
     width: 100%
     height: 100%
@@ -75,14 +69,16 @@ input[type=radio].pxl-overlay--state-off
     +visible(false)
 
   &__body
-    display: flex
-    flex-direction: column
     width: 100%
     height: 100%
     flex-grow: 1
     overflow: hidden
 
     // inner position settings
+    &[data-inner-position]
+      display: flex
+      flex-direction: column
+
     &[data-inner-position="top"]
       align-items: center
       justify-content: flex-start
@@ -123,7 +119,9 @@ input[type=radio].pxl-overlay--state-off
       justify-content: flex-end
       
   &__inner
+    background-color: #fff
     display: inline-block
     min-height: 1px
     position: relative
     z-index: 2
+    +visible(false)

@@ -1,9 +1,11 @@
-mixin dropdown(type = 'hover', attr)
-  .pxl-dropdown(class="pxl-dropdown--" + type)&attributes(attr)
+mixin dropdown(attr)
+  // .pxl-dropdown
+  .pxl-dropdown(class="pxl-dropdown--" + attr.type, data-dropdown-position=attr.position)
     block
+  // ## .pxl-dropdown
 
 mixin dropdown__trigger(attr)
-  span.pxl-dropdown__trigger(tabindex="0")&attributes(attr)
+  label.pxl-dropdown__trigger(tabindex="0")&attributes(attr)
     block
 
 mixin dropdown__body
