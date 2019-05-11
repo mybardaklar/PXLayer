@@ -1,0 +1,122 @@
+.pxl-container
+  width: 100%
+  position: relative
+  +padding($container-padding)
+  +margin(null auto)
+  
+  +breakpoint('from', $breakpoint-tablet)
+    max-width: $container-tablet
+  +breakpoint('from', $breakpoint-desktop)
+    max-width: $container-desktop
+  +breakpoint('from', $breakpoint-widescreen)
+    max-width: $container-widescreen
+
+.pxl-wrap
+  margin-bottom: 1rem
+
+  &[pxl-gapless]
+    margin-bottom: 1rem + $gap
+
+  &:not([pxl-gapless])
+    +margin(#{-$gap} #{-$gap} null)
+    .pxl-wrap__item
+      +padding($gap)
+
+  // flex grid system
+  &.pxl-flex
+    display: flex
+    flex-wrap: wrap
+
+    // flex properties for all screens
+    +pxl-wrap--flex__properties
+    
+    // flex columns for all screens
+    +pxl-wrap--flex__columns
+    
+    .pxl-wrap__item
+      flex-grow: 1
+      flex-basis: 100%
+      width: 100%
+      max-width: 100%
+      position: relative
+
+      // align-self property
+      &[pxl-align-self="auto"]
+        align-self: auto
+      &[pxl-align-self="stretch"]
+        align-self: stretch
+      &[pxl-align-self="center"]
+        align-self: center
+      &[pxl-align-self="start"]
+        align-self: flex-start
+      &[pxl-align-self="end"]
+        align-self: flex-end
+      &[pxl-align-self="baseline"]
+        align-self: baseline
+      
+      // flex order for all screens
+      +pxl-wrap--flex__item--order
+      
+      // flex column size for initial
+      +pxl-wrap--flex__item--column(null, null)
+      
+      // flex column size for tablet
+      +pxl-wrap--flex__item--column($breakpoint-tablet-modifier, $breakpoint-tablet)
+      
+      // flex column size for desktop
+      +pxl-wrap--flex__item--column($breakpoint-desktop-modifier, $breakpoint-desktop)
+      
+      // flex column size for widescreen
+      +pxl-wrap--flex__item--column($breakpoint-widescreen-modifier, $breakpoint-widescreen)
+  
+  // masonry grid system
+  &.pxl-masonry
+    column-gap: 0
+
+    // masonry columns for all screens
+    +pxl-wrap--masonry__columns
+
+    .pxl-wrap__item
+      position: relative
+      box-sizing: border-box
+      break-inside: avoid
+      transition: all 250ms
+
+      &:hover
+        transform: translateY(-7.5px)
+
+        img
+          box-shadow: 0 5px 10px 5px rgba($black, .4)
+
+      img
+        width: 100%
+        box-shadow: 0 5px 10px 2px rgba($black, .25)
+        transition: all 250ms
+        display: block
+      
+      iframe
+        width: 100%
+        height: 400px
+
+.amazing
+  color: $white
+  display: block
+  text-align: center
+  font-weight: $weight-semibold
+  font-size: .75rem
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 10px
+  box-shadow: 0 3px 6px 3px rgba($black, .25)
+  margin-bottom: 0
+  +padding(1rem)
+
+  &.box-1
+    background-color: $color-1
+  &.box-2
+    background-color: $color-2
+  &.box-3
+    background-color: $color-3
+  &.box-4
+    background-color: $grey-dark

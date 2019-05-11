@@ -1,0 +1,192 @@
+=breakpoint($type, $breakpoint)
+  @if $type == 'from'
+    @media screen and (min-width: $breakpoint)
+      @content
+  @else if $type == 'until'
+    @media screen and (max-width: $breakpoint)
+      @content
+  @else if $type == 'between'
+    @media screen and (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2) - 1)
+      @content
+
+=pxl-wrap--flex__properties
+  $properties: ('flex-direction': ('row', 'row-reverse', 'column', 'column-reverse'), 'flex-wrap': ('nowrap', 'wrap', 'wrap-reverse'), 'justify-content': (('start', 'flex-start'), ('end', 'flex-end'), 'center', ('between', 'space-between'), ('around', 'space-around')), 'align-items': ('stretch', 'center', ('start', 'flex-start'), ('end', 'flex-end'), 'baseline'), 'align-content': ('stretch', 'center', ('start', 'flex-start'), ('end', 'flex-end'), ('between', 'space-between'), ('around', 'space-around')))
+  $breakpoints: (null, ('sm', $breakpoint-tablet), ('md', $breakpoint-desktop), ('lg', $breakpoint-widescreen))
+
+  @each $breakpoint in $breakpoints
+    $breakpoint-modifier: null
+    $breakpoint-var     : null
+
+    @if $breakpoint
+      $breakpoint-modifier: _get($breakpoint, 1)
+      $breakpoint-var     : _get($breakpoint, 2)
+    
+    @if $breakpoint-modifier
+      +breakpoint('from', $breakpoint-var)
+        @each $property, $values in $properties
+          @each $value in $values
+            @if type-of($value) == 'list'
+              &[pxl-#{$property}-#{$breakpoint-modifier}="#{_get($value, 1)}"]
+                #{$property}: #{_get($value, 2)}
+            @else
+              &[pxl-#{$property}-#{$breakpoint-modifier}="#{$value}"]
+                #{$property}: #{$value}
+    @else
+      @each $property, $values in $properties
+        @each $value in $values
+          @if type-of($value) == 'list'
+            &[pxl-#{$property}="#{_get($value, 1)}"]
+              #{$property}: #{_get($value, 2)}
+          @else
+            &[pxl-#{$property}="#{$value}"]
+              #{$property}: #{$value}
+
+=pxl-wrap--flex__columns
+  // flex column size for initial
+  @for $x from 1 through 12
+    &[pxl-col="#{$x}"]
+      .pxl-wrap__item
+        display: block
+        flex-basis: 100% / $x
+        max-width: 100% / $x
+  
+  // flex column size for tablet
+  +breakpoint('from', $breakpoint-tablet)
+    @for $x from 1 through 12
+      &[pxl-col-#{$breakpoint-tablet-modifier}="#{$x}"]
+        .pxl-wrap__item
+          display: block
+          flex-basis: 100% / $x
+          max-width: 100% / $x
+  
+  // flex column size for desktop
+  +breakpoint('from', $breakpoint-desktop)
+    @for $x from 1 through 12
+      &[pxl-col-#{$breakpoint-desktop-modifier}="#{$x}"]
+        .pxl-wrap__item
+          display: block
+          flex-basis: 100% / $x
+          max-width: 100% / $x
+  
+  // flex column size for widescreen
+  +breakpoint('from', $breakpoint-widescreen)
+    @for $x from 1 through 12
+      &[pxl-col-#{$breakpoint-widescreen-modifier}="#{$x}"]
+        .pxl-wrap__item
+          display: block
+          flex-basis: 100% / $x
+          max-width: 100% / $x
+
+=pxl-wrap--flex__item--order
+  // flex order for initial size
+  &[pxl-order="first"]
+    order: -1
+  @for $x from 0 through 12
+    &[pxl-order="#{$x}"]
+      order: $x
+  &[pxl-order="last"]
+    order: 13
+  
+  // flex order for tablet size
+  +breakpoint('from', $breakpoint-tablet)
+    &[pxl-order-#{$breakpoint-tablet-modifier}="first"]
+      order: -1
+    @for $x from 0 through 12
+      &[pxl-order-#{$breakpoint-tablet-modifier}="#{$x}"]
+        order: $x
+    &[pxl-order-#{$breakpoint-tablet-modifier}="last"]
+      order: 13
+  
+  // flex order for desktop size
+  +breakpoint('from', $breakpoint-desktop)
+    &[pxl-order-#{$breakpoint-desktop-modifier}="first"]
+      order: -1
+    @for $x from 0 through 12
+      &[pxl-order-#{$breakpoint-desktop-modifier}="#{$x}"]
+        order: $x
+    &[pxl-order-#{$breakpoint-desktop-modifier}="last"]
+      order: 13
+  
+  // flex order for widescreen size
+  +breakpoint('from', $breakpoint-widescreen)
+    &[pxl-order-#{$breakpoint-widescreen-modifier}="first"]
+      order: -1
+    @for $x from 0 through 12
+      &[pxl-order-#{$breakpoint-widescreen-modifier}="#{$x}"]
+        order: $x
+    &[pxl-order-#{$breakpoint-widescreen-modifier}="last"]
+      order: 13
+
+=pxl-wrap--flex__item--column($breakpoint-modifier, $breakpoint)
+  @if $breakpoint-modifier
+    +breakpoint('from', $breakpoint)
+      &[pxl-col-#{$breakpoint-modifier}="1-1"]
+        display: block
+        flex-basis: 100%
+        max-width: 100%
+
+      $x: 1
+      @while $x <= 12
+        $i: 1
+        @while $i <= 12
+          @if $x < $i
+            &[pxl-col-#{$breakpoint-modifier}="#{$x}-#{$i}"]
+              display: block
+              flex-basis: (100% / $i) * $x
+              max-width: (100% / $i) * $x
+
+          @if $x < $i and $x != $i
+            $i: $i + 1
+          @else
+            $i: $x + 1
+        $x: $x + 1
+      &[pxl-col-#{$breakpoint-modifier}="hidden"]
+        display: none
+  @else
+    &[pxl-col="1-1"]
+      display: block
+      flex-basis: 100%
+      max-width: 100%
+    
+    $x: 1
+    @while $x <= 12
+      $i: 1
+      @while $i <= 12
+        @if $x < $i
+          &[pxl-col="#{$x}-#{$i}"]
+            display: block
+            flex-basis: (100% / $i) * $x
+            max-width: (100% / $i) * $x
+
+        @if $x < $i and $x != $i
+          $i: $i + 1
+        @else
+          $i: $x + 1
+      $x: $x + 1
+    &[pxl-col="hidden"]
+      display: none
+
+
+=pxl-wrap--masonry__columns
+  // masonry column size for initial
+  @for $x from 1 through 12
+    &[pxl-col="#{$x}"]
+      column-count: $x
+  
+  // masonry column size for tablet
+  +breakpoint('from', $breakpoint-tablet)
+    @for $x from 1 through 12
+      &[pxl-col-#{$breakpoint-tablet-modifier}="#{$x}"]
+        column-count: $x
+  
+  // masonry column size for desktop
+  +breakpoint('from', $breakpoint-desktop)
+    @for $x from 1 through 12
+      &[pxl-col-#{$breakpoint-desktop-modifier}="#{$x}"]
+        column-count: $x
+  
+  // masonry column size for widescreen
+  +breakpoint('from', $breakpoint-widescreen)
+    @for $x from 1 through 12
+      &[pxl-col-#{$breakpoint-widescreen-modifier}="#{$x}"]
+        column-count: $x

@@ -1,0 +1,153 @@
+extends ./Base/layout
+
+block PageSettings
+  - PageSettings.title    = 'Homepage'
+  - PageSettings.author   = 'MYB'
+  - PageSettings.keywords = 'design, mesign, hotness, brotherhood'
+
+block Layers
+  +Layer({
+    name: 'modal-register',
+    class: 'pxl-modal',
+    innerPosition: 'top right',
+    innerAnimation: 'right to left'
+  })
+    +modal__header
+      .pxl-modal__header__title
+        h5 Modal Title
+      label.pxl-modal__header__close-button(for="modal-register--state-off") &times;
+    +modal__body
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, ipsa dicta minima minus, laudantium nulla eaque cum dolorum repudiandae excepturi veniam aut officiis harum quae nobis veritatis inventore dolorem quas.
+    +modal__footer
+      .pxl-tooltip--trigger
+        +tooltip({ position: 'top', style: 'min-width: 80px;' })
+          span Cancel form
+        label(for="modal-register--state-off").button.is-outline Cancel
+    
+  +Layer({
+    type: 'SideNavigation',
+    name: 'side-navigation',
+    class: 'pxl-side-navigation',
+    checked: false,
+    innerPosition: 'top left',
+    innerAnimation: 'left to right'
+  })
+    +side-navigation
+      .has-text-right
+        label.pxl-side-navigation__close-button(for="side-navigation--state-off") &times;
+      .field
+        .control
+          input.input.is-rounded(type='text', placeholder='Search')
+      aside.menu
+        p.menu-label
+          | General
+        ul.menu-list
+          li
+            a Dashboard
+          li
+            a Customers
+        p.menu-label
+          | Administration
+        ul.menu-list
+          li
+            a Team Settings
+          li
+            a.is-active Manage Your Team
+            ul
+              li
+                a Members
+              li
+                a Plugins
+              li
+                a Add a member
+          li
+            a Invitations
+          li
+            a Cloud Storage Environment Settings
+          li
+            a Authentication
+        p.menu-label
+          | Transactions
+        ul.menu-list
+          li
+            a Payments
+          li
+            a Transfers
+          li
+            a Balance
+
+block Body
+  .pxl-area
+    .pxl-main-layer__background(style="background-image: url(https://wallpapersmug.com/download/5120x2880/b20ee7/avengers-infinity-war-don-cheadle-robert-downey-jr-josh.jpg);")
+    
+    .pxl-area__item
+      +main-navbar
+      +main-content
+        .pxl-container
+          .pxl-wrap.pxl-flex(pxl-col="3", pxl-col-md="5")
+            .pxl-wrap__item
+              span.amazing.box-1 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="4")
+            .pxl-wrap__item
+              span.amazing.box-2 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="4")
+            .pxl-wrap__item(pxl-col-md="1-1")
+              span.amazing.box-3 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="8")
+            .pxl-wrap__item
+              label.amazing.box-2(for="modal-register--state-on") Open Layer
+            .pxl-wrap__item
+              span.amazing.box-3 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="8")
+          
+          .pxl-wrap.pxl-flex(pxl-justify-content="center", pxl-align-items="center")
+            .pxl-wrap__item(pxl-col="12", pxl-col-md="4", pxl-order="last", pxl-order-sm="0")
+              span.amazing.box-1 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="4")
+            .pxl-wrap__item(pxl-col="hidden", pxl-col-sm="12", pxl-col-md="4")
+              span.amazing.box-2 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="4")
+            .pxl-wrap__item(pxl-col="12", pxl-col-lg="8", pxl-order="first", pxl-order-sm="0")
+              span.amazing.box-3 .pxl-wrap__item(pxl-col="12", pxl-col-desktop="8")
+          
+          .pxl-wrap.pxl-masonry(pxl-col="2", pxl-col-md="4", pxl-col-lg="3")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/1459505/pexels-photo-1459505.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/1769307/pexels-photo-1769307.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/804605/pexels-photo-804605.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/433989/pexels-photo-433989.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/1166430/pexels-photo-1166430.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/1461264/pexels-photo-1461264.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/1858115/pexels-photo-1858115.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/910086/pexels-photo-910086.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/2099116/pexels-photo-2099116.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/2097475/pexels-photo-2097475.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+            .pxl-wrap__item
+              img(src="https://images.pexels.com/photos/1813252/pexels-photo-1813252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260", alt="")
+      +main-footer

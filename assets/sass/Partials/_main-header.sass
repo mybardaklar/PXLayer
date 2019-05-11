@@ -1,0 +1,167 @@
+.pxl-main-navbar
+  background-color: rgba($black, .75)
+  min-height: 80px
+  display: flex
+  justify-content: space-between
+  position: sticky
+  top: 0
+  z-index: $z-index-main-header
+  +padding(null 1rem)
+
+  +breakpoint('until', 767px)
+    
+
+  &__brand
+    display: flex
+
+    +breakpoint('until', 767px)
+      flex-grow: 1
+      justify-content: space-between
+
+    &__item
+      display: flex
+      align-items: center
+
+    &__burger
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      margin-bottom: 0
+      cursor: pointer
+      padding-right: 1rem
+      padding-left: 1rem
+      
+      span
+        background-color: $white
+        height: 2px
+        transition: all 250ms
+        +margin(.2rem null)
+
+        &:nth-child(1)
+          width: 30px
+        &:nth-child(2)
+          width: 20px
+        &:nth-child(3)
+          width: 10px
+    
+    &__image
+      transition: all 250ms
+  
+  &__search-box
+    display: flex
+    justify-content: center
+    align-items: center
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)
+
+    +breakpoint('until', 1023px)
+      position: relative
+      left: 0
+      transform: none
+      display: none
+
+    &__item
+      position: relative
+
+      input[type="text"]
+        background-color: rgba($white, .15)
+        border-width: 0
+        width: 350px
+        height: 40px
+        border-radius: 40px
+        outline-width: 0
+        text-align: center
+        font-weight: $weight-semibold
+        color: rgba($white, .5)
+        transition: all 250ms
+        +padding(null 3rem null 1rem)
+
+        &:hover,
+          background-color: rgba($white, .3)
+
+        &:focus
+          background-color: rgba($white, .5)
+          color: rgba($black, .5)
+          width: 500px
+
+          & ~ label
+            color: rgba($black, .5)
+
+          & ~ button svg
+            fill: rgba($black, .5)
+
+        &:valid
+          & ~ label
+            top: -1rem
+            +visible(false)
+      
+      label
+        display: flex
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        display: flex
+        align-items: center
+        justify-content: center
+        font-size: 14px
+        font-weight: $weight-semibold
+        color: rgba($white, .5)
+        user-select: none
+        transition: all 250ms
+        cursor: text
+      
+      button
+        background-color: transparent
+        border-width: 0
+        outline-width: 0
+        cursor: pointer
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        display: flex
+        border-top-right-radius: 30px
+        border-bottom-right-radius: 30px
+        +padding(null 1rem)
+
+        &:hover
+          svg
+            fill: $white
+
+        svg
+          fill: rgba($white, .5)
+          transition: all 250ms
+          +box(16px)
+    
+  &__end
+    display: flex
+
+    +breakpoint('until', 767px)
+      flex-grow: 1
+      justify-content: flex-end
+
+    .pxl-dropdown
+      display: flex
+      &__trigger
+        display: flex
+        align-items: center
+    
+    &__user
+
+      img
+        border-radius: 100%
+        min-width: 30px
+        +box(30px)
+      
+      span
+        color: #fff
+        font-size: 12px
+        padding-left: .5rem
+
+        +breakpoint('until', 767px)
+          display: none

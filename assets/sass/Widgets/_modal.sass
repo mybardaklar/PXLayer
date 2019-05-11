@@ -1,0 +1,110 @@
+.pxl-modal
+
+  &.innerScroll
+    .pxl-layer__container
+      overflow-x: hidden
+      overflow-y: hidden
+
+    .pxl-layer__body
+      position: absolute
+      top: 0
+      left: 0
+    
+    .pxl-layer__inner
+      max-height: 100%
+    
+    .pxl-modal__body
+      flex-grow: 1
+      flex-shrink: 1
+      overflow: auto
+
+  input[type=radio].pxl-layer--state-on
+    &:checked ~ .pxl-layer__container
+      transition: $modal__container-transition-in
+
+      .pxl-layer__background
+        transition: $modal__background-transition-in
+
+      .pxl-layer__inner
+        @extend .popIn
+    
+    &:not(:checked) ~ .pxl-layer__container
+      .pxl-layer__inner
+        @extend .popOut
+
+  .pxl-layer__container
+    transition: $modal__container-transition-out
+
+  .pxl-layer__background
+    @if type-of($layer-background) == 'color'
+      background-color: $layer-background
+    @else
+      background-image: $layer-background
+      background-attachment: fixed
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+    transition: $modal__background-transition-out
+
+  .pxl-layer__body
+    +padding($modal-spacing)
+
+  .pxl-layer__inner
+    background-color: $modal-background-color
+    width: 100%
+    max-width: $modal-width
+    display: flex
+    flex-direction: column
+    border-radius: $modal-radius
+    box-shadow: $modal-shadow
+    @extend .vivify
+
+  &__header
+    background-color: $modal__header-background-color
+    display: flex
+    align-items: center
+    justify-content: space-between
+    min-height: $modal__header-height
+    color: $black-light
+    border-bottom: $modal__header-border
+    border-top-left-radius: $modal-radius
+    border-top-right-radius: $modal-radius
+    +padding($modal__header-padding)
+
+    &__title
+      h5
+        font-weight: $weight-medium
+        margin-bottom: 0
+
+    &__close-button
+      display: inline-block
+      color: $grey
+      font-size: $size-3
+      width: 50px
+      height: 50px
+      margin-bottom: 0
+      margin-right: -$size-6
+      text-align: center
+      line-height: 50px
+      cursor: pointer
+      user-select: none
+
+      &:hover
+        color: $grey-darken
+
+  &__body
+    background-color: $modal__body-background-color
+    flex-grow: 1
+    flex-shrink: 1
+    +padding($modal__body-padding)
+
+  &__footer
+    background-color: $modal__footer-background-color
+    min-height: $modal__footer-height
+    display: flex
+    align-items: center
+    justify-content: flex-end
+    border-top: $modal__footer-border
+    border-bottom-left-radius: $modal-radius
+    border-bottom-right-radius: $modal-radius
+    +padding($modal__footer-padding)

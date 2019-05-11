@@ -1,0 +1,122 @@
+input[type=radio].pxl-layer--state-off
+  display: none
+  position: absolute
+  top: -9999px
+  left: -9999px
+
+  &:not(:checked)
+    & ~ .pxl-main-layer
+      @if $layer-background-blur-animation
+        filter: blur(5px)
+
+.pxl-layer
+  input[type=radio].pxl-layer--state-on
+    display: none
+    position: absolute
+    top: -9999px
+    left: -9999px
+  
+    &:checked ~ .pxl-layer__container
+      +visible(true)
+
+      .pxl-layer__background
+        visibility: visible
+        opacity: $layer-background-opacity
+
+  &__container
+    position: fixed
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    z-index: $layer-z-index
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    +visible(false)
+
+  &__wrapper
+    display: flex
+    flex-direction: column
+    width: 100%
+    height: auto
+    min-height: 100%
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+
+  &__background
+    @if type-of($layer-background) == 'color'
+      background-color: $layer-background
+    @else
+      background-image: $layer-background
+      background-attachment: fixed
+      background-repeat: no-repeat
+      background-size: cover
+      background-position: center
+    display: block
+    width: 100%
+    height: 100%
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 1
+    margin-bottom: 0
+    +visible(false)
+
+  &__body
+    width: 100%
+    height: 100%
+    flex-grow: 1
+    overflow: hidden
+
+    // inner position settings
+    &[data-inner-position]
+      display: flex
+      flex-direction: column
+
+    &[data-inner-position="top"]
+      align-items: center
+      justify-content: flex-start
+    &[data-inner-position="top left"]
+      align-items: flex-start
+      justify-content: flex-start
+    &[data-inner-position="top center"]
+      align-items: center
+      justify-content: flex-start
+    &[data-inner-position="top right"]
+      align-items: flex-end
+      justify-content: flex-start
+    
+    &[data-inner-position="center"]
+      align-items: center
+      justify-content: center
+    &[data-inner-position="center left"]
+      align-items: flex-start
+      justify-content: center
+    &[data-inner-position="center center"]
+      align-items: center
+      justify-content: center
+    &[data-inner-position="center right"]
+      align-items: flex-end
+      justify-content: center
+    
+    &[data-inner-position="bottom"]
+      align-items: center
+      justify-content: flex-end
+    &[data-inner-position="bottom left"]
+      align-items: flex-start
+      justify-content: flex-end
+    &[data-inner-position="bottom center"]
+      align-items: center
+      justify-content: flex-end
+    &[data-inner-position="bottom right"]
+      align-items: flex-end
+      justify-content: flex-end
+      
+  &__inner
+    background-color: #fff
+    display: inline-block
+    min-height: 1px
+    position: relative
+    z-index: 2

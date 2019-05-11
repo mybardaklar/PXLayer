@@ -1,0 +1,46 @@
+html.has-pxl-main-layer,
+body.has-pxl-main-layer
+  background-color: $black
+  overflow: hidden
+  +box(100%)
+
+.pxl-main-layer
+  position: relative
+  z-index: $z-index-main-content
+  transition: all 250ms
+  +box(100%)
+
+  &__body
+    flex-grow: 1
+
+  &__background
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 1
+    background-color: $black
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    filter: blur(5px)
+    transition: all 250ms
+    opacity: .5
+    +box(100%)
+  
+  &__body
+    transition: all 250ms
+
+.pxl-area
+  display: flex
+  +box(100%)
+
+  &__item
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    position: relative
+    z-index: $z-index-main-content
+    +box(100%)
+
+.pxl-main-content
+  position: relative
+  z-index: $z-index-main-content

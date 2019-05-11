@@ -1,0 +1,107 @@
+::-moz-selection
+  background-color: $selection-background
+::selection
+  background-color: $selection-background
+
+*
+  &,
+  &::before,
+  &::after
+    box-sizing: border-box
+
+html
+  @if type-of($body-background) == 'color'
+    background-color: $body-background
+  @else
+    background-image: $body-background
+  font-size: $body-font-size
+  -moz-osx-font-smoothing: grayscale
+  -webkit-font-smoothing: antialiased
+  text-rendering: $body-text-rendering
+  text-size-adjust: 100%
+  overflow-x: auto
+  overflow-y: auto
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+section
+  display: block
+
+input,
+textarea,
+select,
+button
+  font-family: $body-font-family
+  font-size: 14px
+
+code,
+pre
+  -moz-osx-font-smoothing: auto
+  -webkit-font-smoothing: auto
+  font-family: $code-font-family
+
+body
+  @if type-of($body-background) == 'color'
+    background-color: $body-background
+  @else
+    background-image: $body-background
+  color: $body-text-color
+  font-family: $body-font-family
+  font-size: 1rem
+  font-weight: $body-font-weight
+  line-height: $body-line-height
+  +padding(0)
+  +margin(0)
+
+a
+  color: $link-color
+  cursor: pointer
+  text-decoration: none
+
+  strong
+    color: currentColor
+
+  &:hover
+    color: $link-color-hover
+
+hr
+  background-color: $hr-background-color
+  border: none
+  display: block
+  height: $hr-height
+  +margin($hr-margin)
+
+img
+  height: auto
+  max-width: 100%
+
+input[type="checkbox"],
+input[type="radio"]
+  vertical-align: baseline
+
+small
+  font-size: 0.875em
+
+span
+  font-style: inherit
+  font-weight: inherit
+
+strong
+  color: $strong-color
+  font-weight: $strong-weight
+
+fieldset
+  border: none
+
+table
+  td,
+  th
+    text-align: left
+    vertical-align: top
+
+  th
+    color: $strong-color

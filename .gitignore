@@ -99,3 +99,4 @@ typings/
 
 # dist
 dist/
+.dist/

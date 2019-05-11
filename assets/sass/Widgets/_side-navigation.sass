@@ -1,0 +1,69 @@
+/*
+  // Scrolling animation
+  input[type=radio].pxl-side-navigation--state-off
+    & ~ .pxl-main-layer,
+    & ~ .pxl-main-layer__background
+      transition: $side-navigation__inner-transition-out
+
+    &:not(:checked)
+      & ~ .pxl-main-layer,
+      & ~ .pxl-main-layer__background
+        transition: $side-navigation__inner-transition-in
+
+    &[data-sidenavigation-position="right to left"]:not(:checked)
+      & ~ .pxl-main-layer,
+      & ~ .pxl-main-layer__background
+        width: calc(100% - #{$side-navigation-width})
+    &[data-sidenavigation-position="left to right"]:not(:checked)
+      & ~ .pxl-main-layer,
+      & ~ .pxl-main-layer__background
+        width: calc(100% - #{$side-navigation-width}) */
+
+.pxl-side-navigation
+  input[type=radio].pxl-layer--state-on
+    &:checked ~ .pxl-layer__container
+      transition: $side-navigation__container-transition-in
+
+      .pxl-layer__background
+        transition: $side-navigation__background-transition-in
+
+      .pxl-layer__inner
+        @extend .fadeInLeft
+    
+    &:not(:checked) ~ .pxl-layer__container
+      .pxl-layer__inner
+        @extend .fadeOutLeft
+
+  .pxl-layer__container
+    transition: $side-navigation__container-transition-out
+  
+  .pxl-layer__background
+    background: linear-gradient(to bottom, rgba(#1488CC, .5), rgba(#2B32B2, .5))
+    transition: $side-navigation__background-transition-out
+
+  .pxl-layer__body
+    $layer__inner-animation-size: $side-navigation-width
+
+  .pxl-layer__inner
+    background-color: $side-navigation-background-color
+    width: $side-navigation-width
+    height: 100%
+    min-height: 100vh
+    position: relative
+    z-index: 2
+    box-shadow: $side-navigation-shadow
+    +padding($side-navigation-padding)
+    +visible(true)
+    @extend .vivify
+
+  &__close-button
+    display: inline-block
+    color: $grey
+    font-size: $size-3
+    width: 50px
+    height: 50px
+    margin-bottom: 0
+    text-align: center
+    line-height: 50px
+    cursor: pointer
+    user-select: none
