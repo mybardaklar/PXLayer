@@ -2,11 +2,11 @@
   "name": "pxlayer",
   "version": "1.0.0",
   "description": "Pure CSS framework. There's no JavaScript.",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "Muhammed Yasar Bardaklar <myasarbardaklar47@gmail.com>",
+  "author": "Muhammed Yasar BARDAKLAR <myasarbardaklar47@gmail.com>",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.4.4",
@@ -18,7 +18,9 @@
     "cssnano": "^4.1.10",
     "del": "^4.1.1",
     "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
     "gulp-eslint": "^5.0.0",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-html-prettify": "0.0.1",
     "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "^1.2.1",
@@ -28,8 +30,7 @@
     "gulp-sass": "^4.0.2",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-svgmin": "^2.2.0",
-    "webpack": "^4.31.0",
-    "webpack-stream": "^5.2.1"
+    "gulp-uglify": "^3.0.2"
   },
   "browserslist": [
     "last 2 versions",

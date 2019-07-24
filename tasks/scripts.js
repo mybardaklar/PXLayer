@@ -2,11 +2,10 @@
 const gulp          = require("gulp");
 
 // packages
-const eslint        = require("gulp-eslint");
-const webpack       = require("webpack");
-const webpackStream = require("webpack-stream");
-const webpackConfig = require("../webpack.config");
-const paths         = require("./paths");
+const eslint = require("gulp-eslint");
+const babel  = require("gulp-babel");
+const uglify = require("gulp-uglify");
+const paths  = require("./paths");
 
 // Lint scripts
 const scriptsLint = () => {
@@ -25,7 +24,8 @@ const scriptsLint = () => {
 const scriptsBuild = () => {
   return gulp
     .src(paths.src.js)
-    .pipe(webpackStream(webpackConfig, webpack))
+    .pipe(babel())
+    .pipe(uglify())
     .pipe(gulp.dest(paths.dest.js));
 };
 

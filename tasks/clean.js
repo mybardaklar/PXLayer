@@ -2,27 +2,27 @@
 const del = require("del");
 const paths = require("./paths");
 
-// Clean
+// clean
 const cleanDist = () => {
   return del([paths.build]);
 };
 
-// Clean HTML templates
+// clean HTML templates
 const cleanTemplate = () => {
   return del([paths.clean.template]);
 };
 
-// Clean SVG icons
+// clean SVG icons
 const cleanIcons = () => {
   return del([paths.clean.svg]);
 };
 
-// Clean images
+// clean images
 const cleanImg = () => {
   return del([paths.clean.img]);
 };
 
-// Clean fonts
+// clean fonts
 const cleanFont = () => {
   return del([paths.clean.font]);
 };

@@ -14,7 +14,7 @@ const init = done => {
   done();
 };
 
-// BrowserSync Reload
+// BrowserSync reload
 const reload = done => {
   browsersync.reload();
   done();

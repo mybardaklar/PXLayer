@@ -1,18 +1,18 @@
 mixin Layer(attr)
   // section.pxl-layer 
   //- layer state off
-  input.pxl-layer--state-off(
+  input.pxl-layer__state-off(
     type="radio",
-    id=attr.name + "--state-off",
+    id=attr.name + "__state-off",
     name=attr.name,
     checked
   )
 
   section.pxl-layer(class=attr.class)
     //- layer state on
-    input.pxl-layer--state-on(
+    input.pxl-layer__state-on(
       type="radio",
-      id=attr.name + "--state-on",
+      id=attr.name + "__state-on",
       name=attr.name,
       checked=attr.checked
     )
@@ -21,12 +21,12 @@ mixin Layer(attr)
     .pxl-layer__container
       .pxl-layer__wrapper
         //- layer background
-        label.pxl-layer__background(for=attr.name+"--state-off")
+        label.pxl-layer__background(for=attr.name+"__state-off")
 
         //- layer body
         .pxl-layer__body(
-          data-inner-position=attr.innerPosition,
-          data-inner-animation=attr.innerAnimation
+          pxl-innerPosition=attr.innerPosition,
+          pxl-innerAnimation=attr.innerAnimation
         )
           //- layer inner
           .pxl-layer__inner

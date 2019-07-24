@@ -7,7 +7,7 @@ const prettify = require("gulp-html-prettify");
 const plumber  = require("gulp-plumber");
 const paths    = require("./paths");
 
-// Template Task
+// template task
 const templatesBuild = () => {
   return gulp
     .src(paths.src.template)

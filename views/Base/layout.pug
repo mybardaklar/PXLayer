@@ -8,9 +8,8 @@ block PageSettings
 doctype html
 html(
   lang=Settings.lang,
-  dir=Settings.dir,
-  class=PageSettings.pxlMainLayer ? 'has-pxl-main-layer' : null
-)&attributes(PageSettings.htmlAttr)
+  dir=Settings.dir
+)
 
   //- Head
   head
@@ -18,15 +17,15 @@ html(
       include ./head
   
   //- Body
-  body(class=PageSettings.pxlMainLayer ? 'has-pxl-main-layer' : null)&attributes(PageSettings.bodyAttr)
+  body
     block Layers
     |
     |
 
-    // #pxl-body 
+    // section.pxl-main-layer
     section.pxl-main-layer
       block Body
-    // /#pxl-body 
+    // /section.pxl-main-layer
 
     |
     |

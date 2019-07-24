@@ -9,13 +9,18 @@ const autoprefixer = require("autoprefixer");
 const cssnano      = require("cssnano");
 const rename       = require("gulp-rename");
 const plumber      = require("gulp-plumber");
+const gcmq         = require("gulp-group-css-media-queries");
 const paths        = require("./paths");
 
-// Styles Task
+// styles Task
 const stylesBuild = () => {
   const plugins = [
     autoprefixer({browsers: ["last 1 version"]}),
-    cssnano()
+    cssnano({
+      preset: ["default", {
+        normalizeWhitespace: false
+      }]
+    })
   ];
 
   return gulp
@@ -24,10 +29,11 @@ const stylesBuild = () => {
       loadMaps: true
     }))
     .pipe(sass({
-      outputStyle: "expanded"
+      outputStyle: "nested"
     }))
     .pipe(plumber())
     .pipe(postcss(plugins))
+    .pipe(gcmq())
     .pipe(rename({ suffix: ".min" }))
     .pipe(sourcemaps.write("./"))
     .pipe(gulp.dest(paths.dest.sass));

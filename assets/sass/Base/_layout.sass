@@ -1,14 +1,16 @@
++classProperties($declarations, $breakpoints)
+
 .pxl-container
   width: 100%
   position: relative
   +padding($container-padding)
   +margin(null auto)
   
-  +breakpoint('from', $breakpoint-tablet)
+  +breakpoint('from', $breakpoint-tablet-size)
     max-width: $container-tablet
-  +breakpoint('from', $breakpoint-desktop)
+  +breakpoint('from', $breakpoint-desktop-size)
     max-width: $container-desktop
-  +breakpoint('from', $breakpoint-widescreen)
+  +breakpoint('from', $breakpoint-widescreen-size)
     max-width: $container-widescreen
 
 .pxl-wrap
@@ -26,9 +28,6 @@
   &.pxl-flex
     display: flex
     flex-wrap: wrap
-
-    // flex properties for all screens
-    +pxl-wrap--flex__properties
     
     // flex columns for all screens
     +pxl-wrap--flex__columns
@@ -54,20 +53,17 @@
       &[pxl-align-self="baseline"]
         align-self: baseline
       
-      // flex order for all screens
-      +pxl-wrap--flex__item--order
-      
       // flex column size for initial
       +pxl-wrap--flex__item--column(null, null)
       
       // flex column size for tablet
-      +pxl-wrap--flex__item--column($breakpoint-tablet-modifier, $breakpoint-tablet)
+      +pxl-wrap--flex__item--column($breakpoint-tablet-modifier, $breakpoint-tablet-size)
       
       // flex column size for desktop
-      +pxl-wrap--flex__item--column($breakpoint-desktop-modifier, $breakpoint-desktop)
+      +pxl-wrap--flex__item--column($breakpoint-desktop-modifier, $breakpoint-desktop-size)
       
       // flex column size for widescreen
-      +pxl-wrap--flex__item--column($breakpoint-widescreen-modifier, $breakpoint-widescreen)
+      +pxl-wrap--flex__item--column($breakpoint-widescreen-modifier, $breakpoint-widescreen-size)
   
   // masonry grid system
   &.pxl-masonry

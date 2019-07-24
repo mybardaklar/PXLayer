@@ -1,0 +1,64 @@
+=classProperties($declarations, $breakpoints)
+  @each $declaration in $declarations
+    $attr      : _get($declaration, 'attr')
+    $properties: _get($declaration, 'properties')
+    $value     : _get($declaration, 'value')
+
+    @each $breakpoint-modifier, $breakpoint-value in $breakpoints
+      // sm, md, lg breakpoint
+      @if $breakpoint-value
+        +breakpoint('from', $breakpoint-value)
+          +classProperties__value($attr, $properties, $value, $breakpoint-modifier)
+      
+      // in breakpoint
+      @else
+        +classProperties__value($attr, $properties, $value, $breakpoint-modifier)
+
+
+=classProperties__value($attr, $properties, $value, $breakpoint-modifier)
+  $value-type: type-of($value)
+
+  @if $value-type == 'map'
+    @each $key, $current-value in $value
+      @if $key == 'loop'
+        +classProperties__value($attr, $properties, $current-value, $breakpoint-modifier)
+      @else
+        @if type-of($properties) == 'list'
+          @each $property in $properties
+            [pxl-#{$attr}*="#{$breakpoint-modifier}: #{$key}"]
+              #{$property}: #{$current-value}
+        @else
+          [pxl-#{$attr}*="#{$breakpoint-modifier}: #{$key}"]
+            #{$properties}: #{$current-value}
+
+  @else
+    $value_1: _get($value, 1)
+    $value_2: _get($value, 2)
+
+    //@debug $properties
+    
+    @if type-of($value_1) == 'list'
+      $from   : _get($value_1, 1)
+      $through: _get($value_1, 2)
+      
+      @for $x from $from through $through
+        @if type-of($properties) == 'list'
+          @each $property in $properties
+            [pxl-#{$attr}*="#{$breakpoint-modifier}: #{$x}"]
+              #{$property}: #{$x * $value_2}
+        @else
+          [pxl-#{$attr}*="#{$breakpoint-modifier}: #{$x}"]
+            #{$properties}: #{$x * $value_2}
+    @else
+      @for $x from $value_1 through $value_2
+        @if type-of($properties) == 'list'
+          @each $property in $properties
+            [pxl-#{$attr}*="#{$breakpoint-modifier}: #{$x}"]
+              #{$property}: #{$x}
+        @else
+          [pxl-#{$attr}*="#{$breakpoint-modifier}: #{$x}"]
+            #{$properties}: #{$x}
+
+$sayi: 5
+$deneme: '$sayi * 5'
+@debug unquote($deneme)

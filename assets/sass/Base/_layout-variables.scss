@@ -1,0 +1,189 @@
+$breakpoints: (
+  '#{$breakpoint-initial-modifier}'   : null,
+  '#{$breakpoint-tablet-modifier}'    : $breakpoint-tablet-size,
+  '#{$breakpoint-desktop-modifier}'   : $breakpoint-desktop-size,
+  '#{$breakpoint-widescreen-modifier}': $breakpoint-widescreen-size
+);
+
+$declarations: (
+  // margin properties
+  (
+    'attr'      : 'm',
+    'properties': ('margin-top', 'margin-right', 'margin-bottom', 'margin-left'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'm-x',
+    'properties': ('margin-right', 'margin-left'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'm-y',
+    'properties': ('margin-top', 'margin-bottom'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'm-t',
+    'properties': ('margin-top'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'm-r',
+    'properties': ('margin-right'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'm-b',
+    'properties': ('margin-bottom'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'm-l',
+    'properties': ('margin-left'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+
+  // padding properties
+  (
+    'attr'      : 'p',
+    'properties': ('padding-top', 'padding-right', 'padding-bottom', 'padding-left'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'p-x',
+    'properties': ('padding-right', 'padding-left'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'p-y',
+    'properties': ('padding-top', 'padding-bottom'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'p-t',
+    'properties': ('padding-top'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'p-r',
+    'properties': ('padding-right'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'p-b',
+    'properties': ('padding-bottom'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  (
+    'attr'      : 'p-l',
+    'properties': ('padding-left'),
+    'value'     : ((0, 8), 0.25rem)
+  ),
+  
+  (
+    'attr'      : 'display',
+    'properties': ('display'),
+    'value'     : (
+      'inline'      : 'inline',
+      'block'       : 'block',
+      'flex'        : 'flex',
+      'inline-block': 'inline-block',
+      'inline-flex' : 'inline-flex',
+      'inline-table': 'inline-table',
+      'list-item'   : 'list-item',
+      'table'       : 'table',
+      'table-cell'  : 'table-cell',
+      'table-column': 'table-column',
+      'table-row'   : 'table-row',
+      'none'        : 'none'
+    )
+  ),
+
+  // flex container properties
+  (
+    'attr'      : 'flex-direction',
+    'properties': ('flex-direction'),
+    'value'     : (
+      'row'           : 'row',
+      'row-reverse'   : 'row-reverse',
+      'column'        : 'column',
+      'column-reverse': 'column-reverse'
+    )
+  ),
+  (
+    'attr'      : 'flex-wrap',
+    'properties': ('flex-wrap'),
+    'value'     : (
+      'nowrap' : 'nowrap',
+      'wrap'   : 'wrap',
+      'reverse': 'wrap-reverse'
+    )
+  ),
+  (
+    'attr'      : 'justify-content',
+    'properties': ('justify-content'),
+    'value'     : (
+      'start'  : 'flex-start',
+      'end'    : 'flex-end',
+      'center' : 'center',
+      'between': 'space-between',
+      'around' : 'space-around'
+    )
+  ),
+  (
+    'attr'      : 'align-items',
+    'properties': ('align-items'),
+    'value'     : (
+      'stretch' : 'stretch',
+      'center'  : 'center',
+      'start'   : 'flex-start',
+      'end'     : 'flex-end',
+      'baseline': 'baseline'
+    )
+  ),
+  (
+    'attr'      : 'align-content',
+    'properties': ('align-content'),
+    'value'     : (
+      'stretch': 'stretch',
+      'center' : 'center',
+      'start'  : 'flex-start',
+      'end'    : 'flex-end',
+      'between': 'space-between',
+      'around' : 'space-around'
+    )
+  ),
+
+  // flex item properties
+  (
+    'attr'      : 'order',
+    'properties': ('order'),
+    'value'     : (
+      'first': -1,
+      'last' : 13,
+      'loop' : (0, 12)
+    )
+  ),
+  (
+    'attr'      : 'flex-grow',
+    'properties': ('flex-grow'),
+    'value'     : (0, 12)
+  ),
+  (
+    'attr'      : 'flex-shrink',
+    'properties': ('flex-shrink'),
+    'value'     : (0, 12)
+  ),
+  (
+    'attr'      : 'align-self',
+    'properties': ('align-self'),
+    'value'     : (
+      'auto': 'auto',
+      'stretch' : 'stretch',
+      'center'  : 'center',
+      'start'   : 'flex-start',
+      'end'     : 'flex-end',
+      'baseline': 'baseline'
+    )
+  ),
+);
