@@ -1,9 +1,9 @@
 // gulp
-const gulp   = require("gulp");
+const gulp = require('gulp')
 
 // packages
-const svgmin = require("gulp-svgmin");
-const paths  = require("./paths");
+const svgmin = require('gulp-svgmin')
+const paths = require('./paths')
 
 const svgminPlugins = [
   {
@@ -29,25 +29,27 @@ const svgminPlugins = [
   },
   {
     addClassesToSVGElement: {
-      classNames: ["pxl-icon"]
+      classNames: ['pxl-icon']
     }
   }
-];
+]
 
 // icon task
 const iconBuild = () => {
   return gulp
     .src(paths.src.svg)
-    .pipe(svgmin({
-      js2svg: {
-        pretty: true
-      },
-      plugins: svgminPlugins
-    }))
-    .pipe(gulp.dest(paths.dest.svg));
-};
+    .pipe(
+      svgmin({
+        js2svg: {
+          pretty: true
+        },
+        plugins: svgminPlugins
+      })
+    )
+    .pipe(gulp.dest(paths.dest.svg))
+}
 
 // exports
 module.exports = {
   build: iconBuild
-};
+}
